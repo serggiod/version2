@@ -1,12 +1,13 @@
-angular.module('legislaturaweb',['ngRoute'])
+angular.module('legislaturaweb',
+	[
+		'ngRoute'
+//addmodule.
+	])
 	.config(function($routeProvider){
 	    $routeProvider
 	    	.when('/',{
 	    		redirectTo:'/home'
 	    	})
-			.when('/noticias',{
-				templateUrl:'views/noticiasView.html',
-				controller:'noticiasController'
-			})
+//routename.
 			.otherwise({redirectTo:'/home'});
 	});

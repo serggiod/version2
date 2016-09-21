@@ -26,9 +26,44 @@ var angular     = {
     
 
     // Interfase. 
-    init:(appname)=>{
-        if(appname===undefined) angular.messages.emptyname();
-        else angular.common.createApp(appname);
+    appName:(appname)=>{
+        if(appname===undefined) angular.messages.errorAppName();
+        else{
+
+            file = angular.path.application;
+            angular.common.fileRead(file,(e,d)=>{
+                if(!e) angular.messages.errorAppName();
+                else{
+                    init    = d.indexOf("('") +2;
+                    end     = d.indexOf("',");
+                    oldname = d.substring(init,end);
+                    value   = d.replace(oldname,appname);
+                    
+                    angular.common.fileWrite(file,value,(e)=>{
+                        if(!e) angular.messages.errorAppName();
+                        else{
+                            
+                            file = angular.path.index;
+                            angular.common.fileRead(file,(e,d)=>{
+                                if(!e) angular.messages.errorAppName();
+                                else{
+                                    init    = d.indexOf('ng-app="') +8;
+                                    end     = d.indexOf('">');
+                                    oldname = d.substring(init,end);
+                                    value   = d.replace(oldname,appname); 
+                                    
+                                    angular.common.fileWrite(file,value,(e)=>{
+                                        if(e) angular.messages.successAppName();
+                                        else  angular.messages.errorAppName();
+                                    });
+                                }
+                            });
+
+                        }
+                    })
+                }
+            });
+        }
     },
 
     addRoute:(route,params)=>{
@@ -52,7 +87,7 @@ var angular     = {
 
                             file     = angular.path.application;
                             template = angular.templates.route(nameroute,namecontroller,nameview);
-                            value    = d.replace('\n//ngRouteName.',template);
+                            value    = d.replace('\n//routename.',template);
                             angular.common.fileWrite(file,value,(e)=>{
                                 if(!e) angular.messages.errorWriteRoute();
                                 else{
@@ -106,45 +141,8 @@ var angular     = {
     },
 
 
-    // Metodos.
+    // Metodos comunes.
     common:{
-
-        createApp:(appname)=>{
-            if(angular.common.exists()) angular.messages.errorAppInitialised(); 
-            else angular.common.setAppName(appname);
-        },
-
-        /*
-        exists:(name)=>{
-            if(name!=undefined){
-                fileSystem.readdir(angular.controllerDir,(e,d)=>{
-                    if(e) throw e;
-                    if(d.length) return true;
-                    else return false;
-                })
-            } else {
-                fileSystem.Stats(angular.controllerDir+'/'+name+'Controller.js',(e)=>{
-                    if(e===undefined) return false;
-                    else return true;
-                });
-            }
-
-        },
-        */
-
-        getAppName:()=>{
-
-        },
-
-        setAppName:(appname)=>{
-            /*
-            fileSystem.readFile(angular.path.application,'utf8',(e,f)=>{
-                if(angular.path.controllers = f.replace(angular.common.getAppname(f),appname);
-                conviewsiteFile(angular.application,application,'utf8',angular.messages.successReplaceName);
-                    controlleviews
-            });
-            */
-        },
 
         fileExist:(file,callback)=>{
             if(callback===undefined || file===undefined) angular.messages.errorFileExists();
@@ -185,9 +183,11 @@ var angular     = {
      
     },
     
-    // Messages
+    // Messages de consola.
     messages:{
-        errorAppNeedsName   : ()=>{console.error('AngularJs necesita un nombre de aplicación.\n\n');},
+        errorAppName        : ()=>{console.error('AngularJs: No se pudo establecer un nombre de aplicación.\n\n');},
+        successAppName      : ()=>{console.log  ('AngularJs: Se ha establecido un nombre de aplicación.\n\n');},
+
         errorAppInitialised : ()=>{console.error('AngularJs informa que la aplicación ya fue inicializada.\n\n');},
         errorWriteRoute     : ()=>{console.error('AngularJs: No se pudo agregar la ruta');},
         errorReadFile       : ()=>{console.error('AngularJs: No se puede leer el archivo.');},

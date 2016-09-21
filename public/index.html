@@ -1,35 +1,467 @@
 <!DOCTYPE html>
-<html lan="es" ng-app="legislatura">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Argentina | Jujuy | Legislatura | {{nombre}}</title>
-        <style></style>
-    </head>
-    <body>
-        <!-- Pagina web -->
-        <div ng-view>Hola Versión 2</div>
-        <!-- /Pagina web -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet">
+	<title>Legislatura de Jujuy</title>
+</head>
 
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="0">
 
+	<header id="slidePrincipal" class="carousel slide">
+        <div class="carousel-inner" style="float: left;">
+            <div class="item active">
+                <div class="fill" style="background-image:url('images/slide01.jpg');"></div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('images/slide02.jpg');"></div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('images/slide03.jpg');"></div>
+            </div>
+        </div>
 
-        <!-- JSLib: JQuery -->
-        <script src="http://www.legislaturajujuy.gov.ar/jscdn/jquery/dist/jquery.min.js"></script>
+        <a class="left carousel-control" href="#slidePrincipal" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#slidePrincipal" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+		<div class="container cabezal"> <!-- contenedor logo -->
+	    	<div class="row">
+		        <div class="col-xs-8 col-sm-6 col-md-4 col-lg-3 fondoLogo">
+		            <img class="logo" src="images/logo.png" width="150" height="auto" alt="Legislatura de Jujuy">
+		        </div>
+	    	</div>
+	    </div> <!-- cierra contenedor logo -->
+	</header>
         
-        <!-- Polyfill para HTML5 -->
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/html5shiv/dist/html5shiv.js"></script>
+		
 
-		<!-- Libreria CSS BootStrap -->
-		<link href="http://www.legislaturajujuy.gov.ar/jscdn/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-		<script type="text/javascript" src="http://www.legislaturajujuy.gov.ar/jscdn/bootstrap/dist/js/bootstrap.min.js"></script>
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<div class="nav navbar-nav">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-lg">
+						<span class="sr-only">Desplegar / Ocultar Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Men&uacute;</a>
+				</div>
+				<!-- Menu -->
+				<div class="collapse navbar-collapse" id="navegacion-lg">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Institucional</a></li>
+						<li><a href="#">Autoridades</a></li>
+						<li><a href="#">Diputados</a></li>
+						<li><a href="#">Orden del d&iacute;a</a></li>
+						<li><a href="#">Poder Legislativo</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Bloques <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Uni&oacute;n C&iacute;vica Radical</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Justicialista</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Primero Jujuy</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Unidos y Organizados por la Soberan&iacute;a Popular</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Labor Legislativa</a></li>
+					</ul>
+					<!-- Busqueda -->
+					<form action="" class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" size="10" placeholder="Buscar">
+						</div>
+						<button type="submit" class="btn btn-primary">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+	
 
-        <!-- JSLib: Angular -->
-        <script src="http://www.legislaturajujuy.gov.ar/jscdn/angular/angular.min.js"></script>
-        <script src="http://www.legislaturajujuy.gov.ar/jscdn/angular-route/angular-route.min.js"></script>
+	
 
-        <!-- Aplicacion Angular: Definicionn -->
-        <script src="application/application.js"></script>
+	<section class="main container">
 
-        <!-- Aplicacion Angular: Controladores -->
-<!-- newcontroller -->
-    </body>
+		<section class=""> <!-- Botones grandes -->
+			<article>
+				<div class="row clearfix">
+					<div class="container col-xs-4 text-center cajaBotonesGrandes">
+						<button class="btnPresidencia"></button>
+							<h4>Presidencia</h4>	
+					</div>
+					<div class="container col-xs-4 text-center">
+						<button class="btnLegislatura"></button>
+						<h4>Legislatura</h4>
+					</div>
+					<div class="container col-xs-4 text-center">
+						<button class="btnSesion"></button>
+						<h4>Sesi&oacute;n en vivo</h4>
+					</div>
+				</div>
+			</article>
+		</section> <!-- Cierre botones grandes -->
+		
+		<section> <!-- Actividad del dia y boletin oficial -->
+			<article>
+				<div class="row clearfix">
+					<div class="container col-xs-12 col-sm-9">
+						<div class="container col-xs-12 col-sm-5 col-md-4">
+							<p class="tituloSeccion">Actividad del d&iacute;a</p>
+							<div class="actividadDia">
+								<div class="zoom">
+									<img class="img-responsive" src="http://placehold.it/230x150">
+								</div>
+								<p class="titulo">Titulo</p>
+								<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque iusto earum molestias consequuntur eius...</p>
+								<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+							</div>
+						</div>
+						<div class="container col-xs-12 col-sm-7 col-md-8">
+							<p class="tituloSeccion">Bolet&iacute;n Oficial</p>
+							<div class="boletinOficial">
+								<p class="text-justify texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								<p align="right"><a class="btn btn-primary" href="#">Ver listado completo</a></p>
+							</div>
+						</div>
+					</div>
+
+					<aside> <!-- Marcos Paz -->
+						<div class="container col-xs-12 col-sm-3">
+							<p class="tituloSeccion hidden-sm">Sal&oacuten Marcos Paz</p>
+							<p class="tituloSeccion visible-sm">Marcos Paz</p>
+							<div class="marcosPaz">
+								<div class="zoom">
+									<img class="img-responsive" src="http://placehold.it/260x150">
+								</div>
+								<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque iusto earum molestias consequuntur eius...</p>
+								<button class="btn btn-info pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+							</div>
+						</div>
+					</aside>
+				</div>
+			</article>
+			
+		</section> <!-- Cierre actividad del dia y boletin oficial -->
+
+		<div class="row">
+			<div class="container col-sm-9">
+				<section> <!-- Noticias 1 grande y 2 chicas-->
+					<div class="row">
+						<p class="tituloSeccion">Noticias</p>
+					</div>
+					<article>
+						<div class="row clearfix">
+							<div class="container col-xs-12 col-md-6 well clearfix">
+									<div class="zoom">
+										<img class="img-responsive" src="http://lorempixel.com/450/200/business">
+									</div>
+									<p class="titulo">T&iacute;tulo nota</p>
+									<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat. Duis aute irure dolor in reprehenderit in voluptate...</p>
+									<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+							</div>
+				
+							<div class="container col-xs-12 col-md-6 well">
+								<div class="noticiaChica">
+									<div class="zoom pull-left" style="margin: 0 5px">
+										<img class="img-responsive" src="http://placehold.it/150x150" alt="">
+									</div>
+									<p class="titulo">T&iacute;tulo</p>
+									<p class="titulo">Nota</p>
+									<p class="texto text-justify">Lorem ipsum dolor sit amet...</p>
+									<button class="btn-xs btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/>
+										</button>
+								</div>
+								<div class="noticiaChica" style="margin-top:6px">
+									<div class="zoom pull-left" style="margin: 0 5px">
+										<img class="img-responsive" src="http://placehold.it/150x150" alt="">
+									</div>
+									<p class="titulo">T&iacute;tulo nota</p>
+									<p class="titulo">Nota</p>
+									<p class="texto text-justify">Lorem ipsum dolor sit amet...</p>
+									<button class="btn-xs btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+								</div>
+							</div>
+						</div>
+					</article>
+				</section> <!-- cierre noticias 1 grande y 2 chicas-->
+				
+				<section class="espacioSuperior"> <!-- 3 notas chicas -->
+					<article>
+						<div class="row clearfix">
+							<div class="container col-sm-4 well">
+								<div class="zoom">
+									<img class="img-responsive" src="http://placehold.it/260x200">
+								</div>
+								<p class="titulo">T&iacute;tulo nota</p>
+								<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua...</p>
+								<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+							</div>
+							<div class="container col-sm-4 well">
+								<div class="zoom">
+									<img class="img-responsive" src="http://placehold.it/260x200">
+								</div>
+								<p class="titulo">T&iacute;tulo nota</p>
+								<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua...</p>
+								<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+							</div>
+							<div class="container col-sm-4 well">
+								<div class="zoom">
+									<img class="img-responsive" src="http://placehold.it/260x200">
+								</div>
+								<p class="titulo">T&iacute;tulo nota</p>
+								<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua...</p>
+								<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+							</div>
+						</div>
+					</article>
+				</section> <!-- cierre 3 notas chicas -->
+			</div>
+
+			<div class="container col-sm-3"> <!-- Botones laterales -->
+				<div class="botonesLaterales text-center">
+					<button type="button" class="btn btn-danger">
+						<p>Honorable</p>
+						<p>Convenci&oacuten</p>
+						<p>Constituyente</p>
+						<p>de la Provincia</p>
+						<p>de Jujuy</p>
+					</button>
+					<br>
+					<br>
+					<button class="btn btn-info">
+						<p>Ceremonial</p>
+						<p>y Protocolo</p>
+					</button>
+					<br>
+					<br>
+					<button class="btn btn-info">
+						<p>Biblioteca</p>
+					</button>
+					<br>
+					<br>
+					<button class="btn btn-info">
+						<p>Audiencias</p>
+						<p>P&uacuteblicas</p>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<section id="">
+			<div class="row-fluid text-center" style="background-color: #337ab7; height: 100px;">
+				<div class="container col-xs-12 espacioSuperior">
+					<p class="tituloSeccion" style="color: #eee;">Links
+					<button class="btn"><img src="images/logo_gobierno.png" height="40" alt=""></button>
+					<button class="btn"><img src="images/logo_senado.png" height="40" alt=""></button>
+					<button class="btn"><img src="images/logo_diputados.png" height="40" alt=""></button></p>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="recinto" data-speed="4" data-type="background"> <!-- Recinto -->
+			<div class="row">
+				<div class="container">
+			        <div class="col-xs-4 col-sm-2">
+			          <h2 align="right" style="color: #fff">Recinto</h2>
+			        </div>
+			        <div class="col-xs-8 col-sm-4 well">
+			       	  <img src="images/distrecinto.png" alt="" class="img-responsive img-thumbnail">
+			          <p style="margin-top:10px">Distribuci&oacuten diputados.</p>
+			          <p align="right"><a class="btn btn-primary" href="#">Ver listado completo</a></p>
+			        </div>
+		    	</div>
+		    </div>
+		</section> <!-- Cierre recinto -->
+
+		<section class="espacioSuperior"> <!--Destacado -->
+			<article>
+				<div class="row">
+					<p class="tituloSeccion">Destacados</p>
+				</div>
+				<div class="row clearfix destacados">
+					<div class="container col-sm-3">
+						<div class="noticiasChicas">
+							<div class="zoom">
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
+							</div>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+						</div>
+					</div>
+					<div class="container col-sm-3">
+						<div class="noticiasChicas">
+							<div class="zoom">
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
+							</div>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+						</div>
+					</div>
+					<div class="container col-sm-3">
+						<div class="noticiasChicas">
+							<div class="zoom">
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
+							</div>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+						</div>
+					</div>
+					<div class="container col-xs-12 col-sm-3">
+						<div class="noticiasChicas">
+							<div class="zoom">
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
+							</div>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section> <!-- Cierre destacado -->
+
+		<section> <!-- Mapa del sitio-->
+			<div class="row clearfix mapaSitio">
+				<div class="container" style="margin: 10px;">
+					<div class="col-sm-3"> <!-- Columna 1 -->
+						<ul class="list-unstyled">
+							<li><p class="tituloMapa">Institucional</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Autoridades</a></li>
+								<li><a href="#" class="textoMapa">Diputados</a></li>
+							</ul>
+							<li><p class="tituloMapa">Labor Legislativa</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Proyectos</a></li>
+								<li><a href="#" class="textoMapa">Acceso a Leyes</a></li>
+								<li><a href="#" class="textoMapa">Versiones Taquigráficas</a></li>
+								<li><a href="#" class="textoMapa">Orden del Día</a></li>
+							</ul>
+							<li><p class="tituloMapa">Normativa</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Constitución de la Nación</a></li>
+								<li><a href="#" class="textoMapa">Constitución de la Provincia</a></li>
+								<li><a href="#" class="textoMapa">Reglamento de la Legislatura</a></li>
+							</ul>
+						</ul>
+					</div>
+					<div class="col-sm-3"> <!-- Columna 2 -->
+						<ul class="list-unstyled">
+							<li><p class="tituloMapa">Comisiones</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Ambiente</a></li>
+								<li><a href="#" class="textoMapa">Asuntos Institucionales</a></li>
+								<li><a href="#" class="textoMapa">Asuntos Sociales</a></li>
+								<li><a href="#" class="textoMapa">Comision Especial Ddhh</a></li>
+								<li><a href="#" class="textoMapa">Cultura Y Turismo</a></li>
+								<li><a href="#" class="textoMapa">Derechos Humanos</a></li>
+								<li><a href="#" class="textoMapa">Economía</a></li>
+								<li><a href="#" class="textoMapa">Educación</a></li>
+								<li><a href="#" class="textoMapa">Finanzas</a></li>
+								<li><a href="#" class="textoMapa">Legislación General</a></li>
+								<li><a href="#" class="textoMapa">Obras Y Servicios Públicos</a></li>
+							</ul>
+						</ul>
+					</div>
+					<div class="col-sm-3"> <!-- Columna 3 -->
+						<ul class="list-unstyled">
+							<ul>
+								<li><a class="textoMapa" href="#">Pueblos Indigenas</a></li>
+								<li><a class="textoMapa" href="#">Reforma Del Codigo De Faltas</a></li>
+								<li><a class="textoMapa" href="#">Salud Pública</a></li>
+								<li><a class="textoMapa" href="#">Trabajo Y Seguridad Social</a></li>
+								<li><a class="textoMapa" href="#">Transporte Y Comunicaciones</a></li>
+							</ul>
+							<li><p class="tituloMapa">Bloques</p></li>
+							<ul>
+								<li><a class="textoMapa" href="#">Unión Cívica Radical</a></li>
+								<li><a class="textoMapa" href="#">Justicialista</a></li>
+								<li><a class="textoMapa" href="#">Peronista</a></li>
+								<li><a class="textoMapa" href="#">Primero Jujuy</a></li>
+								<li><a class="textoMapa" href="#">Unidos y Organizados por la Soberanía Popular</a></li>
+							</ul>
+						</ul>
+					</div>				
+					<div class="col-sm-3"> <!-- Columna 4 -->
+						<ul class="list-unstyled">
+							<li><p class="tituloMapa" href="#">Prensa</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Noticias de la Legislatura</a></li>
+								<li><a href="#" class="textoMapa">Archivo de Fotografias</a></li>
+							</ul>
+						</ul>
+
+						<!-- Boton donde estamos -->
+						<p class="tituloSeccion" style="color: #fff;">Donde estamos</p>
+						<div class="img-responsive zoom" style="float: left;">
+							<img src="images/mapa.jpg" alt="">
+						</div>
+						<div style="position: absolute; margin:20px;">
+							<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#mapa">Abrir Mapa <span class="glyphicon glyphicon-map-marker"/></button>
+						</div>
+						<!-- Ventana emergente mapa-->
+						<div id="mapa" class="modal fade" role="dialog">
+							<div class="modal-dialog">
+							    <div class="modal-content">
+									<div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal">&times;</button>
+								        <h4 class="modal-title">Donde estamos</h4>
+								      </div>
+								      <div class="container modal-body">
+								      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.551886582221!2d-65.30043138187949!3d-24.187443621063057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f44ba8981d1%3A0xb6b2365e42893975!2sCan%C3%B3nigo+Gorriti+47%2C+4600+San+Salvador+de+Jujuy%2C+Jujuy!5e0!3m2!1ses!2sar!4v1474455234052" width="550" height="400" frameborder="0" style="border:0;" allowfullscreen></iframe>
+							    	  </div>
+							      	<div class="modal-footer">
+							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+							      	</div>
+							    </div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</section> <!-- Cierre Mapa del sitio-->
+
+	</section>
+	<footer>
+		<div class="container-fluid piePagina">
+			<p>Copyright 2016 Legislatura de Jujuy | Todos los derechos reservados. J. I. Gorritti 47 - San Salvador de Jujuy - CP Y4600 (Jujuy) Argentina | Teléfono: (54) 0388 4239200</p>
+		</div>
+	</footer>
+
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- <script src="js/init.js"></script> -->
+</body>
 </html>

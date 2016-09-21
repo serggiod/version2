@@ -1,0 +1,331 @@
+/* CABEZAL*/
+.cabezal {
+	height: 390px;
+}
+
+.fondoLogo{
+	background-color: #FFFFFF;
+	border-radius: 10px 10px 0 0;
+	border: 1px;
+	height: 250px;
+	margin: 140px 10px 0px 10px;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	width: 200px;
+}
+
+.logo{
+	margin:50px 25px 50px 25px;
+}
+.btnSILeJu{
+	margin:150px 0;
+}
+.btnWebMail{
+	position:absolute;
+	margin: 0px 0px 0px 0px;
+}
+/* MENU */
+.menuPrincipal{
+	background-color: #29ABE2;
+	color: #fff;
+}
+/* TEXTOS */
+.tituloSeccion{
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 24px;
+	margin-top:15px;
+}
+.titulo{
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 20px;
+	margin-top:10px;
+}
+.texto{
+	font-family: 'Hind', sans-serif;
+	font-size: 14px;
+}
+.tituloMapa{
+	background-color: #808080;
+	color:#fff;
+	font-family: 'Hind', sans-serif;
+	font-size: 14px;
+	padding: 2px 0px 2px 25px;
+}
+.textoMapa{
+	font-family: 'Hind', sans-serif;
+	font-size: 12px;
+	color:#fff;
+}
+.textoBoletin{
+
+}
+
+/* SECCIONES */
+.actividadDia{
+	background-color: #29ABE2;
+	border-radius: 5px;
+	color:#fff;
+	height: 350px;
+	overflow: hidden;
+	padding:15px;
+}
+#links{
+	background-color: #808080;
+	height: 100px;
+}
+.marcosPaz{
+	background-color: #337ab7;
+	color:#fff;
+	/*height: 350px;*/
+	overflow: hidden;
+	padding:15px;
+}
+.botonesLaterales{
+	background-color: #337ab7;
+	color:#fff;
+	/*height: 1000px;*/
+	overflow: hidden;
+	padding:15px;
+}
+.boletinOficial{
+	background-color: #D2D2D2;
+	border-radius: 5px;
+	border:2px solid #eee;
+	height: 350px;
+	overflow: hidden;
+	padding:15px;
+}
+.noticiaImportante{
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	border: 2px solid #eee;
+	float:left;
+	height: 400px;
+	overflow: hidden;
+}
+
+.noticiaChica{
+	background-color: #9A9A9A;
+	border-radius: 5px;
+	border: 2px solid #eee;
+	height: 185px;
+	overflow: hidden;
+	padding: 7px;
+}
+.noticiasChicas{
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	border: 2px solid #eee;
+	float:left;
+	height: 400px;
+	margin:10px 2px 10px 2px;
+	overflow: hidden;
+	padding:7px;
+}
+.destacados{
+	background-color: #808080;
+	height: auto;
+	overflow: hidden;
+}
+.mapaSitio{
+	background-color: #337ab7;
+	height: auto;
+}
+.izquierda{
+	float:left;
+}
+.piePagina{
+	background-color: #808080;
+	color:#fff;
+	font-size: 14px;
+	height:auto;
+	margin:0px 0;
+	padding: 10px;
+	text-align:center;
+}
+
+/* BOTONES */
+.cajaBotonesGrandes{
+	height: 300px;
+	margin: auto;
+}
+.btnPresidencia{
+	background-image: url("../images/haquim.jpeg");
+	background-position: center;
+	border-radius: 50%;
+	border: 3px solid #eee;
+	height: 200px;
+	margin: 15px 0px;
+	opacity: 30%;
+	padding: 10;
+	width: 200px;
+}
+.btnPresidencia:hover{
+	background-image: url("../images/haquim.jpeg");
+	background-position: center;
+	border-radius: 50%;
+	border: 3px solid #eee;
+	height: 230px;
+	margin: 0px 0px;
+	padding: 10;
+	opacity: 100%;
+	transition: all 500ms ease;
+	width: 230px;
+}
+.btnLegislatura{
+	background-image: url("../images/legislatura.jpg");
+	background-position: center;
+	border-radius: 50%;
+	border: 3px solid #eee;
+	height: 200px;
+	margin: 15px 0px;
+	padding: 10;
+	width: 200px;
+}
+.btnLegislatura:hover{
+	background-image: url("../images/legislatura.jpg");
+	background-position: center;
+	border-radius: 50%;
+	border: 3px solid #eee;
+	height: 230px;
+	margin: 0px 0px;
+	padding: 10;
+	transition: all 500ms ease;
+	width: 230px;
+}
+.btnSesion{
+	background-image: url("../images/play-button.svg");
+	background-position: center;
+	border-radius: 50%;
+	border: 3px solid #eee;
+	height: 200px;
+	margin: 15px 0px;
+	padding: 10;
+	width: 200px;
+}
+.btnSesion:hover{
+	background-image: url("../images/play-button.svg");
+	background-position: center;
+	border-radius: 50%;
+	border: 3px solid #eee;
+	height: 230px;
+	margin: 0px 0px;
+	padding: 10;
+	transition: all 500ms ease;
+	width: 230px;
+}
+
+
+.espacioSuperior{
+	margin:10px 0;
+}
+.uno {
+ background-color: tomato;
+ border: 1px solid #eee;
+ color: white;
+ font-size: 28px;
+ line-height: 50px;
+ margin: 7px 0;
+ padding: 0;
+ text-align: center;
+}
+
+.otro {
+ background-color: blue;
+ border: 1px solid #eee;
+ color: white;
+ font-size: 28px;
+ height: 75px;
+ line-height: 50px;
+ margin: 7px 0;
+ padding: 0;
+ text-align: center;
+ transition: all 500ms ease;
+}
+
+.otro:hover {
+ background-color: blue;
+ border: 1px solid #eee;
+ color: white;
+ font-size: 28px;
+ height: 200px;
+ line-height: 50px;
+ margin: 7px 0;
+ padding: 0;
+ text-align: center;
+ transition: all 500ms ease;
+}
+
+
+/* PARALLAX RECINTO */
+
+#recinto { 
+	background: url(../images/recintoblur.jpg) 50% 0 fixed; 
+	background-repeat: no-repeat;
+	height: 400px;  
+	margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    padding: 20px;
+}
+
+/* Non-essential demo stuff */
+.hero-unit {
+	background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.media-object { width: 64px; height: 64px; padding-bottom: 30px }
+
+/* ZOOM FOTOS */
+.zoom{
+	background-color: #FFFFFF;
+	border:1px solid #eee;
+	overflow:hidden;
+	padding: 3px;
+}
+.zoom:Hover{
+	border:1px solid #eee;
+	box-shadow: 0 0 5px rgba(0,0,0,0.8);
+	padding: 3px;
+}
+.zoom img {
+	transition: 1s ease;
+	-moz-transition: 1s ease; /* Firefox */
+	-webkit-transition: 1s ease; /* Chrome - Safari */
+	-o-transition: 1s ease; /* Opera */
+}
+.zoom:Hover img {
+	transform : scale(1.25);
+	-moz-transform : scale(1.25); /* Firefox */
+	-webkit-transform : scale(1.25); /* Chrome - Safari */
+	-o-transform : scale(1.25); /* Opera */
+	-ms-transform : scale(1.25); /* IE9 */
+}
+
+/* SLIDE */
+html,
+body {
+    height: 390px;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}

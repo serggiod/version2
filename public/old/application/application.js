@@ -1,0 +1,41 @@
+angular
+	.module('OtroNombre3',[
+		'ngRoute'
+//ngModuleName.
+	])
+	.config(function($routeProvider){
+	    $routeProvider
+	    	.when('/',{
+	    		redirectTo:'/home'
+	    	})
+			.when('/home1',{
+				templateUrl:'views/home1View.html',
+				controller:'home1Controller'
+			})
+			.when('/home2',{
+				templateUrl:'views/home2View.html',
+				controller:'home2Controller'
+			})
+			.when('/home3',{
+				templateUrl:'views/home3View.html',
+				controller:'home3Controller'
+			})
+			.when('/home4',{
+				templateUrl:'views/home4View.html',
+				controller:'home4Controller'
+			})
+			.when('/home5',{
+				templateUrl:'views/home5View.html',
+				controller:'home5Controller'
+			})
+			.when('/home6',{
+				templateUrl:'views/home6View.html',
+				controller:'home6Controller'
+			})
+			.when('/home7',{
+				templateUrl:'views/home7View.html',
+				controller:'home7Controller'
+			})
+//ngRouteName.
+			.otherwise({redirectTo:'/home'});
+	});

@@ -1,14 +1,13 @@
 angular
-	.module('legislaturaweb',['ngAnimate','ngRoute'])
+	.module('OtroNombre3',[
+		'ngRoute'
+//ngModuleName.
+	])
 	.config(function($routeProvider){
 	    $routeProvider
 	    	.when('/',{
 	    		redirectTo:'/home'
 	    	})
-	    	.when('/home',{
-	    		templateUrl:'views/home.html',
-	    		controller:'home'
-	    	})
-			// add routes.
+//ngRouteName.
 		    .otherwise({redirectTo:'/home'});
 	});

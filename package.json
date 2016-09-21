@@ -4,15 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "server":"server.js",
-    "addcontroller":"addcontrller.js",
-    "addview":"addview.js",
-    "adddirective":"adddircetive.js"
+    "init"  : "node scripts/init.js",
+    "server": "node scripts/server.js",
+    "addmod": "node scripts/addmod.js",
+    "addview": "addview.js",
+    "adddirective": "adddircetive.js"
   },
   "repository": {
     "type": "git",
     "url": "https://www.github.com/serggiod/version2"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "static-server": "^2.0.3"
+  }
 }

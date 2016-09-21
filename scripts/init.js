@@ -1,4 +1,5 @@
-var ngObject = require('./ngobject');
+var angular = require('./angular');
 var appname  = process.argv[2];
 
-if(appname!=undefined) ngObject.init(appname.trim());
+if(appname!=undefined) angular.init(appname.trim());
+else console.error('Debe ingresar el nombre de la aplicación.\n\n');

@@ -9,7 +9,8 @@
     "addroute":"node scripts/addroute",
     "addcontroller": "node scripts/addcontroller.js",
     "addview": "node scripts/addview.js",
-    "adddirective": "node scripts/adddircetive.js"
+    "adddirective": "node scripts/adddircetive.js",
+    "addngmodule":"node scripts/addngmodule.js"
   },
   "repository": {
     "type": "git",

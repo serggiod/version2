@@ -135,6 +135,13 @@ var angular     = {
         }
     },
 
+    addNgModule:(name,injector)=>{
+        if(name===undefined || injector===undefined) angular.messages.errorAddNgModule();
+        else{
+            angular.common.addNgModule(name,injector,()=>{});
+        }
+    },
+
     // Metodos comunes.
     common:{
 
@@ -230,6 +237,13 @@ var angular     = {
                     }
                 });
             }
+        },
+
+        addNgModule:(name,injector,callback)=>{
+            if(name===undefined || injector===undefined || callback===undefined) angular.messages.errorAddNgModule();
+            else{
+                angular.messages.successAddNgModule();
+            }
         }
      
     },
@@ -244,6 +258,9 @@ var angular     = {
 
         errorAddView        : ()=>{console.error('No se pudo agregar la vista.');},
         successAddView      : ()=>{console.log  ('La vista se agregó correctamente.');},
+
+        errorAddNgModule    : ()=>{console.error('No se pudo agregar el modulo de angular.');},
+        successAddNgModule  : ()=>{console.log  ('El modulo de angular se agregó correctamente.');},
 
         errorAppInitialised : ()=>{console.error('AngularJs informa que la aplicación ya fue inicializada.');},
         errorWriteRoute     : ()=>{console.error('No se pudo agregar la ruta');},
@@ -277,7 +294,7 @@ var angular     = {
             return template;
         },
         script:(namecontroller)=>{
-            template  = '\n\t\t<script src="controllers/'+namecontroller+'"></script>';
+            template  = '\n\t\t<script src="controllers/'+namecontroller+'.js"></script>';
             template += '\n\t<!-- addcontroller -->';
             return template;
         }

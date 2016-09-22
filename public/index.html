@@ -11,106 +11,17 @@
 
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="0">
 
-		<header id="slidePrincipal" class="carousel slide">
-			<div class="carousel-inner" style="float: left;">
-				<div class="item active">
-					<div class="fill" style="background-image:url('images/slide01.jpg');"></div>
-				</div>
-				<div class="item">
-					<div class="fill" style="background-image:url('images/slide02.jpg');"></div>
-				</div>
-				<div class="item">
-					<div class="fill" style="background-image:url('images/slide03.jpg');"></div>
-				</div>
-			</div>
-
-			<a class="left carousel-control" href="#slidePrincipal" data-slide="prev">
-				<span class="icon-prev"></span>
-			</a>
-			<a class="right carousel-control" href="#slidePrincipal" data-slide="next">
-				<span class="icon-next"></span>
-			</a>
-
-			<div class="container cabezal"> <!-- contenedor logo -->
-				<div class="row">
-					<div class="col-xs-8 col-sm-6 col-md-4 col-lg-3 fondoLogo">
-						<img class="logo" src="images/logo.png" width="150" height="auto" alt="Legislatura de Jujuy">
-					</div>
-				</div>
-			</div> <!-- cierra contenedor logo -->
+		<header id="slidePrincipal" class="carousel slide" ng-controller="headerController">
+			<ng-include src="'views/headerView.html'"></ng-include>
 		</header>
-        
-		
 
-		<nav class="navbar navbar-inverse navbar-static-top">
-			<div class="container">
-				<div class="nav navbar-nav">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-lg">
-						<span class="sr-only">Desplegar / Ocultar Menu</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a href="#" class="navbar-brand">Men&uacute;</a>
-				</div>
-				<!-- Menu -->
-				<div class="collapse navbar-collapse" id="navegacion-lg">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Institucional</a></li>
-						<li><a href="#">Autoridades</a></li>
-						<li><a href="#">Diputados</a></li>
-						<li><a href="#">Orden del d&iacute;a</a></li>
-						<li><a href="#">Poder Legislativo</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Bloques <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Uni&oacute;n C&iacute;vica Radical</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Justicialista</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Primero Jujuy</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Unidos y Organizados por la Soberan&iacute;a Popular</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Labor Legislativa</a></li>
-					</ul>
-					<!-- Busqueda -->
-					<form action="" class="navbar-form navbar-right" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" size="10" placeholder="Buscar">
-						</div>
-						<button type="submit" class="btn btn-primary">
-							<span class="glyphicon glyphicon-search"></span>
-						</button>
-					</form>
-				</div>
-			</div>
+		<nav class="navbar navbar-inverse navbar-static-top" ng-controller="mainMenuController">
+			<ng-include src="'views/mainMenuView.html'"></ng-include>
 		</nav>
 	
-
-	
-
 	<section class="main container">
 
-		<section class=""> <!-- Botones grandes -->
-			<article>
-				<div class="row clearfix">
-					<div class="container col-xs-4 text-center cajaBotonesGrandes">
-						<button class="btnPresidencia"></button>
-							<h4>Presidencia</h4>	
-					</div>
-					<div class="container col-xs-4 text-center">
-						<button class="btnLegislatura"></button>
-						<h4>Legislatura</h4>
-					</div>
-					<div class="container col-xs-4 text-center">
-						<button class="btnSesion"></button>
-						<h4>Sesi&oacute;n en vivo</h4>
-					</div>
-				</div>
-			</article>
-		</section> <!-- Cierre botones grandes -->
+		<ng-include src="'views/botonesGrandesView.html'"></ng-include>
 		
 		<section> <!-- Actividad del dia y boletin oficial -->
 			<article>
@@ -350,114 +261,12 @@
 			</article>
 		</section> <!-- Cierre destacado -->
 
-		<section> <!-- Mapa del sitio-->
-			<div class="row clearfix mapaSitio">
-				<div class="container" style="margin: 10px;">
-					<div class="col-sm-3"> <!-- Columna 1 -->
-						<ul class="list-unstyled">
-							<li><p class="tituloMapa">Institucional</p></li>
-							<ul>
-								<li><a href="#" class="textoMapa">Autoridades</a></li>
-								<li><a href="#" class="textoMapa">Diputados</a></li>
-							</ul>
-							<li><p class="tituloMapa">Labor Legislativa</p></li>
-							<ul>
-								<li><a href="#" class="textoMapa">Proyectos</a></li>
-								<li><a href="#" class="textoMapa">Acceso a Leyes</a></li>
-								<li><a href="#" class="textoMapa">Versiones Taquigráficas</a></li>
-								<li><a href="#" class="textoMapa">Orden del Día</a></li>
-							</ul>
-							<li><p class="tituloMapa">Normativa</p></li>
-							<ul>
-								<li><a href="#" class="textoMapa">Constitución de la Nación</a></li>
-								<li><a href="#" class="textoMapa">Constitución de la Provincia</a></li>
-								<li><a href="#" class="textoMapa">Reglamento de la Legislatura</a></li>
-							</ul>
-						</ul>
-					</div>
-					<div class="col-sm-3"> <!-- Columna 2 -->
-						<ul class="list-unstyled">
-							<li><p class="tituloMapa">Comisiones</p></li>
-							<ul>
-								<li><a href="#" class="textoMapa">Ambiente</a></li>
-								<li><a href="#" class="textoMapa">Asuntos Institucionales</a></li>
-								<li><a href="#" class="textoMapa">Asuntos Sociales</a></li>
-								<li><a href="#" class="textoMapa">Comision Especial Ddhh</a></li>
-								<li><a href="#" class="textoMapa">Cultura Y Turismo</a></li>
-								<li><a href="#" class="textoMapa">Derechos Humanos</a></li>
-								<li><a href="#" class="textoMapa">Economía</a></li>
-								<li><a href="#" class="textoMapa">Educación</a></li>
-								<li><a href="#" class="textoMapa">Finanzas</a></li>
-								<li><a href="#" class="textoMapa">Legislación General</a></li>
-								<li><a href="#" class="textoMapa">Obras Y Servicios Públicos</a></li>
-							</ul>
-						</ul>
-					</div>
-					<div class="col-sm-3"> <!-- Columna 3 -->
-						<ul class="list-unstyled">
-							<ul>
-								<li><a class="textoMapa" href="#">Pueblos Indigenas</a></li>
-								<li><a class="textoMapa" href="#">Reforma Del Codigo De Faltas</a></li>
-								<li><a class="textoMapa" href="#">Salud Pública</a></li>
-								<li><a class="textoMapa" href="#">Trabajo Y Seguridad Social</a></li>
-								<li><a class="textoMapa" href="#">Transporte Y Comunicaciones</a></li>
-							</ul>
-							<li><p class="tituloMapa">Bloques</p></li>
-							<ul>
-								<li><a class="textoMapa" href="#">Unión Cívica Radical</a></li>
-								<li><a class="textoMapa" href="#">Justicialista</a></li>
-								<li><a class="textoMapa" href="#">Peronista</a></li>
-								<li><a class="textoMapa" href="#">Primero Jujuy</a></li>
-								<li><a class="textoMapa" href="#">Unidos y Organizados por la Soberanía Popular</a></li>
-							</ul>
-						</ul>
-					</div>				
-					<div class="col-sm-3"> <!-- Columna 4 -->
-						<ul class="list-unstyled">
-							<li><p class="tituloMapa" href="#">Prensa</p></li>
-							<ul>
-								<li><a href="#" class="textoMapa">Noticias de la Legislatura</a></li>
-								<li><a href="#" class="textoMapa">Archivo de Fotografias</a></li>
-							</ul>
-						</ul>
+		<ng-include src="'view/mapaSitioView.html'"></ng-include>
 
-						<!-- Boton donde estamos -->
-						<p class="tituloSeccion" style="color: #fff;">Donde estamos</p>
-						<div class="img-responsive zoom" style="float: left;">
-							<img src="images/mapa.jpg" alt="">
-						</div>
-						<div style="position: absolute; margin:20px;">
-							<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#mapa">Abrir Mapa <span class="glyphicon glyphicon-map-marker"/></button>
-						</div>
-						<!-- Ventana emergente mapa-->
-						<div id="mapa" class="modal fade" role="dialog">
-							<div class="modal-dialog">
-							    <div class="modal-content">
-									<div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal">&times;</button>
-								        <h4 class="modal-title">Donde estamos</h4>
-								      </div>
-								      <div class="container modal-body">
-								      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.551886582221!2d-65.30043138187949!3d-24.187443621063057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f44ba8981d1%3A0xb6b2365e42893975!2sCan%C3%B3nigo+Gorriti+47%2C+4600+San+Salvador+de+Jujuy%2C+Jujuy!5e0!3m2!1ses!2sar!4v1474455234052" width="550" height="400" frameborder="0" style="border:0;" allowfullscreen></iframe>
-							    	  </div>
-							      	<div class="modal-footer">
-							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							      	</div>
-							    </div>
-							</div>
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-		</section> <!-- Cierre Mapa del sitio-->
 
 	</section>
 	<footer>
-		<div class="container-fluid piePagina">
-			<p>Copyright 2016 Legislatura de Jujuy | Todos los derechos reservados. J. I. Gorritti 47 - San Salvador de Jujuy - CP Y4600 (Jujuy) Argentina | Teléfono: (54) 0388 4239200</p>
-		</div>
+		<ng-include src="'views/footerView.html'"></ng-include>
 	</footer>
 
 	<!-- jQuery y Bootstrap -->
@@ -474,8 +283,8 @@
 	<script src="application/application.js"></script>
 
 	<!-- Aplicación AngularJS: Controllers -->
-		<script src="controllers/pruebaController.js"></script>
-		<script src="controllers/pruebaController.js"></script>
+		<script src="controllers/headerController.js"></script>
+		<script src="controllers/mainMenuController.js"></script>
 	<!-- addcontroller -->
 	<!-- Usado por el paralax -->
 	<!-- <script src="js/init.js"></script>-->

@@ -1,13 +1,13 @@
 angular.module('legislaturaweb',
 	[
 		'ngRoute'
-//addmodule.
+		//addmodule.
 	])
 	.config(function($routeProvider){
 	    $routeProvider
 	    	.when('/',{
 	    		redirectTo:'/home'
 	    	})
-//routename.
+			//addroute.
 			.otherwise({redirectTo:'/home'});
 	});

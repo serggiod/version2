@@ -7,7 +7,7 @@
     "init"  : "node scripts/init.js",
     "server": "node scripts/server.js",
     "addroute":"node scripts/addroute",
-    "addmod": "node scripts/addmod.js",
+    "addcontroller": "node scripts/addcontroller.js",
     "addview": "addview.js",
     "adddirective": "adddircetive.js"
   },

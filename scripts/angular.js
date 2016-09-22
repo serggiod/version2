@@ -128,6 +128,12 @@ var angular     = {
         }
     },
 
+    addView:(name)=>{
+        if(name===undefined) angular.messages.errorAddView();
+        else{
+            angular.common.addView(name,()=>{});
+        }
+    },
 
     // Metodos comunes.
     common:{
@@ -206,6 +212,24 @@ var angular     = {
                     }           
                 });
             }
+        },
+
+        addView:(name,callback)=>{
+            if(name===undefined || callback===undefined) angular.messages.errorAddView();
+            else{
+                var view  = name+'View';
+                var file  = angular.path.views+'/'+view+'.html';
+                var value = angular.templates.view('');
+                angular.common.fileExist(file,(e)=>{
+                    if(e) angular.messages.errorAddView();
+                    else{
+                        angular.common.fileWrite(file,value,(e)=>{
+                            if(e) angular.messages.successAddView();
+                            else  angular.messages.errorAddView();
+                        })
+                    }
+                });
+            }
         }
      
     },
@@ -217,6 +241,9 @@ var angular     = {
 
         errorAddController  : ()=>{console.error('No se pudo agregar el controlador.');},
         successAddController: ()=>{console.log  ('El controlador se ha agregado correctamente.');},
+
+        errorAddView        : ()=>{console.error('No se pudo agregar la vista.');},
+        successAddView      : ()=>{console.log  ('La vista se agregó correctamente.');},
 
         errorAppInitialised : ()=>{console.error('AngularJs informa que la aplicación ya fue inicializada.');},
         errorWriteRoute     : ()=>{console.error('No se pudo agregar la ruta');},

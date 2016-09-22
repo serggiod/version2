@@ -8,8 +8,8 @@
     "server": "node scripts/server.js",
     "addroute":"node scripts/addroute",
     "addcontroller": "node scripts/addcontroller.js",
-    "addview": "addview.js",
-    "adddirective": "adddircetive.js"
+    "addview": "node scripts/addview.js",
+    "adddirective": "node scripts/adddircetive.js"
   },
   "repository": {
     "type": "git",

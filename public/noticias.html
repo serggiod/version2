@@ -11,7 +11,7 @@
 
 <body class="fondoPagina" data-spy="scroll" data-target="#navegacion-lg" data-offset="0">
 
-	<header id="slidePrincipal" class="carousel slide">
+	<header id="slidePrincipal" class="carousel slide" data-interval="5000">
         <div class="carousel-inner" style="float: left;">
             <div class="item active">
                 <div class="fill" style="background-image:url('images/slide01.jpg');"></div>
@@ -31,10 +31,10 @@
             <span class="icon-next"></span>
         </a>
 		
-		<div class="row" style="position:absolute; margin: 300px 0px 10px 750px; z-index: 1;">
+		<div class="row" style="position:absolute; margin: 300px 0px 10px 750px; z-index: 2;">
 			<button class="btn btn-danger">SILeJu</button>
 		</div>
-		<div class="row" style="position:absolute; margin: 300px 0px 10px 850px; z-index: 1;">
+		<div class="row" style="position:absolute; margin: 300px 0px 10px 850px; z-index: 3;">
 			<button class="btn btn-success">WebMail</button>
 		</div>
     	<div class="row" style="position: absolute; margin: 200px 0px 0px 150px; z-index: 1;">
@@ -56,7 +56,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a href="#" class="navbar-brand">Inicio</a>
+					<a href="index.html" class="navbar-brand">Inicio</a>
 				</div>
 				<!-- Menu -->
 				<div class="collapse navbar-collapse" id="navegacion-lg">
@@ -98,122 +98,34 @@
 
 	<section class="main container marcoPagina">
 
-		<section class=""> <!-- Botones grandes -->
-			<article>
-				<div class="row clearfix cajaBotonesGrandes">
-					<div class="container col-xs-4 text-center">
-						<a href="biografia.html"><button class="btnPresidencia"></button></a>
-							<h4>Presidencia</h4>	
-					</div>
-					<div class="container col-xs-4 text-center">
-						<button class="btnLegislatura"></button>
-						<h4>Legislatura</h4>
-					</div>
-					<div class="container col-xs-4 text-center">
-						<button class="btnSesion"></button>
-						<h4>Sesi&oacute;n en vivo</h4>
-					</div>
-				</div>
-			</article>
-		</section> <!-- Cierre botones grandes -->
-		
-		<section> <!-- Actividad del dia y boletin oficial -->
+		<section> <!-- Ultima Noticia -->
 			<article>
 				<div class="row clearfix">
-					<div class="container col-xs-12 col-md-9">
-						<div class="container col-xs-12 col-md-4">
-							<p class="tituloSeccion visible-xs visible-lg">Actividad del d&iacute;a</p>
-							<p class="tituloSeccion visible-sm visible-md">Actividad d&iacute;a</p>
-							<div class="actividadDia">
-								<div class="zoom">
-									<a href="#" data-toggle="modal" data-target="#actividad"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-39492700-1473867042-Visita%20de%20Haquim%202.jpg"></a>
-								</div>
-								<div class="linea"></div>
-								<a href="#" data-toggle="modal" data-target="#actividad"><p class="titulo" style="color:#fff;">VISITA DEL VICEGOBERNADOR AL INTENDENTE RAÚL JORGE</p></a>
-								<p class="texto text-justify">El Intendente Municipal, Arq. Raúl “Chuli” Jorge recibió la visita del Vicegobernador de la Provincia, CPN Carlos Haquim...</p>
-
-							</div>
+					<div class="container col-xs-12 col-sm-9">
+						<p class="tituloSeccion">T&iacute;tulo noticia principal</p>
+						<div class="espacioSuperior zoom">
+							<img class="img-responsive" src="http://placehold.it/800x300" width="100%">
 						</div>
-						<div id="actividad" class="modal fade" role="dialog">
-							<div class="modal-dialog modal-lg">
-							    <div class="modal-content">
-									<div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal">&times;</button>
-								        <h4 class="modal-title">Actividad del D&iacute;a</h4>
-								    </div>
-								    <div class="container modal-body">
-								    	<img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-39492700-1473867042-Visita%20de%20Haquim%202.jpg" width="800"></img>
-      									<p class="titulo">Nombre de la Actividad</p>
-										<div class="container text-justify">
-											<table border="1px" width="70%">
-											    <thead>
-											      <tr>
-											        <th>Fecha</th>
-											        <th>Hora</th>
-											        <th>Contenido</th>
-											        <th>Requisitos</th>
-											      </tr>
-											    </thead>
-											    <tbody>
-											      <tr>
-											        <td>25/09/2016</td>
-											        <td>20.30hs.</td>
-											        <td>Descripci&oacute;n de la actividad</td>
-											        <td>Requisitos para participar</td>
-											      </tr>
-											    </tbody>
-											</table>
-										</div>
-							    	  </div>
-							      	<div class="modal-footer">
-							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							      	</div>
-							    </div>
-							</div>
-						</div>
-						<div class="container col-xs-12 col-md-8">
-							<p class="tituloSeccion">Bolet&iacute;n Oficial</p>
-							<div class="boletinOficial">
-								<p class="text-justify texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								<button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#boletin">Ver listado completo <span class="glyphicon glyphicon-th-list""/></button>
-							</div>
-						</div>
+						<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+						<button class="btn btn-primary pull-right" data-toggle="modal" data-target="#marcosPaz">Ampliar <span class="glyphicon glyphicon-play"/></button>
 					</div>
-					<div id="boletin" class="modal fade" role="dialog">
-							<div class="modal-dialog modal-lg">
-							    <div class="modal-content">
-									<div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal">&times;</button>
-								        <h4 class="modal-title">Bolet&iacute;n oficial</h4>
-								      </div>
-								      <div class="container modal-body">
-								      	<img class="img-responsive" src="http://placehold.it/850x300"></img>
-      									<p class="titulo">Nombre de la Actividad</p>
-										<div class="container text-justify">
-										</div>
-							    	  </div>
-							      	<div class="modal-footer">
-							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							      	</div>
-							    </div>
-							</div>
-						</div>
 
 					<aside> <!-- Marcos Paz -->
-						<div class="container col-xs-12 col-md-3">
-							<p class="tituloSeccion hidden-md">Sal&oacuten Marcos Paz</p>
-							<p class="tituloSeccion visible-sm visible-md">Marcos Paz</p>
+						<div class="container col-xs-12 col-sm-3">
+							<p class="tituloSeccion hidden-sm">Sal&oacuten Marcos Paz</p>
+							<p class="tituloSeccion visible-sm">Marcos Paz</p>
 							<div class="marcosPaz">
 								<div class="zoom">
-									<a href="#" data-toggle="modal" data-target="#marcosPaz"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-46888100-1474373928-DSC_1448.JPG"></a>
+									<img class="img-responsive" src="http://placehold.it/260x150">
 								</div>
-								<div class="linea"></div>
-								<a href="#" data-toggle="modal" data-target="#marcosPaz"><p class="titulo">EL VICEGOBERNADOR ACOMPAÑÓ A LA JUVENTUD EN LA ELECCIÓN PROVINCIAL</p></a>
+								<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque iusto earum molestias consequuntur eius...</p>
+								<button class="btn btn-info pull-right" data-toggle="modal" data-target="#marcosPaz">Ampliar <span class="glyphicon glyphicon-play"/></button>
 							</div>
 						</div>
 					</aside>
@@ -226,7 +138,7 @@
 								        <h4 class="modal-title">Sal&oacute;n Marcos Paz</h4>
 								      </div>
 								      <div class="container modal-body">
-								      	<img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-46888100-1474373928-DSC_1448.JPG" width="800"></img>
+								      	<img class="img-responsive" src="http://placehold.it/850x300"></img>
       									<p class="titulo">Nombre de la Actividad</p>
 										<div class="container text-justify">
 											<table border="1px" width="70%">
@@ -258,41 +170,71 @@
 				</div>
 			</article>
 			
-		</section> <!-- Cierre actividad del dia y boletin oficial -->
+		</section> <!-- Cierre Ultima Noticia -->
 
-		<div class="row"> <!--Row de Noticias y Archivo historico -->
+		<div class="row espacioSuperior"> <!--Row de Noticias y Archivo historico -->
 
 			<div class="container col-sm-12 col-md-9"> <!-- Contenedor Noticias -->
 
-				<section> <!-- Noticias 1 grande y 2 chicas-->
-					<div class="row">
-						<p class="tituloSeccion">Noticias</p>
-					</div>
-					<article>
-						<div class="row clearfix">
-							<div class="container col-xs-12 col-md-6 clearfix">
+				<section> <!-- 2 Noticias -->
+							<div class="container col-xs-12 col-md-6">
 									<div class="zoom">
-										<a href="noticia.html"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-90017000-1474738591-14358737_703890403101427_7614554396167913057_n.jpg"></a>
+										<img class="img-responsive" src="http://placehold.it/450x200">
 									</div>
-									<div class="linea"></div>
-									<a href="noticia.html"><p class="titulo">EL VICEGOBERNADOR ACOMPAÑÓ A ROGELIO FRIGERIO DURANTE SU VISITA</p></a>
-									<p class="texto text-justify">Como parte de una agenda muy apretada, el presidente de la Cámara de Diputados de Jujuy, Carlos Haquim acompañó la visita del ministro del Interior de la Nación, Rogelio Frigerio, el Gobernador, Gerardo Morales, el intendente de San Salvador de Jujuy, Raúl Jorge y al intendente de la ciudad de Palpalá, Pablo Palomares...</p>
+									<p class="titulo">T&iacute;tulo nota</p>
+									<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat. Duis aute irure dolor in reprehenderit in voluptate...</p>
+									<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+							</div>
+							<div class="container col-xs-12 col-md-6">
+									<div class="zoom">
+										<img class="img-responsive" src="http://placehold.it/450x200">
+									</div>
+									<p class="titulo">T&iacute;tulo nota</p>
+									<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat. Duis aute irure dolor in reprehenderit in voluptate...</p>
+									<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+							</div>
+				</section> <!-- Cierre 2 Noticias -->
+
+				<section> <!-- Noticias 1 grande y 2 chicas-->
+					<article>
+						<div class="row espacioSuperior clearfix">
+							<div class="container espacioSuperior col-xs-12 col-md-6 clearfix">
+									<div class="zoom">
+										<img class="img-responsive" src="http://placehold.it/450x200">
+									</div>
+									<p class="titulo">T&iacute;tulo nota</p>
+									<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat. Duis aute irure dolor in reprehenderit in voluptate...</p>
+									<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
 							</div>
 				
-							<div class="container col-xs-12 col-md-6">
+							<div class="container espacioSuperior col-xs-12 col-md-6">
 								<div class="noticiaChica">
-									<div class="zoom pull-left" style="margin: 0 5px; width: 150px; height: 150px;">
-										<a href="noticia2.html"><img class="" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-61829400-1474738180-IMG_0623.jpg" height="100%" alt=""></a>
-										<div class="linea"></div>								
+									<div class="zoom pull-left" style="margin: 0 5px">
+										<img class="img-responsive" src="http://placehold.it/150x150" alt="">
 									</div>
-									<a href="noticia2.html"><p class="titulo">CARLOS HAQUIM PARTICIPÓ DEL 62° CONGRESO NACIONAL  DE VETERANOS DE GUERRA DE LA REPÚBLICA ARGENTINA</p></a>
+									<p class="titulo">T&iacute;tulo</p>
+									<p class="titulo">Nota</p>
+									<p class="texto text-justify">Lorem ipsum dolor sit amet...</p>
+									<button class="btn-xs btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/>
+										</button>
 								</div>
 								<div class="noticiaChica" style="margin-top:6px">
-									<div class="zoom pull-left" style="margin: 0 5px; width: 150px; height: 150px;">
-										<a href="#"><img class="" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-68352700-1474629798-DSC_0114.JPG" height="100%" alt=""></a>
-										<div class="linea"></div>
+									<div class="zoom pull-left" style="margin: 0 5px">
+										<img class="img-responsive" src="http://placehold.it/150x150" alt="">
 									</div>
-									<a href="#"><p class="titulo">CARLOS HAQUIM RECIBIÓ A VETERANOS DE MALVINAS</p></a>
+									<p class="titulo">T&iacute;tulo nota</p>
+									<p class="titulo">Nota</p>
+									<p class="texto text-justify">Lorem ipsum dolor sit amet...</p>
+									<button class="btn-xs btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
 								</div>
 							</div>
 						</div>
@@ -302,74 +244,48 @@
 				<section class="espacioSuperior"> <!-- 3 notas chicas -->
 					<article>
 						<div class="row clearfix">
-							<div class="container col-xs-12 col-md-4">
+							<div class="container col-sm-4">
 								<div class="zoom">
-									<a href="#"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-92852300-1474479675-DSC_0036.jpg"></a>
+									<img class="img-responsive" src="http://placehold.it/260x200">
 								</div>
-								<div class="linea"></div>
-								<a href="#"><p class="titulo">BUSCAN DAR SOLUCIONES A LOS PROBLEMAS DE LOS TRABAJADORES TABACALEROS</p></a>
-								<p class="texto text-justify">La Comisión de Trabajo y Seguridad de la Legislatura, en respuesta a las inquietudes planteadas por delegados de la Unión Argentina de Trabajadores Rurales y Estibadores (UATRE), se reunió con el presidente de la Cámara del Tabaco de Jujuy, Pedro Pascuttini , y el Ministro de Trabajo, Jorge Cabana Fusz.</p>
+								<p class="titulo">T&iacute;tulo nota</p>
+								<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua...</p>
+								<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
 							</div>
-							<div class="container col-xs-12 col-md-4">
+							<div class="container col-sm-4">
 								<div class="zoom">
-									<a href="#"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-49887500-1474456828-DSC_0079.jpg"></a>
+									<img class="img-responsive" src="http://placehold.it/260x200">
 								</div>
-								<div class="linea"></div>
-								<a href="#"><p class="titulo">LA ASOCIACIÓN CIVIL LAS GAUCHITAS RECIBIÓ DIPLOMA DE HONOR GAUCHO POR PARTE DEL CONSEJO FEDERAL DEL FOLKLORE DE ARGENTINA</p></a>
-								<p class="texto text-justify">En el Salón Marcos Paz de la Legislatura, la Asociación Civil las Gauchitas de Jujuy recibió por parte de la Consejo Federal  del Folklore de Argentina, el diploma de honor gaucho y Bandera del COFFAR por su constante labor en la promoción de la cultura y por su destacada participación en los actos centrales</p>
+								<p class="titulo">T&iacute;tulo nota</p>
+								<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua...</p>
+								<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
 							</div>
-							<div class="container col-xs-12 col-md-4">
+							<div class="container col-sm-4">
 								<div class="zoom">
-									<a href="#"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-68571600-1474373928-DSC_1446.JPG"></a>
+									<img class="img-responsive" src="http://placehold.it/260x200">
 								</div>
-								<div class="linea"></div>
-								<a href="#"><p class="titulo">EL VICEGOBERNADOR ACOMPAÑÓ A LA JUVENTUD EN LA ELECCIÓN PROVINCIAL</p></a>
-								<p class="texto text-justify">Anoche en el estadio La Tablada se eligió a la Reina Provincial, el vicegobernador a cargo del Ejecutivo, C.P.N. Carlos Haquim, participó de este evento tan importante para los estudiantes jujeños. En la ocasión, saludó a Manuela Poma, la flamante reina que representará a Jujuy en la elección Nacional.</p>
+								<p class="titulo">T&iacute;tulo nota</p>
+								<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua...</p>
+								<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
 							</div>
 						</div>
 					</article>
 				</section> <!-- cierre 3 notas chicas -->
 
-				<div class="row col-xs-12">
-					<a href="noticias.html"><button type="button" class="btn btn-info pull-right btn-block">M&aacute;s noticias</button></a>
-				</div>
-
-				<section> <!-- Noticias Diputados -->
-					<article>
-						<div class="row clearfix">
-							<div class="noticiasDiputados espacioSuperior" style="margin-left: 15px;">
-								<div class="container col-xs-12 col-md-6 clearfix espacioSuperior">
-									<p class="tituloSeccion espacioSuperior" style="color:#fff;">Noticias</p>
-										<div class="zoom">
-											<a href="#"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-05010000-1474299877-DSC_0038.jpg"></a>
-										</div>
-										<div class="linea" style="background-color: #337ab7;"></div>
-										<a href="#"><p class="titulo" style="color: #fff;">EN LA LEGISLATURA SE REALIZÓ EL EXAMEN PARA OCUPAR EL CARGO DE JUEZ DE VIOLENCIA DE GÉNERO</p></a>
-										<p class="texto text-justify" style="color: #fff;">En el marco de la nueva metodología de selección de integrantes del Poder Judicial, más de veinte postulantes rindieron en el Recinto de la Legislatura,el examen que constituye el concurso de oposición para ocupar el cargo de Juez de violencia de Género.  </p>
-								</div>
-												
-								<div class="container col-xs-12 col-md-6 espacioSuperior">
-									<div class="noticiaChica">
-										<div class="zoom pull-left" style="margin: 0 5px; width: 150px; height: 150px;">
-											<a href="#"><img class="" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-94258800-1474285012-DSC_0009.jpg" height="100%" alt=""></a>
-											<div class="linea" style="background-color: #337ab7;"></div>
-										</div>
-										<a href="#"><p class="titulo">ALUMNOS DE LA ESCUELA PRIMARIA N°299 DE LA LOCALIDAD DE LAGUNILLAS DE POZUELOS VISITARON LA LEGISLATURA</p></a>
-									</div>
-									<div class="noticiaChica" style="margin-top:6px;">
-										<div class="zoom pull-left" style="margin: 0 5px; width: 150px; height: 150px;">
-											<a href="#"><img class="" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-34419600-1474284659-DSC_0051.jpg" height="100%" alt=""></a>
-											<div class="linea" style="background-color: #337ab7;"></div>
-										</div>
-										<a href="#"><p class="titulo">RECONOCIMIENTO PARA EL CANTAUTOR JUJEÑO NINO FUENTES</p></a>
-									</div>
-									<button type="button" class="btn btn-warning btn-block espacioSuperior">M&aacute;s noticias</button>
-								</div>
-							</div>
-						</div>
-					</article>
-				</section> <!-- cierre noticias 1 grande y 2 chicas Diputados -->
-
+				<section id="paginacion"> 
+					<ul class="pagination pull-right">
+					  <li><a href="#"> Anterior </a></li>
+					  <li><a href="#"> 1 </a></li>
+					  <li><a href="#"> 2 </a></li>
+					  <li><a href="#"> 3 </a></li>
+					  <li><a href="#"> 4 </a></li>
+					  <li><a href="#"> 5 </a></li>
+					  <li><a href="#"> Siguiente </a></li>
+					</ul>
+				</section>
 
 			</div> <!-- Cierre Contenedor Noticias -->
 
@@ -379,8 +295,7 @@
 				<div class="botonesLaterales text-center">
 					<p class="tituloSeccion" style="color: #fff">Archivo Hist&oacute;rico</p>
 					<div style="background-color:#eeeeee; padding:10px;">
-						<div id="slideHistorico" class="carousel slide" style="margin-bottom: 10px;">
-						    <a href="historico.html">
+						<div id="slideHistorico" class="carousel slide" data-interval="2000" style="margin-bottom: 10px;">
 						    <div class="carousel-inner">
 						        <div class="item active">
 							        <div class="fill" style="background-image:url('images/hist01.jpg');"></div>
@@ -391,7 +306,7 @@
 								<div class="item">
 									<div class="fill" style="background-image:url('images/hist03.jpg');"></div>
 								</div>
-							</div></a>
+							</div>
 					        <a class="left carousel-control" href="#slideHistorico" data-slide="prev">
 				            <span class="icon-prev"></span>
 					        </a>
@@ -440,14 +355,14 @@
 			<div class="row">
 				<div class="container">
 			        <div class="col-xs-4 col-sm-2">
-			        	<h2 align="right" style="color: #fff">Recinto</h2>
+			          <h2 align="right" style="color: #fff">Recinto</h2>
 			        </div>
 			        <div class="well pull-left">
-			       	  <img src="images/distrecinto.png" alt="" width="400" usemap="#mapaRecinto">
-			          <p style="margin-top:10px">Distribuci&oacuten diputados.</p>
-			          <p align="right"><a class="btn btn-primary" href="#">Ver listado completo</a></p>
-					<map name="mapaRecinto">
-							<area shape="rect" coords="140, 30, 170, 50" title="Secretario Parlamentario">
+			       	  <img src="images/distrecinto.png" alt="" class="img-thumbnail" width="400" usemap="#mapaRecinto">
+
+					  <map name="mapaRecinto" > <!--  Mapa Recinto  -->
+					    <div class="tooltip">
+					    	<area shape="rect" coords="140, 30, 170, 50" title="Secretario Parlamentario">
 					    	<area shape="rect" coords="170, 30, 205, 50" title="Presidente">
 					    	<area shape="rect" coords="205, 30, 245, 50" title="Secretario Administrativo">
 					    	<area shape="rect" coords="15, 85, 50, 105" title="Dip. Rivarola">
@@ -455,9 +370,18 @@
 					    	<area shape="rect" coords="100, 85, 130, 105" title="Dip. Ruarte">
 					    	<area shape="rect" coords="142, 85, 172, 105" title="Dip. Lops">
 					    	<area shape="rect" coords="184, 85, 214, 105" title="Dip. Segura">
-			        </map>
-			        </div>
+					    	<span class="tooltiptext">
+					    		<div>
+									<img src=""/>
+								</div>
+								<p align="center"> WIdeASar</p>
+							</span>
+						</div>
+					  </map>
 
+			          <p style="margin-top:10px">Distribuci&oacuten diputados.</p>
+			          <p align="right"><a class="btn btn-primary" href="#">Ver listado completo</a></p>
+			        </div>
 		    	</div>
 		    </div>
 		</section> <!-- Cierre recinto -->
@@ -468,57 +392,57 @@
 					<p class="tituloSeccion">Destacados</p>
 				</div>
 				<div class="row clearfix destacados">
-					<div class="container col-xs-12 col-sm-6 col-md-3">
+					<div class="container col-sm-3">
 						<div class="noticiasChicas">
 							<div class="zoom">
-								<a href="#"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-42223000-1473989340-DSC_0023.JPG"></img></a>
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
 							</div>
-							<div class="linea"></div>
-							<a href="#"><p class="titulo">SE APROBÓ LA LEY DE NOCTURNIDAD</p></a>
-							<p class="texto text-justify">La Cámara de Diputados provincial aprobó la ley Nº 5955 que regula Las actividades nocturnas y espectáculos públicos. La misma establece que el nuevo horario de cierre de boliches...</p>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
 						</div>
 					</div>
-					<div class="container col-xs-12 col-sm-6 col-md-3">
+					<div class="container col-sm-3">
 						<div class="noticiasChicas">
 							<div class="zoom">
-								<a href="#"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-82827800-1473989045-DSC_1276.jpg"></img></a>
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
 							</div>
-							<div class="linea"></div>
-							<a href="#"><p class="titulo">LA LEGISLATURA HOMENAJEÓ A DEPORTISTAS Y A GAUCHAS JUJEÑAS</p></a>
-							<p class="texto text-justify">En el inicio de la 20ma Sesión Ordinaria, la Legislatura de Jujuy hizo entrega de diplomas honoríficos a la Asociación Civil “La Gauchita – en homenaje a las mujeres que hicieron patria”...</p>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
 						</div>
 					</div>
-					<div class="container col-xs-12 col-sm-6 col-md-3">
+					<div class="container col-sm-3">
 						<div class="noticiasChicas">
 							<div class="zoom">
-								<a href="#"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-91844500-1473870591-DSC_1241.jpg"></img></a>
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
 							</div>
-							<div class="linea"></div>
-							<a href="#"><p class="titulo">EL DIPUTADO PROVINCIAL RODOLFO NIETO VISITÓ LA COOPERATIVA "SUEÑOS DE SEDA"; DE LA CIUDAD DE EL CARMEN</p></a>
-							<p class="texto text-justify">Como un claro ejemplo de la matriz productiva que impulsa la provincia de Jujuy, la Cooperativa Sueños de...</p>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
 						</div>
 					</div>
-					<div class="container col-xs-12 col-sm-6 col-md-3">
+					<div class="container col-xs-12 col-sm-3">
 						<div class="noticiasChicas">
 							<div class="zoom">
-								<a href="#"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-83502900-1473870303-DSC_1219.JPG"></img></a>
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
 							</div>
-							<div class="linea"></div>
-							<a href="#"><p class="titulo">LA COMISIÓN DE TRABAJO DE LA LEGISLATURA DE JUJUY RECIBIÓ A DELEGADOS DE UATRE- OSPRERA</p></a>
-							<p class="texto text-justify">La comisión de Trabajo y Seguridad Social de la Legislatura de Jujuy recibió a integrantes de UATRE-OSPRERA para conversar sobre la situación laboral...</p>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
 						</div>
 					</div>
 				</div>
 			</article>
 		</section> <!-- Cierre destacado -->
 
-
-	</section> <!-- cierre container principal -->
-
-
 		<section> <!-- Mapa del sitio-->
-			<div class="row-fluid clearfix mapaSitio">
-				<div class="container-fluid" style="margin: 10px;">
+			<div class="row clearfix mapaSitio">
+				<div class="container" style="margin: 10px;">
 					<div class="col-sm-3"> <!-- Columna 1 -->
 						<ul class="list-unstyled">
 							<li><p class="tituloMapa">Institucional</p></li>
@@ -625,19 +549,17 @@
 			</div>
 		</section> <!-- Cierre Mapa del sitio-->
 
-
+	</section>
 	<footer>
 		<div class="container-fluid piePagina">
 			<p>Copyright 2016 Legislatura de Jujuy | Todos los derechos reservados. J. I. Gorritti 47 - San Salvador de Jujuy - CP Y4600 (Jujuy) Argentina | Teléfono: (54) 0388 4239200</p>
 		</div>
 	</footer>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/jquery-3.1.0.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/init.js"></script>
-
-	<!--Inicializa slides-->
-	<script type="text/javascript">
+		<script type="text/javascript">
 	    var $ = jQuery.noConflict();
 		$(document).ready(function() { 
   		$('#slidePrincipal').carousel({ interval: 4000, cycle: true });
@@ -646,5 +568,6 @@
   		$('#slideHistorico').carousel({ interval: 2000, cycle: true });
 		}); 
 	</script>
+
 </body>
 </html>

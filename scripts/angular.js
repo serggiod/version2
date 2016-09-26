@@ -1,7 +1,8 @@
 var basePath     = __dirname.replace('/scripts','');
 var nodeModules  = basePath+'/node_modules';
 var fileSystem   = require('fs');
-var angular     = {
+var readline     = require('readline');
+var angular      = {
 
     //Paths.
     path:{
@@ -137,6 +138,27 @@ var angular     = {
 
     addNgModule:(name,injector)=>{
         if(name===undefined || injector===undefined) angular.messages.errorAddNgModule();
+        else{
+            angular.common.addNgModule(name,injector,()=>{});
+        }
+    },
+
+    addDirective:(name)=>{
+        if(name===undefined || injector===undefined) angular.messages.errorAddDirective();
+        else{
+            angular.common.addNgModule(name,injector,()=>{});
+        }
+    },
+
+    addFactory:(name)=>{
+        if(name===undefined || injector===undefined) angular.messages.errorAddFactory();
+        else{
+            angular.common.addNgModule(name,injector,()=>{});
+        }
+    },
+
+    addService:(name)=>{
+        if(name===undefined || injector===undefined) angular.messages.errorAddService();
         else{
             angular.common.addNgModule(name,injector,()=>{});
         }

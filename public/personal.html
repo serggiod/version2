@@ -7,6 +7,69 @@
 	<link rel="stylesheet" href="css/estilos.css">
 	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet">
 	<title>Legislatura de Jujuy</title>
+
+	<script language="javascript">
+		function doSearch()	{
+			var tableReg = document.getElementById('datos');
+			var searchText = document.getElementById('searchTerm').value.toLowerCase();
+			var cellsOfRow="";
+			var found=false;
+			var compareWith="";
+ 
+			// Recorremos todas las filas con contenido de la tabla
+			for (var i = 1; i < tableReg.rows.length; i++)
+			{
+				cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+				found = false;
+				// Recorremos todas las celdas
+				for (var j = 0; j < cellsOfRow.length && !found; j++)
+				{
+					compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+					// Buscamos el texto en el contenido de la celda
+					if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1))
+					{
+						found = true;
+					}
+				}
+				if(found)
+				{
+					tableReg.rows[i].style.display = '';
+				} else {
+					// si no ha encontrado ninguna coincidencia, esconde la
+					// fila de la tabla
+					tableReg.rows[i].style.display = 'none';
+				}
+			}
+		}
+	</script>
+	<!--<script language=JavaScript>
+		function buscarTxt(texto) 
+			{ if(!document.all) return 
+			var contenido = document.body.createTextRange(); 
+			var seguir = true; 
+			var temporal = contenido.duplicate(); 
+			var existe = temporal.findText(texto,0,0) 
+			while(existe && seguir) 
+			{ 
+			temporal.scrollIntoView(true);
+			temporal.select(); 
+			//Modifica contenido para que comience al final 
+			//de la palabra encontrada 
+			contenido.setEndPoint("StartToEnd", temporal); 
+			seguir = confirm("¿Continuar la búsqueda?");
+			if (seguir) 
+			{ 
+			//Repite labúsqueda 
+			temporal = contenido.duplicate(); 
+			existe = temporal.findText(texto,0,0) 
+			} 
+			} 
+			if (seguir) 
+			alert("Fin del documento");
+		}  
+	</script> -->
+
+
 </head>
 
 <body class="fondoPagina" data-spy="scroll" data-target="#navegacion-lg" data-offset="0">
@@ -105,16 +168,32 @@
 						<div class="" id="personalInicio">
 							<p class="tituloSeccion">N&oacute;mina de empleados por lugar de trabajo</p>
 						</div>
-						<div class="btn-group">
+
+						<!--<form name="form1" method="post" action="">
+							<input type="text" name="texto">
+							<input type="button" name="Button" value="Buscar" onclick="buscarTxt(this.form.texto.value)">
+						</form>-->
+
+						<div class="pull-right">
+							<form class="texto"> Buscar <input id="searchTerm" type="text" onkeyup="doSearch()" /> <span class="glyphicon glyphicon-search"></span></form>
+						</div>
+
+						<div class="btn-group espacioSuperior">
 							<a href="#personalPresidencia"><button class="btn-xs">Presidencia</button></a>
 							<a href="#personalPrensa"><button class="btn-xs">Prensa</button></a>
+							<a href="#personalUTOL"><button class="btn-xs">UTOL</button></a>
+							<a href="#personalAsuntosJuridicos"><button class="btn-xs">Asuntos Juridicos</button></a>
+							<a href="#personalServicioMedico"><button class="btn-xs">Servicio M&eacute;dico</button></a>
+							<a href="#personalCeremonial"><button class="btn-xs">Ceremonial y Protocolo</button></a>
 						</div>
 						<div class="container col-xs-12 col-sm-12" id="personalPresidencia">
 							<br>
+							<div class="container col-xs-12">
 							<legend>
 								<p class="titulo">Presidencia</p>
 							</legend>
-								<table class="table table-hover table-striped">
+							</div>
+								<table class="table table-hover table-striped" id="datos">
 									<thead>
 								      <tr>
 										<th>Apellido</th>
@@ -184,11 +263,36 @@
 								    		<td>Planta Permanente</td>
 								    		<td>Administrativo</td>
 								    	</tr>
-								    	<tr></tr>
-								    	<tr></tr>
-								    	<tr></tr>
-								    	<tr></tr>
-								    	<tr></tr>
+								    	<tr>
+								    		<td>ABRAHAM</td>
+								    		<td>RUBEN ORLANDO</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>BERNAL GARCIA</td>
+								    		<td>SERGIO JAVIER</td>
+								    		<td>Gabinete</td>
+								    		<td>Chofer</td>
+								    	</tr>
+								    	<tr>
+								    		<td>CHAÑI</td>
+								    		<td>MARIA FATIMA</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>SOLIS</td>
+								    		<td>JOAQUIN ROQUE</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>SOSA GALIAN</td>
+								    		<td>FABIANA ESTER</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
 								    	<tr></tr>
 								    	<tr></tr>
 								    	<tr></tr>
@@ -246,9 +350,11 @@
 						</div>
 						<div class="container col-xs-12 col-sm-12" id="personalPrensa">						
 							<br>
-							<legend>
-								<p class="titulo">Dirección de Prensa y Difusión</p>
-							</legend>
+							<div class="container col-xs-6">
+								<legend>
+									<p class="titulo">Dirección de Prensa y Difusión</p>
+								</legend>
+							</div>
 							<table class="table table-hover table-striped">
 								<thead>
 							      <tr>
@@ -319,10 +425,204 @@
 							    		<td>Planta Permanente</td>
 							    		<td>Administrativo</td>
 							    	</tr>
+							    	<tr>
+							    		<td>FERNANDEZ</td>
+							    		<td>GABRIEL ESTEBAN</td>
+							    		<td>Gabinete</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>TAGLIOLI</td>
+							    		<td>MAXIMILIANO FABIAN</td>
+							    		<td>Gabinete</td>
+							    		<td>Administrativo</td>
+							    	</tr>
 							    </tbody>
 							</table>
 							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
 						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalUTOL">						
+							<br>
+							<legend>
+								<p class="titulo">Dirección U.T.O.L.</p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+							    	<tr class="success">
+							    		<td>DIP</td>
+							    		<td>ELIAS DOMINGO MARTIN</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Director U.T.O.L.</td>
+							    	</tr>
+							    	<tr>
+							    		<td>MANERO</td>
+							    		<td>ELSA MARCELA</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalAsuntosJuridicos">						
+							<br>
+							<legend>
+								<p class="titulo">Departamento Asuntos Jurídicos</p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+							    	<tr class="success">
+							    		<td>TORREJON</td>
+							    		<td>HUMBERTO RAUL</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Jefe Dpto. Asuntos Jurídicos</td>
+							    	</tr>
+							    	<tr>
+							    		<td>BARRIGA</td>
+							    		<td>JORGE HUGO</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>VARELA</td>
+							    		<td>MARIA EUGENIA</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalServicioMedico">						
+							<br>
+							<legend>
+								<p class="titulo">Departamento Servicio Médico</p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+							    	<tr class="success">
+							    		<td>MEROI DEL FRARI</td>
+							    		<td>JULIO CESAR</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Jefe Dpto. Servicio Médico</td>
+							    	</tr>
+							    	<tr>
+							    		<td>CUELLAR PAREJA</td>
+							    		<td>GRACIELA EUGENIA</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>MEDRANO</td>
+							    		<td>MARIA BELEN</td>
+							    		<td>Gabinete</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>RODRIGUEZ</td>
+							    		<td>CAROLINA BEATRIZ</td>
+							    		<td>Gabinete</td>
+							    		<td>Enfermero</td>
+							    	</tr>
+							    	<tr>
+							    		<td>VILLAGRA</td>
+							    		<td>JOSE DANIEL</td>
+							    		<td>Gabinete</td>
+							    		<td>Enfermero</td>
+							    	</tr>
+							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalCeremonial">						
+							<br>
+							<legend>
+								<p class="titulo">División Ceremonial y Protocolo</p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+							    	<tr class="success">
+							    		<td>AZUA</td>
+							    		<td>ANA MARIA NOEMI</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Jefe Div. Ceremonial</td>
+							    	</tr>
+							    	<tr>
+							    		<td>LOBO</td>
+							    		<td>LILIANA DEL VALLE</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>SALINAS</td>
+							    		<td>LUIS FRANCISCO</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>BACA</td>
+							    		<td>EUDOSIA DEL CARMEN</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+   							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personal">						
+							<br>
+							<legend>
+								<p class="titulo"></p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+
+   							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+
+
 
 
 
@@ -606,8 +906,8 @@
 							<ul>
 								<li><a href="#" class="textoMapa">Resoluciones Concursos Secretaria Administrativa</a></li>
 								<li><a href="#" class="textoMapa">Direcci&oacute;n de Administraci&oacute;n</a></li>
-								<li><a href="#" class="textoMapa">Requisitos para Proveedores</a></li>
-								<li><a href="#" class="textoMapa">N&oacute;mina del Personal de la Legislatura</a></li>
+								<li><a href="proveedores.html" class="textoMapa">Inscripci&oacute;n para Proveedores</a></li>
+								<li><a href="personal.html" class="textoMapa">N&oacute;mina del Personal de la Legislatura</a></li>
 								<li><a href="#" class="textoMapa">Listado de Tel&eacute;fonos internos</a></li>
 							</ul>
 						</ul>
@@ -668,6 +968,7 @@
   		$('#slideHistorico').carousel({ interval: 2000, cycle: true });
 		}); 
 	</script>
+
 
 </body>
 </html>

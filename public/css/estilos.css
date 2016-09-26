@@ -9,6 +9,12 @@
 	background-color:#FFFFFF;
 	/*box-shadow: 0 0 40px rgba(0,0,0,0.3);*/
 }
+hr { 
+   border: 2px solid #eeeeee; 
+   border-radius: 200px ; 
+   height: 0px; 
+   text-align: center; 
+ }
 /* CABEZAL*/
 .cabezal {
 	height: 390px;
@@ -58,6 +64,10 @@
 	font-family: 'Hind', sans-serif;
 	font-size: 14px;
 }
+.textoBoletin{
+	font-family: Arial;
+	font-size:16px;
+}
 .tituloMapa{
 	background-color: #808080;
 	color:#fff;
@@ -69,9 +79,6 @@
 	font-family: 'Hind', sans-serif;
 	font-size: 12px;
 	color:#fff;
-}
-.textoBoletin{
-
 }
 
 /* SECCIONES */

@@ -635,19 +635,45 @@
 		</div>
 	</footer>
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/init.js"></script>
+		
 
-	<!--Inicializa slides-->
-	<script type="text/javascript">
-	    var $ = jQuery.noConflict();
-		$(document).ready(function() { 
-  		$('#slidePrincipal').carousel({ interval: 4000, cycle: true });
-		}); 
-		$(document).ready(function() { 
-  		$('#slideHistorico').carousel({ interval: 2000, cycle: true });
-		}); 
-	</script>
+        <!-- JSLib: JQuery -->
+        <script src="/jscdn/jquery/dist/jquery.min.js"></script>
+
+        <!-- JSLib: Angular -->
+		<script src="/jscdn/angular/angular.min.js"></script>
+        <script src="/jscdn/angular-route/angular-route.min.js"></script>
+        <script src="/jscdn/angular-sanitize/angular-sanitize.min.js"></script>
+
+        <!-- Aplicacion Angular: Definicionn -->
+        <script src="application/application.js"></script>
+
+		<!-- Aplicacion Angular: Directivas. -->
+
+		<!-- Aplicacion Angular:  Factorias -->
+
+		<!-- Aplicacion Angular: Servicios -->
+
+        <!-- Aplicacion Angular: Controladores --> 
+
+		<!--Inicializa slides-->
+		<script src="js/init.js"></script>
+		<script type="text/javascript">
+			var $ = jQuery.noConflict();
+			$(document).ready(function() { 
+				$('#slidePrincipal')
+					.carousel({
+						interval: 4000,
+						cycle: true
+					});
+			}); 
+			$(document).ready(function() { 
+				$('#slideHistorico')
+					.carousel({ 
+						interval: 2000, 
+						cycle: true 
+					});
+			}); 
+		</script>
 </body>
 </html>

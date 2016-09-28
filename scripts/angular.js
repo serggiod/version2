@@ -146,21 +146,21 @@ var angular      = {
     addDirective:(name)=>{
         if(name===undefined || injector===undefined) angular.messages.errorAddDirective();
         else{
-            angular.common.addNgModule(name,injector,()=>{});
+            angular.common.addDirective(name,injector,()=>{});
         }
     },
 
     addFactory:(name)=>{
         if(name===undefined || injector===undefined) angular.messages.errorAddFactory();
         else{
-            angular.common.addNgModule(name,injector,()=>{});
+            angular.common.addFactory(name,injector,()=>{});
         }
     },
 
     addService:(name)=>{
         if(name===undefined || injector===undefined) angular.messages.errorAddService();
         else{
-            angular.common.addNgModule(name,injector,()=>{});
+            angular.common.addFactory(name,injector,()=>{});
         }
     },
 
@@ -266,6 +266,27 @@ var angular      = {
             else{
                 angular.messages.successAddNgModule();
             }
+        },
+
+        addDirective:(name,injector,callback)=>{
+            if(name===undefined || injector===undefined || callback===undefined) angular.messages.errorAddDirective();
+            else{
+                angular.messages.successAddDirective();
+            }
+        },
+
+        addFactory:(name,injector,callback)=>{
+            if(name===undefined || injector===undefined || callback===undefined) angular.messages.errorAddFactory();
+            else{
+                angular.messages.successAddFactory();
+            }
+        },
+
+        addService:(name,callback)=>{
+            if(name===undefined || injector===undefined || callback===undefined) angular.messages.errorAddService();
+            else{
+                angular.messages.successAddService();
+            }
         }
      
     },
@@ -284,6 +305,15 @@ var angular      = {
         errorAddNgModule    : ()=>{console.error('No se pudo agregar el modulo de angular.');},
         successAddNgModule  : ()=>{console.log  ('El modulo de angular se agregó correctamente.');},
 
+        errorAddDirective   : ()=>{console.error('No se pudo agregar la directiva.');},
+        successAddDirective : ()=>{console.log  ('La directiva se agregó correctamente.');},
+
+        errorAddFactory     : ()=>{console.error('No se pudo agregar la factoria.');},
+        successAddFactory   : ()=>{console.log  ('La factoria se agregó correctamente.');},
+
+        errorAddService     : ()=>{console.error('No se pudo agregar el servicio.');},
+        successAddService   : ()=>{console.log  ('El servicio se agregó correctamente.');},
+
         errorAppInitialised : ()=>{console.error('AngularJs informa que la aplicación ya fue inicializada.');},
         errorWriteRoute     : ()=>{console.error('No se pudo agregar la ruta');},
         errorReadFile       : ()=>{console.error('No se puede leer el archivo.');},
@@ -293,6 +323,10 @@ var angular      = {
         successWriteRoute   : ()=>{console.log('Se ha agregado una ruta.')}
     },
 
+    // Targets.
+    targets:{
+        
+    },
     // Templates.
     templates:{
 

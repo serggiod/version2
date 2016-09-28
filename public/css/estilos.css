@@ -1,13 +1,12 @@
 /* HOME */
 .fondoPagina { 			
-	background-color: #FFFFFF;
-	/*background-color: #EAE6E3;*/
-	/*background: url(../images/fondo.png) 50% 0 fixed; 
-	background-repeat: repeat;*/
+	background: url("../images/fondo.jpg") 50% 0 fixed; 
+	background-repeat: repeat;
 }
 .marcoPagina{
-	background-color:#FFFFFF;
-	/*box-shadow: 0 0 40px rgba(0,0,0,0.3);*/
+	background-color: rgba(255,255,255,0.25);
+	border-radius: 10px 10px 0px 0px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 hr { 
    border: 2px solid #eeeeee; 
@@ -17,40 +16,78 @@ hr {
  }
 /* CABEZAL*/
 .cabezal {
-	height: 390px;
+	height: 220px;
 }
 
 .fondoLogo{
-	background-color: #FFFFFF;
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 25%, rgba(255,255,255,0.17) 35%, rgba(255,255,255,0.75) 70%, rgba(255,255,255,0.8) 93%, rgba(255,255,255,0.8) 95%, rgba(17,53,89,0.8) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 25%,rgba(255,255,255,0.17) 35%,rgba(255,255,255,0.75) 70%,rgba(255,255,255,0.8) 93%,rgba(255,255,255,0.8) 95%,rgba(17,53,89,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 25%,rgba(255,255,255,0.17) 35%,rgba(255,255,255,0.75) 70%,rgba(255,255,255,0.8) 93%,rgba(255,255,255,0.8) 95%,rgba(17,53,89,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#cc113559',GradientType=0 ); /* IE6-9 */
 	border-radius: 10px 10px 0 0;
-	border: 1px;
-	
+	border: 1px;	
 	text-align: center;
-	width: 200px;
+	width: 250px;
+	height: 220px;
+	/*box-shadow: 0 0 5px rgba(0,0,0,0.5);*/
 }
-
+.fecha{
+	background-color: rgba(51,122,183,0.9);
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 16px;
+	color:#eee;
+	text-align: right;
+	width: 100%;
+	height: 100px;
+	padding:0px 100px 20px 0px;
+}
 .logo{
-	margin:40px 12px 50px 12px;
+	margin:30px auto;
 }
 .btnSILeJu{
 	margin:150px 0;
 	position: absolute;
 }
 .btnWebMail{
-	margin-bottom: 15px;
-	margin-right: 15px;
-	position:absolute;
-}
-/* MENU */
-.menuPrincipal{
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 18px;
 	background-color: #29ABE2;
-	color: #fff;
+	width: 150px;
+	height: 35px;
+	position:absolute;
+	color:#fff;
+	text-align: center;
+	padding: 7px;
+	border-radius: 20px;
+	box-shadow: 0 0 25px rgba(0,0,0,0.8);
 }
+.btnWebMail:hover{
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 18px;
+	background-color: #BD4E3A;
+	width: 150px;
+	height: 35px;
+	position:absolute;
+	color:#fff;
+	text-align: center;
+	padding: 7px;
+	border-radius: 20px;
+	transition: all 500ms ease;
+}
+
+/* MENU */
+
+.navbar{
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
 /* TEXTOS */
 .tituloSeccion{
-	color:#29ABE2;
+	color:#337ab7;
+	/*color:#29ABE2;*/
 	font-family: 'Fjalla One', sans-serif;
-	font-size: 30px;
+	font-size: 28px;
 	margin-top:15px;
 	margin-left:15px;
 }
@@ -95,14 +132,14 @@ hr {
 	height: 100px;
 }
 .marcosPaz{
-	background: linear-gradient( 180deg, #337ab7, white);
+	background: linear-gradient( 180deg, #337ab7, rgba(255,255,255,0));
 	/*background-color: #337ab7;*/
 	height: auto;
 	overflow: hidden;
 	padding:15px;
 }
 .botonesLaterales{
-	background: linear-gradient( 180deg, #337ab7, white);
+	background: linear-gradient( 180deg, #337ab7, rgba(255,255,255,0));
 	/*background-color: #337ab7;*/
 	color:#fff;
 	height: auto;
@@ -110,7 +147,7 @@ hr {
 	padding:15px;
 }
 .boletinOficial{
-	background-color: #EAE6E3;
+	background-color: #FFFFFF;
 	border-radius: 5px;
 	border:2px solid #eee;
 	height: 350px;
@@ -127,7 +164,7 @@ hr {
 }
 
 .noticiaChica{
-	background-color: #EAE6E3;
+	background-color: #FFFFFF;
 	border-radius: 5px;
 	border: 2px solid #eee;
 	height: 185px;
@@ -173,13 +210,18 @@ hr {
 
 /* BOTONES */
 .cajaBotonesGrandes{
+background: -moz-linear-gradient(top,  rgba(51,122,183,0.9) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(51,122,183,0.9) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(51,122,183,0.9) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+	height: 290px;
+	margin: auto 0px;
 	width: 100%;
-	height: 300px;
-	margin: auto;
 }
 .btnPresidencia{
 	background-image: url("../images/haquim.jpeg");
 	background-position: center;
+	background-size: 100%;
 	border-radius: 50%;
 	border: 3px solid #eee;
 	height: 200px;
@@ -191,17 +233,20 @@ hr {
 .btnPresidencia:hover{
 	background-image: url("../images/haquim.jpeg");
 	background-position: center;
+	background-size: 110%;
 	border-radius: 50%;
 	border: 3px solid #eee;
+	box-shadow: 8px -8px 15px rgba(0,0,0,0.15);
 	height: 230px;
 	margin: 0px 0px;
-	padding: 10;
 	opacity: 100%;
+	padding: 10;
 	transition: all 500ms ease;
 	width: 230px;
 }
 .btnLegislatura{
 	background-image: url("../images/legislatura.jpg");
+	background-size: 150%;
 	background-position: center;
 	border-radius: 50%;
 	border: 3px solid #eee;
@@ -213,8 +258,10 @@ hr {
 .btnLegislatura:hover{
 	background-image: url("../images/legislatura.jpg");
 	background-position: center;
+	background-size: 160%;
 	border-radius: 50%;
 	border: 3px solid #eee;
+	box-shadow: 8px -8px 15px rgba(0,0,0,0.15);
 	height: 230px;
 	margin: 0px 0px;
 	padding: 10;
@@ -222,7 +269,8 @@ hr {
 	width: 230px;
 }
 .btnSesion{
-	background-image: url("../images/play-button.svg");
+	background-image: url("../images/play.svg");
+	background-size: 100%;
 	background-position: center;
 	border-radius: 50%;
 	border: 3px solid #eee;
@@ -232,10 +280,13 @@ hr {
 	width: 200px;
 }
 .btnSesion:hover{
-	background-image: url("../images/play-button.svg");
+	background-image: url("../images/play.svg");
 	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
 	border-radius: 50%;
 	border: 3px solid #eee;
+	box-shadow: 8px -8px 15px rgba(0,0,0,0.15);
 	height: 230px;
 	margin: 0px 0px;
 	padding: 10;
@@ -290,9 +341,8 @@ hr {
 #recinto { 
 	background: url(../images/recintoblur.jpg) 50% 0 fixed; 
 	background-repeat: no-repeat;
-	height: 425px;  
-	margin: 0 auto; 
-    width: 100%;
+	background-size: 150%;
+	margin-top: 0px; 
     /*position: fixed; */
     box-shadow: 0 0 25px rgba(0,0,0,0.8);
     padding: 20px;
@@ -351,10 +401,10 @@ hr {
 /* SLIDE */
 html,
 body {
-    height: 390px;
+    height: 220px;
 }
 #slideHistorico {
-	height: 200px;
+	height: 220px;
 }
 
 .carousel,

@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet">
+	<title>Legislatura de Jujuy</title>
+</head>
+
+<body class="fondoPagina" data-spy="scroll" data-target="#navegacion-lg" data-offset="0">
+
+	<header id="slidePrincipal" class="carousel slide">
+        <div class="carousel-inner" style="float: left;">
+            <div class="item active">
+                <div class="fill" style="background-image:url('images/slide01.jpg');"></div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('images/slide02.jpg');"></div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('images/slide03.jpg');"></div>
+            </div>
+        </div>
+
+		<!-- Controles Slide
+        <a class="left carousel-control" href="#slidePrincipal" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#slidePrincipal" data-slide="next">
+            <span class="icon-next"></span>
+        </a> -->
+		
+		<!--<div class="row" style="position:absolute; margin: 170px 0px 10px 750px; z-index: 1;">
+			<button class="btn btn-danger">SILeJu</button>
+		</div>
+		<div class="row" style="position:absolute; margin: 170px 0px 10px 850px; z-index: 1;">
+			<a href="#"><div class="btnWebMail">WebMail</div></a>
+		</div>-->
+    	<!--<div class="row" style="position: absolute; margin: 0px 0px 0px 150px; z-index: 1;">-->
+    	<div class="row" style="position: absolute; margin: 0px 0px 0px 150px; z-index: 1;">
+    		<div class="col-xs-8 col-sm-6 col-md-4 col-lg-3 fondoLogo">
+		        <img class="logo" src="images/logoesc1.png" width="220" height="auto" alt="Legislatura de Jujuy">
+		    </div>
+	    </div> <!-- cierra contenedor logo -->
+
+	</header>
+        
+		
+
+		<nav class="navbar navbar-inverse navbar-static-top pull-left" data-spy="affix" data-offset-top="220">
+			<div class="container">
+				<div class="nav navbar-nav">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-lg">
+						<span class="sr-only">Desplegar / Ocultar Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="index.html" class="navbar-brand"><span class="glyphicon glyphicon-home"></span></a>
+				</div>
+				<!-- Menu -->
+				<div class="collapse navbar-collapse" id="navegacion-lg">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Institucional</a></li>
+						<li><a href="#">Autoridades</a></li>
+						<li><a href="#">Diputados</a></li>
+						<li><a href="#">Orden del d&iacute;a</a></li>
+						<li><a href="#">Poder Legislativo</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Bloques <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Uni&oacute;n C&iacute;vica Radical</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Justicialista</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Primero Jujuy</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Unidos y Organizados por la Soberan&iacute;a Popular</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Labor Legislativa</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Ingreso<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">SILeJu</a></li>
+								<li class="divider"></li>
+								<li><a href="https://mail.legislaturajujuy.gov.ar/">Webmail</a></li>
+							</ul>
+						</li>
+					</ul>
+					<!-- Busqueda -->
+					<form action="" class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" size="8" placeholder="Buscar">
+						</div>
+						<button type="submit" class="btn btn-primary">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+	
+
+	<article class="container marcoPagina">
+
+		<section> <!-- Biografia y Marcos Paz-->
+				<div class="row clearfix"> <!-- Contenedor Fila -->
+
+					<div class="container col-xs-12 col-sm-9"> <!-- Listado de Personal -->
+						<div class="" id="personalInicio">
+							<p class="tituloSeccion">N&oacute;mina de empleados por lugar de trabajo</p>
+						</div>
+
+						<!--<form name="form1" method="post" action="">
+							<input type="text" name="texto">
+							<input type="button" name="Button" value="Buscar" onclick="buscarTxt(this.form.texto.value)">
+						</form>-->
+
+						<div class="pull-right">
+							<form class="texto"> Buscar <input id="searchTerm" type="text" onkeyup="doSearch()" /> <span class="glyphicon glyphicon-search"></span></form>
+						</div>
+
+						<div class="btn-group espacioSuperior">
+							<a href="#personalPresidencia"><button class="btn-xs">Presidencia</button></a>
+							<a href="#personalPrensa"><button class="btn-xs">Prensa</button></a>
+							<a href="#personalUTOL"><button class="btn-xs">UTOL</button></a>
+							<a href="#personalAsuntosJuridicos"><button class="btn-xs">Asuntos Juridicos</button></a>
+							<a href="#personalServicioMedico"><button class="btn-xs">Servicio M&eacute;dico</button></a>
+							<a href="#personalCeremonial"><button class="btn-xs">Ceremonial y Protocolo</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalPresidencia">
+							<br>
+							<div class="container col-xs-12">
+							<legend>
+								<p class="titulo">Presidencia</p>
+							</legend>
+							</div>
+								<table class="table table-hover table-striped" id="datos">
+									<thead>
+								      <tr>
+										<th>Apellido</th>
+										<th>Nombres</th>
+										<th>Sit.</th>
+										<th>Funci&oacute;n</th>
+										</tr>
+									</thead>
+								    <tbody>
+								    	<tr class="info">
+									    	<td>HAQUIM</td>
+									    	<td>CARLOS GUILLERMO</td>
+									    	<td>Funcionario</td>
+									    	<td>Presidente</td>
+									    </tr>
+								    	<tr>
+								    		<td>MORERO</td>
+								    		<td>NELSO PEDRO</td>
+								    		<td>Planta Permanente</td>
+								    		<td>Comisario de Cámara</td>
+								    	</tr>
+								    	<tr>
+								    		<td>PACHECO</td>
+								    		<td>SONIA CRISTINA</td>
+								    		<td>Planta Permanente</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>DONAIRES</td>
+								    		<td>MARTIN GUILLERMO</td>
+								    		<td>Planta Permanente</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>NUÑEZ</td>
+								    		<td>PATRICIA SUSANA</td>
+								    		<td>Planta Permanente</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>PACHECO</td>
+								    		<td>PAULA AGUSTINA</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>PEREZ</td>
+								    		<td>MARINA BERTA</td>
+								    		<td>Planta Permanente</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>VARGAS ARCE</td>
+								    		<td>MIRTHA LUCILA</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>PORTAL</td>
+								    		<td>DARIO</td>
+								    		<td>Planta Permanente</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>VELAZQUEZ</td>
+								    		<td>YOLANDA MARGARITA</td>
+								    		<td>Planta Permanente</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>ABRAHAM</td>
+								    		<td>RUBEN ORLANDO</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>BERNAL GARCIA</td>
+								    		<td>SERGIO JAVIER</td>
+								    		<td>Gabinete</td>
+								    		<td>Chofer</td>
+								    	</tr>
+								    	<tr>
+								    		<td>CHAÑI</td>
+								    		<td>MARIA FATIMA</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>SOLIS</td>
+								    		<td>JOAQUIN ROQUE</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr>
+								    		<td>SOSA GALIAN</td>
+								    		<td>FABIANA ESTER</td>
+								    		<td>Gabinete</td>
+								    		<td>Administrativo</td>
+								    	</tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    	<tr></tr>
+								    </tbody>
+								</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalPrensa">						
+							<br>
+							<div class="container col-xs-6">
+								<legend>
+									<p class="titulo">Dirección de Prensa y Difusión</p>
+								</legend>
+							</div>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+							    	<tr class="success">
+							    		<td>CALVETTI</td>
+							    		<td>JORGE DELFIN</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Director Prensa</td>
+							    	</tr>
+							    	<tr>
+							    		<td>MEALLA</td>
+							    		<td>ZULMA LAURA</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>LOPEZ</td>
+							    		<td>LUIS</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Fotógrafo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>STEGAGNINI</td>
+							    		<td>SONIA MABEL</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>COLMENARES</td>
+							    		<td>RENE EDGAR</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>FERRARO</td>
+							    		<td>GABRIELA ALEJANDRA</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>TOCONAS</td>
+							    		<td>BLANCA AZUCENA</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>ABALOS</td>
+							    		<td>JOSE LUIS</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>CHAVARRIA</td>
+							    		<td>PABLO RICARDO</td>
+							    		<td>Gabinete</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>CAIGUARA</td>
+							    		<td>CRISTIAN JAIME</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>FERNANDEZ</td>
+							    		<td>GABRIEL ESTEBAN</td>
+							    		<td>Gabinete</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>TAGLIOLI</td>
+							    		<td>MAXIMILIANO FABIAN</td>
+							    		<td>Gabinete</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalUTOL">						
+							<br>
+							<legend>
+								<p class="titulo">Dirección U.T.O.L.</p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+							    	<tr class="success">
+							    		<td>DIP</td>
+							    		<td>ELIAS DOMINGO MARTIN</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Director U.T.O.L.</td>
+							    	</tr>
+							    	<tr>
+							    		<td>MANERO</td>
+							    		<td>ELSA MARCELA</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalAsuntosJuridicos">						
+							<br>
+							<legend>
+								<p class="titulo">Departamento Asuntos Jurídicos</p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+							    	<tr class="success">
+							    		<td>TORREJON</td>
+							    		<td>HUMBERTO RAUL</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Jefe Dpto. Asuntos Jurídicos</td>
+							    	</tr>
+							    	<tr>
+							    		<td>BARRIGA</td>
+							    		<td>JORGE HUGO</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>VARELA</td>
+							    		<td>MARIA EUGENIA</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalServicioMedico">						
+							<br>
+							<legend>
+								<p class="titulo">Departamento Servicio Médico</p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+							    	<tr class="success">
+							    		<td>MEROI DEL FRARI</td>
+							    		<td>JULIO CESAR</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Jefe Dpto. Servicio Médico</td>
+							    	</tr>
+							    	<tr>
+							    		<td>CUELLAR PAREJA</td>
+							    		<td>GRACIELA EUGENIA</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>MEDRANO</td>
+							    		<td>MARIA BELEN</td>
+							    		<td>Gabinete</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>RODRIGUEZ</td>
+							    		<td>CAROLINA BEATRIZ</td>
+							    		<td>Gabinete</td>
+							    		<td>Enfermero</td>
+							    	</tr>
+							    	<tr>
+							    		<td>VILLAGRA</td>
+							    		<td>JOSE DANIEL</td>
+							    		<td>Gabinete</td>
+							    		<td>Enfermero</td>
+							    	</tr>
+							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personalCeremonial">						
+							<br>
+							<legend>
+								<p class="titulo">División Ceremonial y Protocolo</p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+							    	<tr class="success">
+							    		<td>AZUA</td>
+							    		<td>ANA MARIA NOEMI</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Jefe Div. Ceremonial</td>
+							    	</tr>
+							    	<tr>
+							    		<td>LOBO</td>
+							    		<td>LILIANA DEL VALLE</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>SALINAS</td>
+							    		<td>LUIS FRANCISCO</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+							    	<tr>
+							    		<td>BACA</td>
+							    		<td>EUDOSIA DEL CARMEN</td>
+							    		<td>Planta Permanente</td>
+							    		<td>Administrativo</td>
+							    	</tr>
+   							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+						<div class="container col-xs-12 col-sm-12" id="personal">						
+							<br>
+							<legend>
+								<p class="titulo"></p>
+							</legend>
+							<table class="table table-hover table-striped">
+								<thead>
+							      <tr>
+									<th>Apellido</th>
+									<th>Nombres</th>
+									<th>Sit.</th>
+									<th>Funci&oacute;n</th>
+									</tr>
+								</thead>
+							    <tbody>
+
+   							    </tbody>
+							</table>
+							<a href="#personalInicio"><button class="btn-xs btn-primary pull-right">Inicio</button></a>
+						</div>
+
+
+
+
+
+
+					</div>
+
+					<aside> <!-- Marcos Paz -->
+						<div class="container col-xs-12 col-md-3">
+							<p class="tituloSeccion hidden-md">Sal&oacuten Marcos Paz</p>
+							<p class="tituloSeccion visible-sm visible-md">Marcos Paz</p>
+							<div class="marcosPaz">
+								<div class="zoom">
+									<a href="#" data-toggle="modal" data-target="#marcosPaz"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-46888100-1474373928-DSC_1448.JPG"></a>
+								</div>
+								<div class="linea"></div>
+								<a href="#" data-toggle="modal" data-target="#marcosPaz"><p class="titulo">EL VICEGOBERNADOR ACOMPAÑÓ A LA JUVENTUD EN LA ELECCIÓN PROVINCIAL</p></a>
+							</div>
+						</div>
+					</aside>
+
+					<div id="marcosPaz" class="modal fade" role="dialog">
+							<div class="modal-dialog modal-lg">
+							    <div class="modal-content">
+									<div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal">&times;</button>
+								        <h4 class="modal-title">Sal&oacute;n Marcos Paz</h4>
+								      </div>
+								      <div class="container modal-body">
+								      	<img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-46888100-1474373928-DSC_1448.JPG" width="800"></img>
+      									<p class="titulo">Nombre de la Actividad</p>
+										<div class="container text-justify">
+											<table border="1px" width="70%">
+											    <thead>
+											      <tr>
+											        <th>Fecha</th>
+											        <th>Hora</th>
+											        <th>Contenido</th>
+											        <th>Requisitos</th>
+											      </tr>
+											    </thead>
+											    <tbody>
+											      <tr>
+											        <td>25/09/2016</td>
+											        <td>20.30hs.</td>
+											        <td>Descripci&oacute;n de la actividad</td>
+											        <td>Requisitos para participar</td>
+											      </tr>
+											    </tbody>
+											</table>
+										</div>
+							    	  </div>
+							      	<div class="modal-footer">
+							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+							      	</div>
+							    </div>
+							</div>
+						</div>
+				</div> <!-- Cierra fila -->
+			
+		</section> <!-- cierre biografia y Marcos Paz -->
+
+		
+
+			<!-- Contenedor Archivo historico -->
+
+		<!--	<div class="container col-md-3 hidden-xs hidden-sm botonesLaterales text-center">
+				<div class="container col-xs-12">
+					<p class="tituloSeccion" style="color: #fff">Archivo Hist&oacute;rico</p>
+					<div style="background-color:#eeeeee; padding:10px;">
+						<div id="slideHistorico" class="carousel slide" data-interval="2000" style="margin-bottom: 10px;">
+						    <div class="carousel-inner">
+						        <div class="item active">
+							        <div class="fill" style="background-image:url('images/hist01.jpg');"></div>
+						        </div>
+							    <div class="item">
+									<div class="fill" style="background-image:url('images/hist02.jpg');"></div>
+								</div>
+								<div class="item">
+									<div class="fill" style="background-image:url('images/hist03.jpg');"></div>
+								</div>
+							</div>
+					        <a class="left carousel-control" href="#slideHistorico" data-slide="prev">
+				            <span class="icon-prev"></span>
+					        </a>
+					        <a class="right carousel-control" href="#slideHistorico" data-slide="next">
+				            <span class="icon-next"></span>
+					        </a>
+					    </div>
+
+						<button type="button" class="btn btn-danger btn-block">
+							<p>Honorable</p>
+							<p>Convenci&oacuten</p>
+							<p>Constituyente</p>
+							<p>de la Provincia</p>
+							<p>de Jujuy</p>
+						</button>
+						<button class="btn btn-info btn-block">
+							<p>Ceremonial</p>
+							<p>y Protocolo</p>
+						</button>
+						<button class="btn btn-info btn-block">
+							<p>Biblioteca</p>
+						</button>
+						<button class="btn btn-info btn-block">
+							<p>Audiencias</p>
+							<p>P&uacuteblicas</p>
+						</button>
+					</div>
+				</div>
+			</div> <!-- Cierre Archivo Historico -->
+
+		</div> <!-- Cierre Row -->
+	</div>
+
+		<section> <!-- Links -->
+			<div class="row-fluid text-center espacioSuperior" style="background-color: #337ab7; height: 100px; box-shadow: 0 0 25px rgba(0,0,0,0.3);">
+				<div class="container col-xs-12 espacioSuperior">
+					<p class="tituloSeccion" style="color: #eee;">Links
+					<a href="http://jujuy.gob.ar/" target="_blank"><button class="btn"><img src="images/logo_gobierno.png" height="40" alt=""></button></a>
+					<a href="http://www.senado.gov.ar/" target="_blank"><button class="btn"><img src="images/logo_senado.png" height="40" alt=""></button></a>
+					<a href="http://www.diputados.gov.ar/" target="_blank"><button class="btn"><img src="images/logo_diputados.png" height="40" alt=""></button></a></p>
+				</div>
+
+			</div>
+		</section>
+
+		<section id="recinto" data-speed="4" data-type="background"> <!-- Recinto -->
+			<div class="row">
+				<div class="container">
+			        <div class="col-xs-4 col-sm-2">
+			          <h2 align="right" style="color: #fff">Recinto</h2>
+			        </div>
+			        <div class="well pull-left">
+			       	  <img src="images/distrecinto.png" alt="" class="img-thumbnail" width="400" usemap="#mapaRecinto">
+
+					  <map name="mapaRecinto" > <!--  Mapa Recinto  -->
+					    <div class="tooltip">
+					    	<area shape="rect" coords="140, 30, 170, 50" title="Secretario Parlamentario">
+					    	<area shape="rect" coords="170, 30, 205, 50" title="Presidente">
+					    	<area shape="rect" coords="205, 30, 245, 50" title="Secretario Administrativo">
+					    	<area shape="rect" coords="15, 85, 50, 105" title="Dip. Rivarola">
+					    	<area shape="rect" coords="55, 85, 90, 105" title="Dip. Frias">
+					    	<area shape="rect" coords="100, 85, 130, 105" title="Dip. Ruarte">
+					    	<area shape="rect" coords="142, 85, 172, 105" title="Dip. Lops">
+					    	<area shape="rect" coords="184, 85, 214, 105" title="Dip. Segura">
+					    	<span class="tooltiptext">
+					    		<div>
+									<img src=""/>
+								</div>
+								<p align="center"> WIdeASar</p>
+							</span>
+						</div>
+					  </map>
+
+			          <p style="margin-top:10px">Distribuci&oacuten diputados.</p>
+			          <p align="right"><a class="btn btn-primary" href="#">Ver listado completo</a></p>
+			        </div>
+		    	</div>
+		    </div>
+		</section> <!-- Cierre recinto -->
+
+		<section class="espacioSuperior"> <!--Destacado -->
+			<article>
+				<div class="row">
+					<p class="tituloSeccion">Destacados</p>
+				</div>
+				<div class="row clearfix destacados">
+					<div class="container col-sm-3">
+						<div class="noticiasChicas">
+							<div class="zoom">
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
+							</div>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+						</div>
+					</div>
+					<div class="container col-sm-3">
+						<div class="noticiasChicas">
+							<div class="zoom">
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
+							</div>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+						</div>
+					</div>
+					<div class="container col-sm-3">
+						<div class="noticiasChicas">
+							<div class="zoom">
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
+							</div>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+						</div>
+					</div>
+					<div class="container col-xs-12 col-sm-3">
+						<div class="noticiasChicas">
+							<div class="zoom">
+								<img class="img-responsive" src="http://placehold.it/260x200"></img>
+							</div>
+							<p class="titulo">T&iacute;tulo de nota</p>
+							<p class="texto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua...</p>
+							<button class="btn btn-primary pull-right">Ampliar <span class="glyphicon glyphicon-play"/></button>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section> <!-- Cierre destacado -->
+
+
+	</article>
+
+		<section> <!-- Mapa del sitio-->
+			<div class="row-fluid mapaSitio">
+				<div class="container-fluid" style="margin: 10px;">
+					<div class="col-sm-3"> <!-- Columna 1 -->
+						<ul class="list-unstyled">
+							<li><p class="tituloMapa">Institucional</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Autoridades</a></li>
+								<li><a href="#" class="textoMapa">Diputados</a></li>
+							</ul>
+							<li><p class="tituloMapa">Labor Legislativa</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Proyectos</a></li>
+								<li><a href="#" class="textoMapa">Acceso a Leyes</a></li>
+								<li><a href="#" class="textoMapa">Versiones Taquigráficas</a></li>
+								<li><a href="#" class="textoMapa">Orden del Día</a></li>
+							</ul>
+							<li><p class="tituloMapa">Normativa</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Constitución de la Nación</a></li>
+								<li><a href="#" class="textoMapa">Constitución de la Provincia</a></li>
+								<li><a href="#" class="textoMapa">Reglamento de la Legislatura</a></li>
+							</ul>
+						</ul>
+					</div>
+					<div class="col-sm-3"> <!-- Columna 2 -->
+						<ul class="list-unstyled">
+							<li><p class="tituloMapa">Comisiones</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Ambiente</a></li>
+								<li><a href="#" class="textoMapa">Asuntos Institucionales</a></li>
+								<li><a href="#" class="textoMapa">Asuntos Sociales</a></li>
+								<li><a href="#" class="textoMapa">Comision Especial Ddhh</a></li>
+								<li><a href="#" class="textoMapa">Cultura Y Turismo</a></li>
+								<li><a href="#" class="textoMapa">Derechos Humanos</a></li>
+								<li><a href="#" class="textoMapa">Economía</a></li>
+								<li><a href="#" class="textoMapa">Educación</a></li>
+								<li><a href="#" class="textoMapa">Finanzas</a></li>
+								<li><a href="#" class="textoMapa">Legislación General</a></li>
+								<li><a href="#" class="textoMapa">Obras Y Servicios Públicos</a></li>
+								<li><a class="textoMapa" href="#">Pueblos Indigenas</a></li>
+								<li><a class="textoMapa" href="#">Reforma Del Codigo De Faltas</a></li>
+								<li><a class="textoMapa" href="#">Salud Pública</a></li>
+								<li><a class="textoMapa" href="#">Trabajo Y Seguridad Social</a></li>
+								<li><a class="textoMapa" href="#">Transporte Y Comunicaciones</a></li>
+							</ul>
+						</ul>
+					</div>
+					<div class="col-sm-3"> <!-- Columna 3 -->
+						<ul class="list-unstyled">
+							<li><p class="tituloMapa">Bloques</p></li>
+								<li><a class="textoMapa" href="#">Unión Cívica Radical</a></li>
+								<li><a class="textoMapa" href="#">Justicialista</a></li>
+								<li><a class="textoMapa" href="#">Peronista</a></li>
+								<li><a class="textoMapa" href="#">Primero Jujuy</a></li>
+								<li><a class="textoMapa" href="#">Unidos y Organizados por la Soberanía Popular</a></li>
+							<li><p class="tituloMapa" href="#">Prensa</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Noticias de la Legislatura</a></li>
+								<li><a href="#" class="textoMapa">Archivo de Fotografias</a></li>
+							</ul>
+							<li><p class="tituloMapa" href="#">Transparencia</p></li>
+							<ul>
+								<li><a href="#" class="textoMapa">Resoluciones Concursos Secretaria Administrativa</a></li>
+								<li><a href="#" class="textoMapa">Direcci&oacute;n de Administraci&oacute;n</a></li>
+								<li><a href="proveedores.html" class="textoMapa">Inscripci&oacute;n para Proveedores</a></li>
+								<li><a href="personal.html" class="textoMapa">N&oacute;mina del Personal de la Legislatura</a></li>
+								<li><a href="#" class="textoMapa">Listado de Tel&eacute;fonos internos</a></li>
+							</ul>
+						</ul>
+					</div>				
+
+					<div class="col-sm-3"> <!-- Columna 4 -->
+						<ul class="list-unstyled">
+							</ul>
+						</ul>
+
+						<!-- Boton donde estamos -->
+						<p class="tituloSeccion" style="color: #fff;">Donde estamos</p>
+						<div class="img-responsive zoom" style="float: left;">
+							<img src="images/mapa.jpg" alt="">
+						</div>
+						<div style="position: absolute; margin:20px;">
+							<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#mapa">Abrir Mapa <span class="glyphicon glyphicon-map-marker"/></button>
+						</div>
+						<!-- Ventana emergente mapa-->
+						<div id="mapa" class="modal fade" role="dialog">
+							<div class="modal-dialog">
+							    <div class="modal-content">
+									<div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal">&times;</button>
+								        <h4 class="modal-title">Donde estamos</h4>
+								      </div>
+								      <div class="container modal-body">
+								      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.551886582221!2d-65.30043138187949!3d-24.187443621063057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f44ba8981d1%3A0xb6b2365e42893975!2sCan%C3%B3nigo+Gorriti+47%2C+4600+San+Salvador+de+Jujuy%2C+Jujuy!5e0!3m2!1ses!2sar!4v1474455234052" width="550" height="400" frameborder="0" style="border:0;" allowfullscreen></iframe>
+							    	  </div>
+							      	<div class="modal-footer">
+							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+							      	</div>
+							    </div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</section> <!-- Cierre Mapa del sitio-->
+
+	<footer>
+		<div class="container-fluid piePagina">
+			<p>Copyright 2016 Legislatura de Jujuy | Todos los derechos reservados. J. I. Gorritti 47 - San Salvador de Jujuy - CP Y4600 (Jujuy) Argentina | Teléfono: (54) 0388 4239200</p>
+		</div>
+	</footer>
+
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/init.js"></script>
+		<script type="text/javascript">
+	    var $ = jQuery.noConflict();
+		$(document).ready(function() { 
+  		$('#slidePrincipal').carousel({ interval: 4000, cycle: true });
+		}); 
+		$(document).ready(function() { 
+  		$('#slideHistorico').carousel({ interval: 2000, cycle: true });
+		}); 
+	</script>
+
+
+</body>
+</html>

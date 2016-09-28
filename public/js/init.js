@@ -9,7 +9,7 @@ $(document).ready(function(){
       $(window).scroll(function() {
         // HTML5 proves useful for helping with creating JS functions!
         // also, negative value because we're scrolling upwards                            
-        var yPos = -($window.scrollTop() / $scroll.data('speed'));
+        var yPos = -($window.scrollTop() / $scroll.data('speed'))+650;
          
         // background position
         var coords = '50% '+ yPos + 'px';
@@ -18,6 +18,14 @@ $(document).ready(function(){
         $scroll.css({ backgroundPosition: coords });   
       }); // end window scroll
    });  // end section function
+
+   $.get('http://www.legislaturajujuy.gov.ar/rest/institucion.php/diputados',function(data) {
+      html = '';
+      for(i in data.rows){
+        html += '<div>'+data.rows[i].nombre+'</div>';
+     }
+      console.log(html);
+  });
 }); // close out script
 
 /* Create HTML5 element for IE */

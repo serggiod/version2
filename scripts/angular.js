@@ -96,7 +96,7 @@ var angular      = {
                                                                 else{
 
                                                                     template = angular.templates.script(namecontroller+'.js');
-                                                                    value    = d.replace('\n\t<!-- addcontroller -->',template);
+                                                                    value    = d.replace('\n\t\t<!-- addcontroller -->',template);
                                                                     angular.common.fileWrite(file,value,(e)=>{
                                                                         if(e) angular.messages.successWriteRoute();
                                                                         else angular.messages.errorWriteRoute();
@@ -224,7 +224,7 @@ var angular      = {
                                         angular.common.fileRead(file,(e,d)=>{
                                             if(!e) angular.messages.errorAddController();
                                             else{
-                                                var value = d.replace('\n\t<!-- addcontroller -->',angular.templates.script(controller));
+                                                var value = d.replace('\n\t\t<!-- addcontroller -->',angular.templates.script(controller));
                                                 angular.common.fileWrite(file,value,(e)=>{
                                                     if(!e) angular.messages.errorAddController();
                                                     else{
@@ -351,7 +351,7 @@ var angular      = {
         },
         script:(namecontroller)=>{
             template  = '\n\t\t<script src="controllers/'+namecontroller+'.js"></script>';
-            template += '\n\t<!-- addcontroller -->';
+            template += '\n\t\t<!-- addcontroller -->';
             return template;
         }
 

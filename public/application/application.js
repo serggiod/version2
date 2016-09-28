@@ -8,6 +8,10 @@ angular.module('legislaturaweb',
 	    	.when('/',{
 	    		redirectTo:'/home'
 	    	})
+			.when('/presidencia',{
+				templateUrl:'views/presidenciaView.html',
+				controller:'presidenciaController'
+			})
 			//addroute.
 			.otherwise({redirectTo:'/home'});
 	});

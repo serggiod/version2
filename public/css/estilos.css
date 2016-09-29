@@ -354,19 +354,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', end
 }
 .media-object { width: 64px; height: 64px; padding-bottom: 30px }
 
-.cajaRecinto{	
-	width: 400px;
-	height: 400px;
-}
-.dipAzul{
-	background-color: #2A2E9F;
-	width: 20px;
-	height: 10px;
-	margin:5px 5px;
-	position: absolute;
-	z-index: 3;
-}
-
 /* ZOOM FOTOS */
 .zoom{
 	background-color: #FFFFFF;
@@ -436,30 +423,114 @@ body {
 }
 
 /* TOOLTIPS */
-.tooltip {
+.cajaRecinto{	
+	width: 450px;
+	height: 390px;
+}
+.fotoRecinto{
+	border: 1px solid white;
+	margin:auto;
+}
+.presidenteRecinto{
+	background-color: #25D1CB;
+	height: 15px;
+	position: absolute;
+	text-align: center;
+	width: 50px;
+}
+.bloqueUCR{
+	background-color: #6722A6;
+	width: 30px;
+	height: 15px;
+	position: absolute;
+}
+.bloqueJusticialista{
+	background-color: #000695;
+	width: 30px;
+	height: 15px;
+	position: absolute;
+}
+.bloqueFUyO{
+	background-color: #005600;
+	width: 30px;
+	height: 15px;
+	position: absolute;
+}
+.bloqueFPJ{
+	background-color: #0080B4;
+	width: 30px;
+	height: 15px;
+	position: absolute;
+}
+.bloquePeronista{
+	background-color: #F55004;
+	width: 30px;
+	height: 15px;
+	position: absolute;
+}
+.bloqueIndependiente{
+	background-color: #808080;
+	width: 30px;
+	height: 15px;
+	position: absolute;
+}
+.bloquePresidente{
+	background-color: #000000;
+	border-radius: 50%;
+	border: 1px solid white;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+}
+.lineaPresidente{
+	z-index: 7;
+}
+.lineaRecinto1{
+	z-index: 6;
+}
+.lineaRecinto2{
+	z-index: 5;
+}
+.lineaRecinto3{
+	z-index: 4;
+}
+.lineaRecinto4{
+	z-index: 3;
+}
+.lineaRecinto5{
+	z-index: 2;
+}
+.lineaRecinto6{
+	z-index: 1;
+}
+.tooltipbloque {
     position: absolute;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    border-bottom: 2px solid black;
 }
 
-.tooltip .tooltiptext {
+.tooltipbloque .tooltiptextbloque {
     visibility: hidden;
+    background-color: rgba(225,225,225,0.95); 
     width: 120px;
-    background-color: #eee;
-    background-opacity:0.2;
     color: #000;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
-
-    /* Position the tooltip */
+    padding: 5px;
     position: absolute;
-    z-index: 10;
+    margin: 20px -50px;
+	box-shadow: 5px 5px 7px rgba(0,0,0,0.3);
 }
-
-.tooltip:hover .tooltiptext {
+.tooltipbloque .tooltiptextbloque > div > img{
+	border-radius: 5px;
+	border: 2px solid white;
+	margin: 5px auto;
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+.tooltipbloque:hover .tooltiptextbloque {
     visibility: visible;
 }
+
 
 /* FIJA MENU */
 .affix {

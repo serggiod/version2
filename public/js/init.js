@@ -19,13 +19,6 @@ $(document).ready(function(){
       }); // end window scroll
    });  // end section function
 
-   $.get('http://www.legislaturajujuy.gov.ar/rest/institucion.php/diputados',function(data) {
-      html = '';
-      for(i in data.rows){
-        html += '<div>'+data.rows[i].nombre+'</div>';
-     }
-      console.log(html);
-  });
 }); // close out script
 
 /* Create HTML5 element for IE */

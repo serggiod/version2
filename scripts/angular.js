@@ -350,7 +350,7 @@ var angular      = {
             return template;
         },
         script:(namecontroller)=>{
-            template  = '\n\t\t<script src="controllers/'+namecontroller+'.js"></script>';
+            template  = '\n\t\t<script src="controllers/'+namecontroller+'"></script>';
             template += '\n\t\t<!-- addcontroller -->';
             return template;
         }

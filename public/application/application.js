@@ -1,6 +1,7 @@
 angular.module('legislaturaweb',
 	[
 		'ngRoute'
+		,'mgcrea.ngStrap'
 		//addmodule.
 	])
 	.config(function($routeProvider){

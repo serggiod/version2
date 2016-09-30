@@ -353,6 +353,21 @@ var angular      = {
             template  = '\n\t\t<script src="controllers/'+namecontroller+'"></script>';
             template += '\n\t\t<!-- addcontroller -->';
             return template;
+        },
+        scriptDirective:(namedirective)=>{
+            template  = '\n\t\t<script src="directives/'+namedirective+'"></script>';
+            template += '\n\t\t<!-- adddirective -->';
+            return template;
+        },
+        scriptService:(nameservice)=>{
+            template  = '\n\t\t<script src="services/'+nameservice+'"></script>';
+            template += '\n\t\t<!-- addservice -->';
+            return template;
+        },
+        scriptFactory:(namefactory)=>{
+            template  = '\n\t\t<script src="factories/'+namefactory+'"></script>';
+            template += '\n\t\t<!-- addfactory -->';
+            return template;
         }
 
 

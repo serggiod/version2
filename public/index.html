@@ -12,9 +12,12 @@
 
         <ng-include src="'views/headerView.html'"></ng-include>
 		<ng-include src="'views/mainMenuView.html'"></ng-include>
-		<ng-view></ng-view>
-		<ng-include src="'views/recintoView.html'"></ng-include>
-		<ng-include src="'views/destacadosView.html'"></ng-include>
+		<ng-include src="'views/mediaBarView.html'"></ng-include>
+		<section class="main container marcoPagina"><!-- container principal -->
+			<ng-view></ng-view>
+			<ng-include src="'views/recintoView.html'"></ng-include>
+			<ng-include src="'views/destacadosView.html'"></ng-include>
+		</section><!-- cierre container principal -->
 		<ng-include src="'views/mapaSitioView.html'"></ng-include>
 		<ng-include src="'views/footerView.html'"></ng-include>
 
@@ -35,6 +38,15 @@
 		<!-- Aplicacion Angular: Definicionn -->
 		<script src="application/application.js"></script>
 
+		<!-- Aplicacion Angular: Directivas -->
+		<!-- adddirective -->
+		
+		<!-- Aplicacion Angular: Servicios -->
+		<!-- addservice -->
+
+		<!-- Aplicacion Angular: Factorias -->
+		<!-- addfactory -->
+
 		<!-- Aplicacion Angular: Controladores --> 
 		<script src="controllers/headerController.js"></script>
 		<script src="controllers/mainMenuController.js"></script>
@@ -42,12 +54,14 @@
 		<script src="controllers/presidenciaController.js"></script>
 		<script src="controllers/homeController.js"></script>
 		<script src="controllers/autoridadesController.js"></script>
-		<script src="controllers/diputadosController.js.js"></script>
-		<script src="controllers/orden_del_diaController.js.js"></script>
+		<script src="controllers/diputadosController.js"></script>
+		<script src="controllers/orden_del_diaController.js"></script>
 		<script src="controllers/poder_legislativoController.js"></script>
 		<script src="controllers/bloqueController.js"></script>
 		<script src="controllers/labor_legislativaController.js"></script>
 		<script src="controllers/buscarController.js"></script>
+		<script src="controllers/legislaturaController.js"></script>
+		<script src="controllers/session_en_vivoController.js"></script>
 		<!-- addcontroller -->
 
 		<script src="js/init.js"></script>

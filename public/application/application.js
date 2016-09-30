@@ -44,6 +44,14 @@ angular.module('legislaturaweb',
 				templateUrl:'views/buscarView.html',
 				controller:'buscarController'
 			})
+			.when('/legislatura',{
+				templateUrl:'views/legislaturaView.html',
+				controller:'legislaturaController'
+			})
+			.when('/session_en_vivo',{
+				templateUrl:'views/session_en_vivoView.html',
+				controller:'session_en_vivoController'
+			})
 			//addroute.
 			.otherwise({redirectTo:'/home'});
 	});

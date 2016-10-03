@@ -9,7 +9,9 @@
     "addroute":"node scripts/addroute",
     "addcontroller": "node scripts/addcontroller.js",
     "addview": "node scripts/addview.js",
-    "adddirective": "node scripts/adddircetive.js",
+    "adddirective": "node scripts/adddirective.js",
+    "addservice": "node scripts/addservice.js",
+    "addfactory": "node scripts/addfactory.js",
     "addngmodule":"node scripts/addngmodule.js"
   },
   "repository": {

@@ -8,6 +8,9 @@ var angular      = {
     path:{
         application:basePath+'/public/application/application.js',
         controllers:basePath+'/public/controllers',
+        directives:basePath+'/public/directives',
+        services:basePath+'/public/services',
+        factories:basePath+'/public/factories',
         views:basePath+'/public/views',
         index:basePath+'/public/index.html'
     },
@@ -144,23 +147,23 @@ var angular      = {
     },
 
     addDirective:(name)=>{
-        if(name===undefined || injector===undefined) angular.messages.errorAddDirective();
+        if(name===undefined) angular.messages.errorAddDirective();
         else{
-            angular.common.addDirective(name,injector,()=>{});
+            angular.common.addDirective(name,()=>{});
         }
     },
 
     addFactory:(name)=>{
-        if(name===undefined || injector===undefined) angular.messages.errorAddFactory();
+        if(name===undefined) angular.messages.errorAddFactory();
         else{
-            angular.common.addFactory(name,injector,()=>{});
+            angular.common.addFactory(name,()=>{});
         }
     },
 
     addService:(name)=>{
-        if(name===undefined || injector===undefined) angular.messages.errorAddService();
+        if(name===undefined) angular.messages.errorAddService();
         else{
-            angular.common.addFactory(name,injector,()=>{});
+            angular.common.addService(name,()=>{});
         }
     },
 
@@ -224,7 +227,7 @@ var angular      = {
                                         angular.common.fileRead(file,(e,d)=>{
                                             if(!e) angular.messages.errorAddController();
                                             else{
-                                                var value = d.replace('\n\t\t<!-- addcontroller -->',angular.templates.script(controller));
+                                                var value = d.replace('\n\t\t<!-- addcontroller -->',angular.templates.script(controller+'.js'));
                                                 angular.common.fileWrite(file,value,(e)=>{
                                                     if(!e) angular.messages.errorAddController();
                                                     else{
@@ -268,24 +271,123 @@ var angular      = {
             }
         },
 
-        addDirective:(name,injector,callback)=>{
-            if(name===undefined || injector===undefined || callback===undefined) angular.messages.errorAddDirective();
+        addDirective:(name,callback)=>{
+            if(name===undefined || callback===undefined) angular.messages.errorAddDirective();
             else{
-                angular.messages.successAddDirective();
+                angular.common.fileRead(angular.path.application,(e,d)=>{
+                    if(e){
+                        init = d.indexOf("('") +2;
+                        end  = d.indexOf("',");
+                        var nameapp     = d.substring(init,end);
+                        var directive = name+'Directive';
+                        var file  = angular.path.directives+'/'+directive+'.js';
+                        var value = angular.templates.directive(nameapp,directive);
+                        angular.common.fileExist(file,(e)=>{
+                            if(e) angular.messages.errorAddDirective();
+                            else{
+                                angular.common.fileWrite(file,value,(e)=>{
+                                    if(!e) angular.messages.errorAddDirective();
+                                    else{
+                                        var file  = angular.path.index;
+                                        angular.common.fileRead(file,(e,d)=>{
+                                            if(!e) angular.messages.errorAddDirective();
+                                            else{
+                                                var value = d.replace('\n\t\t<!-- adddirective -->',angular.templates.scriptDirective(directive+'.js'));
+                                                angular.common.fileWrite(file,value,(e)=>{
+                                                    if(!e) angular.messages.errorAddDirective();
+                                                    else{
+                                                        angular.messages.successAddDirective();
+                                                        callback();
+                                                    }
+                                                });
+                                            }
+                                        })
+                                    }
+                                });
+                            } 
+                        });
+                    }           
+                });
             }
         },
 
-        addFactory:(name,injector,callback)=>{
-            if(name===undefined || injector===undefined || callback===undefined) angular.messages.errorAddFactory();
+        addFactory:(name,callback)=>{
+            if(name===undefined || callback===undefined) angular.messages.errorAddFactory();
             else{
-                angular.messages.successAddFactory();
+                angular.common.fileRead(angular.path.application,(e,d)=>{
+                    if(e){
+                        init = d.indexOf("('") +2;
+                        end  = d.indexOf("',");
+                        var nameapp     = d.substring(init,end);
+                        var factory = name+'Factory';
+                        var file  = angular.path.factories+'/'+factory+'.js';
+                        var value = angular.templates.factory(nameapp,factory);
+                        angular.common.fileExist(file,(e)=>{
+                            if(e) angular.messages.errorAddFactory();
+                            else{
+                                angular.common.fileWrite(file,value,(e)=>{
+                                    if(!e) angular.messages.errorAddFactory();
+                                    else{
+                                        var file  = angular.path.index;
+                                        angular.common.fileRead(file,(e,d)=>{
+                                            if(!e) angular.messages.errorAddFactory();
+                                            else{
+                                                var value = d.replace('\n\t\t<!-- addfactory -->',angular.templates.scriptFactory(factory+'.js'));
+                                                angular.common.fileWrite(file,value,(e)=>{
+                                                    if(!e) angular.messages.errorAddFactory();
+                                                    else{
+                                                        angular.messages.successAddFactory();
+                                                        callback();
+                                                    }
+                                                });
+                                            }
+                                        })
+                                    }
+                                });
+                            } 
+                        });
+                    }           
+                });
             }
         },
 
         addService:(name,callback)=>{
-            if(name===undefined || injector===undefined || callback===undefined) angular.messages.errorAddService();
+            if(name===undefined || callback===undefined) angular.messages.errorAddService();
             else{
-                angular.messages.successAddService();
+                angular.common.fileRead(angular.path.application,(e,d)=>{
+                    if(e){
+                        init = d.indexOf("('") +2;
+                        end  = d.indexOf("',");
+                        var nameapp     = d.substring(init,end);
+                        var service = name+'Service';
+                        var file  = angular.path.services+'/'+service+'.js';
+                        var value = angular.templates.service(nameapp,service);
+                        angular.common.fileExist(file,(e)=>{
+                            if(e) angular.messages.errorAddService();
+                            else{
+                                angular.common.fileWrite(file,value,(e)=>{
+                                    if(!e) angular.messages.errorAddService();
+                                    else{
+                                        var file  = angular.path.index;
+                                        angular.common.fileRead(file,(e,d)=>{
+                                            if(!e) angular.messages.errorAddService();
+                                            else{
+                                                var value = d.replace('\n\t\t<!-- addservice -->',angular.templates.scriptService(service+'.js'));
+                                                angular.common.fileWrite(file,value,(e)=>{
+                                                    if(!e) angular.messages.errorAddService();
+                                                    else{
+                                                        angular.messages.successAddService();
+                                                        callback();
+                                                    }
+                                                });
+                                            }
+                                        })
+                                    }
+                                });
+                            } 
+                        });
+                    }           
+                });
             }
         }
      
@@ -347,6 +449,29 @@ var angular      = {
         },
         view:(namecontroller)=>{
             template  = "Ingrese aqui el c&oacute;digo html del controlador "+namecontroller+".";
+            return template;
+        },
+        directive:(app,name)=>{
+            template  = 'angular';
+            template += "\n\t\t.module('"+app+"')";
+            template += "\n\t\t.directive('"+name+"',function(){";
+            template += "\n\t\t\treturn{";
+            template += "\n\t\t\t};"
+            template += "\n\t\t});";
+            return template;
+        },
+        service:(app,name)=>{
+            template  = 'angular';
+            template += "\n\t\t.module('"+app+"')";
+            template += "\n\t\t.service('"+name+"',function(){";
+            template += "\n\t\t});";
+            return template;
+        },
+        factory:(app,name)=>{
+            template  = 'angular';
+            template += "\n\t\t.module('"+app+"')";
+            template += "\n\t\t.factory('"+name+"',function(){";
+            template += "\n\t\t});";
             return template;
         },
         script:(namecontroller)=>{

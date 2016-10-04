@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Legislatura de Jujuy</title> 
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/estilos.css" rel="stylesheet" media="screen">
+
+  </head>
+  <body>
+  <div id="contenedor" class="container"> <!-- contenedor principal -->
+
+    <header>
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="nav-header">
+          <<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-lg">
+            <span class="sr-only">Desplegar / Ocultar Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Menu</a>
+        </div>
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navegacion-lg">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="#">Institucional</a></li>
+            <li><a href="#">Autoridades</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Bloques <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">UCR</a></li>
+                <li class="divider"></li>
+                <li><a href="#">FPV</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Busqueda -->
+          <<form action="" class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Buscar">
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+      <div id="cabezal" class="container"> <!-- header -->
+        <div class="row cabezal"> <!-- slide -->
+          <div id="carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="images/slide01.jpg">
+              </div>
+              <div class="item">
+                <img src="images/slide02.jpg">
+              </div>
+              <div class="item">
+                <img src="images/slide03.jpg">
+              </div>
+            </div>
+          </div> 
+        </div> <!-- cierra slide -->
+
+    <div class="container-fluid"> <!--contenedor logo -->
+      <div class="row" height="390">
+        <div class="col-lg-3 col-md-4 fondoLogo">
+            <img class="logo" src="images/logo.png" width="150" height="auto" alt="Legislatura de Jujuy">
+        </div>
+
+        <div class="container col-lg-2 col-lg-offset-2 col-md-3 col-md-offset-1 bg-warning hidden-sm hidden-xs">
+          <h3>Legislatura</h3>
+        </div>
+
+        <div class="container col-md-2 col-md-offset-1 bg-danger hidden-sm hidden-xs">
+          <h3>de Jujuy</h3>
+        </div>
+
+        <div class="container col-md-1 col-md-offset-1 hidden-sm hidden-xs">
+          <button class="btn btn-primary btnSILeJu">
+            <p>SILeJu</p>
+          </button>
+          <button class="btn btn-danger btnWebMail">
+            <p>WebMail</p>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    </div> <!-- cierra contenedor logo -->
+
+    </div> <!-- cierra header -->
+
+  </div> <!-- cierra contenedor principal -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+</html>

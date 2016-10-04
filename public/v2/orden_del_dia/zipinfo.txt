@@ -1,0 +1,5 @@
+Ez a ZIP archívum PHP-vel készült.
+A ZIP osztályt készítette: Mágus (phpmagus@gmail.com)
+Web: http://alfazonesoft.ath.cx
+
+A fájl elkészült: 2016.09.28. 15:34:13

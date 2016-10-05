@@ -58,6 +58,10 @@ angular.module('legislaturaweb',
 				templateUrl:'views/session_en_vivoView.html',
 				controller:'session_en_vivoController'
 			})
+			.when('/actividad/:dia/:mes/:anio',{
+				templateUrl:'views/actividadView.html',
+				controller:'actividadController'
+			})
 			//addroute.
 			.otherwise({redirectTo:'/home'});
 	});

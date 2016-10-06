@@ -20,7 +20,7 @@ a:link {
 
 /* CABEZAL*/
 .cabezal {
-	height: 220px;
+	height: 260px;
 }
 
 .fondoLogo{
@@ -32,11 +32,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	border: 1px;	
 	text-align: center;
 	width: 250px;
-	height: 220px;
+	height: 260px;
 	/*box-shadow: 0 0 5px rgba(0,0,0,0.5);*/
 }
 .fecha{
-	background-color: rgba(51,122,183,0.9);
+	background-color: #BD4E3A;
 	font-family: 'Fjalla One', sans-serif;
 	font-size: 16px;
 	color:#eee;
@@ -46,7 +46,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	padding:0px 100px 20px 0px;
 }
 .logo{
-	margin:30px auto;
+	margin:60px auto;
 }
 .btnSILeJu{
 	margin:150px 0;
@@ -78,12 +78,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	border-radius: 20px;
 	transition: all 500ms ease;
 }
+.franja{
+	background-color: #00B9FF;
+	height: 30px;
+}
 
 /* MENU */
-
 .navbar{
     width: 100%;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
 }
 
 /* TEXTOS */
@@ -105,13 +108,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	/*font-family: 'Hind', sans-serif;*/
 	font-family: 'Arial', sans-serif;
 	font-size: 14px;
+	color:#000;
 }
 .textoBoletin{
 	font-family: Arial;
 	font-size:16px;
 }
 .tituloMapa{
-	background-color: #808080;
+	background-color: #BD4E3A;
 	color:#fff;
 	font-family: 'Hind', sans-serif;
 	font-size: 14px;
@@ -160,7 +164,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	padding:15px;
 }
 #scrollBoletin div{
-	background-color: #EEEEEE;
+	background-color: #D8E2ED;
 	margin-top: 3px;
 	margin-left: -40px;
 }
@@ -171,6 +175,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	box-shadow: -8px 8px 15px rgba(0,0,0,0.15);
 	transition: all 500ms ease;
 }
+
 #scrollBoletin {
     list-style:none;
 }
@@ -280,11 +285,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 /* BOTONES */
 .cajaBotonesGrandes{
-background: -moz-linear-gradient(top,  rgba(51,122,183,0.9) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(51,122,183,0.9) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(51,122,183,0.9) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-	height: 290px;
+/*background: -moz-linear-gradient(top,  rgba(51,122,183,0.9) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+/*background: -webkit-linear-gradient(top,  rgba(51,122,183,0.9) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+/*background: linear-gradient(to bottom,  rgba(51,122,183,0.9) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+	height: 340px;
 	margin: auto 0px;
 	width: 100%;
 }
@@ -294,11 +299,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', end
 	background-size: 100%;
 	border-radius: 50%;
 	border: 3px solid #eee;
-	height: 200px;
-	margin: 15px 0px;
+	height: 220px;
+	margin: 30px 0px;
 	opacity: 30%;
 	padding: 10;
-	width: 200px;
+	width: 220px;
 }
 .btnPresidencia:hover{
 	background-image: url("../images/haquim.jpeg");
@@ -307,12 +312,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', end
 	border-radius: 50%;
 	border: 3px solid #eee;
 	box-shadow: 8px -8px 15px rgba(0,0,0,0.15);
-	height: 230px;
-	margin: 0px 0px;
+	height: 260px;
+	margin: 10px 0px;
 	opacity: 100%;
 	padding: 10;
 	transition: all 500ms ease;
-	width: 230px;
+	width: 260px;
 }
 .btnLegislatura{
 	background-image: url("../images/legislatura.jpg");
@@ -320,10 +325,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', end
 	background-position: center;
 	border-radius: 50%;
 	border: 3px solid #eee;
-	height: 200px;
-	margin: 15px 0px;
+	height: 220px;
+	margin: 30px 0px;
 	padding: 10;
-	width: 200px;
+	width: 220px;
 }
 .btnLegislatura:hover{
 	background-image: url("../images/legislatura.jpg");
@@ -332,11 +337,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', end
 	border-radius: 50%;
 	border: 3px solid #eee;
 	box-shadow: 8px -8px 15px rgba(0,0,0,0.15);
-	height: 230px;
-	margin: 0px 0px;
+	height: 260px;
+	margin: 10px 0px;
 	padding: 10;
 	transition: all 500ms ease;
-	width: 230px;
+	width: 260px;
 }
 .btnSesion{
 	background-image: url("../images/play.svg");
@@ -344,10 +349,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', end
 	background-position: center;
 	border-radius: 50%;
 	border: 3px solid #eee;
-	height: 200px;
-	margin: 15px 0px;
+	height: 220px;
+	margin: 30px 0px;
 	padding: 10;
-	width: 200px;
+	width: 220px;
 }
 .btnSesion:hover{
 	background-image: url("../images/play.svg");
@@ -357,11 +362,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', end
 	border-radius: 50%;
 	border: 3px solid #eee;
 	box-shadow: 8px -8px 15px rgba(0,0,0,0.15);
-	height: 230px;
-	margin: 0px 0px;
+	height: 260px;
+	margin: 10px 0px;
 	padding: 10;
 	transition: all 500ms ease;
-	width: 230px;
+	width: 260px;
 }
 .row.lineaVertical{
 	overflow: hidden;
@@ -442,20 +447,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', end
 /* ZOOM FOTOS */
 .zoom{
 	background-color: #FFFFFF;
-	/*border:1px solid #eee;*/
+	border:4px solid #fff;
 	overflow:hidden;
 	padding: 3px;
 }
 .zoom:Hover{
-	/*border:1px solid #eee;*/
+	border:4px solid #BD4E3A;
 	box-shadow: 0 0 5px rgba(0,0,0,0.4);
 	padding: 3px;
 }
 .zoom img {
-	transition: 2s ease;
-	-moz-transition: 2s ease; /* Firefox */
-	-webkit-transition: 2s ease; /* Chrome - Safari */
-	-o-transition: 2s ease; /* Opera */
+	transition: 1s ease;
+	-moz-transition: 1s ease; /* Firefox */
+	-webkit-transition: 1s ease; /* Chrome - Safari */
+	-o-transition: 1s ease; /* Opera */
 }
 .zoom:Hover img {
 	transform : scale(1.25);
@@ -473,7 +478,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#337ab7', end
 /* SLIDE */
 html,
 body {
-    height: 220px;
+    height: 260px;
 }
 #slideHistorico {
 	height: 220px;

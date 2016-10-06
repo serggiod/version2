@@ -1,6 +1,8 @@
 angular
 		.module('legislaturaweb')
 		.controller('homeController',function($scope,$http){
+			
+			// función inicializadora.
 			$scope.init = ()=>{
 
 				$('#scrollBoletin').marquee({
@@ -18,6 +20,13 @@ angular
 					.get('/rest/version2.php/actividad')
 					.success((json)=>{ if(json.result) $scope.actividad = json.rows; });
 			};
+
+			// Modal de actividad del día.
+			$scope.modal = {
+				'title'   : 'Title',
+				'content' : 'Hello Modal<br />This is a multiline message!'
+			};
+
 			$scope.init();
 
 		});

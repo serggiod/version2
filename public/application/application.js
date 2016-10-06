@@ -2,6 +2,7 @@ angular.module('legislaturaweb',
 	[
 		'ngRoute'
 		,'mgcrea.ngStrap'
+		,'angular-marquee'
 		//addmodule.
 	])
 	.config(function($routeProvider,$httpProvider){

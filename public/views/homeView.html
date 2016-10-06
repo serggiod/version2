@@ -4,82 +4,41 @@
 			<article>
 				<div class="row clearfix">
 					<div class="container col-xs-12 col-md-9">
+
+						<!-- Widget: Actualidad -->
 						<div class="container col-xs-12 col-md-4">
 							<p class="tituloSeccion visible-xs visible-lg">Actividad del d&iacute;a</p>
 							<p class="tituloSeccion visible-sm visible-md">Actividad d&iacute;a</p>
 							<div class="actividadDia">
 								<div class="zoom">
-									<a href="#" data-toggle="modal" data-target="#actividad"><img class="img-responsive" src="{{actividad.archivo}}"></a>
+									<a ng-click="showModalActivad()" style="cursor:pointer;">
+										<img class="img-responsive" src="{{actividad.archivo}}">
+									</a>
 								</div>
 								<div class="linea"></div>
-								<a href="#" data-toggle="modal" data-target="#actividad"><p class="titulo" style="color:#fff;">{{actividad.nombre}}</p></a>
-								<p class="texto text-justify">{{actividad.descrip}}</p>
+								<a  ng-click="showModalActivad()"  style="cursor:pointer;">
+									<p class="titulo" style="color:#fff;">
+										{{actividad.nombre}}
+									</p>
+								</a>
+								<p class="texto text-justify">
+									{{actividad.descrip}}
+								</p>
+							</div>
+						</div>
+						<!-- /Widget: Actividad -->
 
-							</div>
-						</div>
-						<div id="actividad" class="modal fade" role="dialog">
-							<div class="modal-dialog modal-lg">
-							    <div class="modal-content">
-									<div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal">&times;</button>
-								        <h4 class="modal-title">Actividad del D&iacute;a</h4>
-								    </div>
-								    <div class="container modal-body">
-								    	<img class="img-responsive" src="{{actividad.archivo}}" width="800"></img>
-      									<p class="titulo">{{actividad.nombre}}</p>
-										<div class="container text-justify">
-											<table border="1px" width="70%">
-											    <thead>
-											      <tr>
-											        <th>Fecha</th>
-											        <th>Hora</th>
-											        <th>Contenido</th>
-											        <th>Requisitos</th>
-											      </tr>
-											    </thead>
-											    <tbody>
-											      <tr>
-											        <td>{{actividad.fecha}}</td>
-											        <td>{{actividad.hora}}</td>
-											        <td>{{actividad.descrip}}</td>
-											        <td>{{actividad.requi}}</td>
-											      </tr>
-											    </tbody>
-											</table>
-										</div>
-							    	  </div>
-							      	<div class="modal-footer">
-							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							      	</div>
-							    </div>
-							</div>
-						</div>
+						<!-- Widget: Boletín Legislativo. -->
 						<div class="container col-xs-12 col-md-8">
 							<p class="tituloSeccion">Bolet&iacute;n Legislativo</p>
 							<div class="cajaBoletin">
-								<ul id="scrollBoletin">
-									<li>
+								<ul id="scrollBoletin" angular-marquee scroll="scroll" duration="duration">
+									<li ng-repeat="b in boletin">
 										<a href="" data-toggle="modal" data-target="#boletin01"><div class="container">
-											<p class="titulo">BOLETÍN LEGISLATIVO N° 01/16</p>
-											<p class="text-justify texto">Periodo Legislativo: 155° - Año: 2016</p>
-											<p class="text-justify texto">Sesión N° y Tipo: 18ª Sesión Ordinaria</p>
-											<p class="text-justify texto">Fecha: 01-09-16  Horas: 17:04 - 19:35</p>
-										</div></a>
-									</li>
-									<li>
-										<a href="" data-toggle="modal" data-target="#boletin01"><div class="container">
-											<p class="titulo">BOLETÍN LEGISLATIVO N° 02/16</p>
-											<p class="text-justify texto">Periodo Legislativo: 155° - Año: 2016</p>
-											<p class="text-justify texto">Sesión N° y Tipo: 18ª Sesión Ordinaria</p>
-											<p class="text-justify texto">Fecha: 01-09-16  Horas: 17:04 - 19:35</p>
-										</div></a>
-									</li>
-									<li>
-										<a href="" data-toggle="modal" data-target="#boletin01"><div class="container">
-											<p class="titulo">BOLETÍN LEGISLATIVO N° 03/16</p>
-											<p class="text-justify texto">Periodo Legislativo: 155° - Año: 2016</p>
-											<p class="text-justify texto">Sesión N° y Tipo: 18ª Sesión Ordinaria</p>
-											<p class="text-justify texto">Fecha: 01-09-16  Horas: 17:04 - 19:35</p>
+											<p class="titulo">BOLETÍN LEGISLATIVO {{b.titulo}}</p>
+											<p class="text-justify texto">Periodo Legislativo: {{b.periodo}}</p>
+											<p class="text-justify texto">Sesión N° y Tipo: {{b.session}}</p>
+											<p class="text-justify texto">Fecha: {{b.fecha}}  Horas: {{b.horas}}</p>
 										</div></a>
 									</li>
 								</ul>
@@ -93,6 +52,8 @@
 
 							</div>
 						</div>
+						<!-- /Widget: Boletín Legislativo. -->
+						
 					</div>
 					<div id="boletin01" class="modal fade" role="dialog">
 							<div class="modal-dialog modal-lg">

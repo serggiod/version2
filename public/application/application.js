@@ -2,7 +2,6 @@ angular.module('legislaturaweb',
 	[
 		'ngRoute'
 		,'mgcrea.ngStrap'
-		,'angular-marquee'
 		//addmodule.
 	])
 	.config(function($routeProvider,$httpProvider){
@@ -62,6 +61,10 @@ angular.module('legislaturaweb',
 			.when('/actividad/:dia/:mes/:anio',{
 				templateUrl:'views/actividadView.html',
 				controller:'actividadController'
+			})
+			.when('/buscarBoletin',{
+				templateUrl:'views/buscarBoletinView.html',
+				controller:'buscarBoletinController'
 			})
 			//addroute.
 			.otherwise({redirectTo:'/home'});

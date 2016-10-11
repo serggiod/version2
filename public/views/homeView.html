@@ -32,9 +32,9 @@
 						<div class="container col-xs-12 col-md-8">
 							<p class="tituloSeccion">Bolet&iacute;n Legislativo</p>
 							<div class="cajaBoletin">
-								<ul id="scrollBoletin" angular-marquee scroll="scroll" duration="duration">
+								<ul id="scrollBoletin">
 									<li ng-repeat="b in boletin">
-										<a href="" data-toggle="modal" data-target="#boletin01"><div class="container">
+										<a ng-click="showModalBoletin(b.titulo)" style="cursor:pointer;">
 											<p class="titulo">BOLETÍN LEGISLATIVO {{b.titulo}}</p>
 											<p class="text-justify texto">Periodo Legislativo: {{b.periodo}}</p>
 											<p class="text-justify texto">Sesión N° y Tipo: {{b.session}}</p>
@@ -44,64 +44,19 @@
 								</ul>
 							</div>
 							<div class="pull-right espacioSuperior">
-								<button type="button" class="btn btn-info" data-toggle="modal" data-target="#infoBoletin">Informaci&oacute;n <span class="glyphicon glyphicon-info-sign""/></button>
-								<!-- <input class="datepicker" type="text" id="fecha" size="10" placeholder="Ingresar fecha">
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#boletin01">Buscar por fecha <span class="glyphicon glyphicon-calendar"></span></button>-->
-
-								<a href="boletin.html"><button type="button" class="btn btn-primary">Buscar por fecha <span class="glyphicon glyphicon-calendar""/></button></a>
-
+								<button ng-click="showModalBoletinInfo()" type="button" class="btn btn-info">
+									Informaci&oacute;n
+									<span class="glyphicon glyphicon-info-sign"/>
+								</button>
+								<button ng-click="gotoBuscarBoletin()"    type="button" class="btn btn-primary">
+										Buscar por fecha
+										<span class="glyphicon glyphicon-calendar"></span>
+								</button>
 							</div>
 						</div>
 						<!-- /Widget: Boletín Legislativo. -->
 						
 					</div>
-					<div id="boletin01" class="modal fade" role="dialog">
-							<div class="modal-dialog modal-lg">
-							    <div class="modal-content">
-
-									<div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal">&times;</button>
-								    </div>
-								      <div class="container modal-body">
-										<div class="container container col-xs-12 col-sm-9 col-md-11 col-lg-9 texto text-justify">
-											<object type="application/pdf" data="boletin/boletin_ejemplo.pdf" width="100%" height="500" style="height: 85vh;"></object>
-										</div>
-							    	  </div>
-							      	<div class="modal-footer">
-							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							      	</div>
-							    </div>
-							</div>
-						</div>
-
-					<div id="infoBoletin" class="modal fade" role="dialog">
-							<div class="modal-dialog modal-lg">
-							    <div class="modal-content">
-									<div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal">&times;</button>
-								        <p class="tituloSeccion">Bolet&iacute;n Legislativo</p>
-								    </div>
-								      <div class="container modal-body">
-										<div class="container container col-xs-12 col-sm-9 col-md-11 col-lg-9 texto text-justify">
-											<table width=100%>
-												<tr>
-													<td>
-														<p>El Boletín Legislativo se publica por decisión de las autoridades de la Legislatura de facilitar el acceso a la información pública y de difundir a la brevedad las normativas (leyes, resoluciones, declaraciones, pedidos de informes, etc.) aprobadas y sancionadas en las sesiones de la Cámara.
-														La periodicidad del Boletín será semanal y estará disponible en esta página web, el día subsiguiente a la realización de la sesión respectiva.
-														Los temas citados en cada ejemplar se los pueden encontrar ingresando a Asuntos Entrados y en el respectivo Diario de Sesiones aprobado, que contiene el desarrollo completo de cada reunión de la Cámara.
-														El diario de sesiones digital no solo tiene un Sumario que es la síntesis de los asuntos tratados, sino que además presenta Enlaces a copia del texto original de todos los documentos y a las deliberaciones de los temas considerados en la sesión.
-														Cuando se considere de interés para la comunidad, se incluirán otras disposiciones e informaciones.</p>
-													</td>
-												</tr>
-											</table>
-										</div>
-							    	  </div>
-							      	<div class="modal-footer">
-							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							      	</div>
-							    </div>
-							</div>
-						</div>
 
 					<aside> <!-- Marcos Paz -->
 						<div class="container col-xs-12 col-md-3">

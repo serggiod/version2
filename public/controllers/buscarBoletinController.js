@@ -3,6 +3,8 @@ angular
 		.controller('buscarBoletinController',function($scope,$http){
 			// Función inicializadora.
 			($scope.init=()=>{
+				// Mostrar media bar.
+				$('#mediaBar').hide();
 				$scope.boletinShow = false;
 			})();
 

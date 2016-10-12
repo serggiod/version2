@@ -1,118 +1,17 @@
-	<section class="main container marcoPagina">
-		
-		<section> <!-- Actividad del dia y boletin oficial -->
-			<article>
-				<div class="row clearfix">
-					<div class="container col-xs-12 col-md-9">
-
-						<!-- Widget: Actualidad -->
-						<div class="container col-xs-12 col-md-4">
-							<p class="tituloSeccion visible-xs visible-lg">Actividad del d&iacute;a</p>
-							<p class="tituloSeccion visible-sm visible-md">Actividad d&iacute;a</p>
-							<div class="actividadDia">
-								<div class="zoom">
-									<a ng-click="showModalActivad()" style="cursor:pointer;">
-										<img class="img-responsive" src="{{actividad.archivo}}">
-									</a>
-								</div>
-								<div class="linea"></div>
-								<a  ng-click="showModalActivad()"  style="cursor:pointer;">
-									<p class="titulo" style="color:#fff;">
-										{{actividad.nombre}}
-									</p>
-								</a>
-								<p class="texto text-justify">
-									{{actividad.descrip}}
-								</p>
-							</div>
-						</div>
-						<!-- /Widget: Actividad -->
-
-						<!-- Widget: Boletín Legislativo. -->
-						<div class="container col-xs-12 col-md-8">
-							<p class="tituloSeccion">Bolet&iacute;n Legislativo</p>
-							<div class="cajaBoletin">
-								<ul id="scrollBoletin">
-									<li ng-repeat="b in boletin">
-										<a ng-click="showModalBoletin(b.titulo)" style="cursor:pointer;">
-											<p class="titulo">BOLETÍN LEGISLATIVO {{b.titulo}}</p>
-											<p class="text-justify texto">Periodo Legislativo: {{b.periodo}}</p>
-											<p class="text-justify texto">Sesión N° y Tipo: {{b.session}}</p>
-											<p class="text-justify texto">Fecha: {{b.fecha}}  Horas: {{b.horas}}</p>
-										</div></a>
-									</li>
-								</ul>
-							</div>
-							<div class="pull-right espacioSuperior">
-								<button ng-click="showModalBoletinInfo()" type="button" class="btn btn-info">
-									Informaci&oacute;n
-									<span class="glyphicon glyphicon-info-sign"/>
-								</button>
-								<button ng-click="gotoBuscarBoletin()"    type="button" class="btn btn-primary">
-										Buscar por fecha
-										<span class="glyphicon glyphicon-calendar"></span>
-								</button>
-							</div>
-						</div>
-						<!-- /Widget: Boletín Legislativo. -->
-						
-					</div>
-
-					<aside> <!-- Marcos Paz -->
-						<div class="container col-xs-12 col-md-3">
-							<p class="tituloSeccion hidden-md">Sal&oacuten Marcos Paz</p>
-							<p class="tituloSeccion visible-sm visible-md">Marcos Paz</p>
-							<div class="marcosPaz">
-								<div class="zoom">
-									<a href="#" data-toggle="modal" data-target="#marcosPaz"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-46888100-1474373928-DSC_1448.JPG"></a>
-								</div>
-								<div class="linea"></div>
-								<a href="#" data-toggle="modal" data-target="#marcosPaz"><p class="titulo">EL VICEGOBERNADOR ACOMPAÑÓ A LA JUVENTUD EN LA ELECCIÓN PROVINCIAL</p></a>
-							</div>
-						</div>
-					</aside>
-
-					<div id="marcosPaz" class="modal fade" role="dialog">
-							<div class="modal-dialog modal-lg">
-							    <div class="modal-content">
-									<div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal">&times;</button>
-								        <h4 class="modal-title">Sal&oacute;n Marcos Paz</h4>
-								      </div>
-								      <div class="container modal-body">
-								      	<img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-46888100-1474373928-DSC_1448.JPG" width="800"></img>
-      									<p class="titulo">Nombre de la Actividad</p>
-										<div class="container text-justify">
-											<table border="1px" width="70%">
-											    <thead>
-											      <tr>
-											        <th>Fecha</th>
-											        <th>Hora</th>
-											        <th>Contenido</th>
-											        <th>Requisitos</th>
-											      </tr>
-											    </thead>
-											    <tbody>
-											      <tr>
-											        <td>25/09/2016</td>
-											        <td>20.30hs.</td>
-											        <td>Descripci&oacute;n de la actividad</td>
-											        <td>Requisitos para participar</td>
-											      </tr>
-											    </tbody>
-											</table>
-										</div>
-							    	  </div>
-							      	<div class="modal-footer">
-							        	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							      	</div>
-							    </div>
-							</div>
-					</div>
-				</div>
-			</article>
-			
-		</section> <!-- Cierre actividad del dia y boletin oficial -->
+<!-- Widgets: Actividad del Dia, Boletin y Marcos Paz. -->
+<section>
+	<div class="row clearfix">
+		<div class="container col-md-9 col-xs-12">
+			<!-- Widget: Actualidad -->
+			<ng-include src="'views/home/widgets/actividad.del.dia.html'"></ng-include>
+			<!-- Widget: Boletín Legislativo. -->
+			<ng-include src="'views/home/widgets/boletin.legislativo.html'"></ng-include>
+			<!-- Widget: Marcos Paz -->
+			<ng-include src="'views/home/widgets/marcos.paz.html'"></ng-include>
+		</div>
+	</div>
+</section>
+<!-- /Widgets: Actividad del Dia, Boletin y Marcos Paz. -->
 
 		<div class="row"> <!--Row de Noticias y Archivo historico -->
 

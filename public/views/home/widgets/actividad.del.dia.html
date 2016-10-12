@@ -1,0 +1,22 @@
+<!-- Widget: Actualidad -->
+<div class="container col-xs-12 col-md-4">
+    <p class="tituloSeccion visible-xs visible-lg">Actividad del d&iacute;a</p>
+    <p class="tituloSeccion visible-sm visible-md">Actividad d&iacute;a</p>
+    <div class="actividadDia">
+        <div class="zoom">
+            <a ng-click="showModalActivad()" style="cursor:pointer;">
+                <img class="img-responsive" src="{{actividad.archivo}}">
+            </a>
+        </div>
+        <div class="linea"></div>
+        <a  ng-click="showModalActivad()"  style="cursor:pointer;">
+            <p class="titulo" style="color:#fff;">
+                {{actividad.nombre}}
+            </p>
+        </a>
+        <p class="texto text-justify">
+            {{actividad.descrip}}
+        </p>
+    </div>
+</div>
+<!-- /Widget: Actividad -->

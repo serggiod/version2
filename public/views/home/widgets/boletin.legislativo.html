@@ -1,0 +1,27 @@
+<!-- Widget: Boletín Legislativo. -->
+<div class="container col-xs-12 col-md-8">
+    <p class="tituloSeccion">Bolet&iacute;n Legislativo</p>
+    <div class="cajaBoletin">
+        <ul id="scrollBoletin">
+            <li ng-repeat="b in boletin">
+                <a ng-click="showModalBoletin(b.titulo)" style="cursor:pointer;">
+                    <p class="titulo">BOLETÍN LEGISLATIVO {{b.titulo}}</p>
+                    <p class="text-justify texto">Periodo Legislativo: {{b.periodo}}</p>
+                    <p class="text-justify texto">Sesión N° y Tipo: {{b.session}}</p>
+                    <p class="text-justify texto">Fecha: {{b.fecha}}  Horas: {{b.horas}}</p>
+                </div></a>
+            </li>
+        </ul>
+    </div>
+    <div class="pull-right espacioSuperior">
+        <button ng-click="showModalBoletinInfo()" type="button" class="btn btn-info">
+            Informaci&oacute;n
+            <span class="glyphicon glyphicon-info-sign"/>
+        </button>
+        <button ng-click="gotoBuscarBoletin()"    type="button" class="btn btn-primary">
+                Buscar por fecha
+                <span class="glyphicon glyphicon-calendar"></span>
+        </button>
+    </div>
+</div>
+<!-- /Widget: Boletín Legislativo. -->

@@ -1,35 +1,55 @@
-	<header id="slidePrincipal" class="carousel slide">
-        <div class="carousel-inner" style="float: left;">
-            <div class="item active">
-                <div class="fill" style="background-image:url('images/slide01.jpg');"></div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('images/slide02.jpg');"></div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('images/slide03.jpg');"></div>
+<!-- Header -->
+<header
+    ng-controller="headerController"
+    id="slidePrincipal"
+    class="carousel slide">
+    
+    <!-- Slides -->
+    <div
+        class="carousel-inner"
+        style="float:left;">
+        <!-- Slide 1:default -->
+        <div
+            class="item active">
+            <div
+                class="fill"
+                style="background-image:url('images/slide01.jpg');">
             </div>
         </div>
+        <!-- Slide 2 -->
+        <div
+            class="item">
+            <div
+                class="fill"
+                style="background-image:url('images/slide02.jpg');">
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div
+            class="item">
+            <div
+                class="fill"
+                style="background-image:url('images/slide03.jpg');">
+            </div>
+        </div>
+    </div>
+    <!-- /Slides -->
 
-		<!-- Controles Slide
-        <a class="left carousel-control" href="#slidePrincipal" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#slidePrincipal" data-slide="next">
-            <span class="icon-next"></span>
-        </a> -->
-		
-		<!--<div class="row" style="position:absolute; margin: 170px 0px 10px 750px; z-index: 1;">
-			<button class="btn btn-danger">SILeJu</button>
-		</div>
-		<div class="row" style="position:absolute; margin: 170px 0px 10px 850px; z-index: 1;">
-			<a href="#"><div class="btnWebMail">WebMail</div></a>
-		</div>-->
-    	<!--<div class="row" style="position: absolute; margin: 0px 0px 0px 150px; z-index: 1;">-->
-    	<div class="row" style="position: absolute; margin: 0px 0px 0px 150px; z-index: 1;">
-    		<div class="col-xs-12 fondoLogo">
-		        <img class="logo" src="images/logoesc1.png" width="220" height="auto" alt="Legislatura de Jujuy">
-		    </div>
-	    </div> <!-- cierra contenedor logo -->
+    <!-- Logo -->
+    <div
+        class="row"
+        style="position: absolute; margin: 0px 0px 0px 150px; z-index: 1;">
+        <div
+            class="col-xs-12 fondoLogo">
+            <img
+                class="logo"
+                src="images/logoesc1.png"
+                width="220"
+                height="auto"
+                alt="Legislatura de Jujuy"/>
+        </div>
+    </div>
+    <!-- /Logo -->
 
-	</header>
+</header>
+<!-- /Header ->

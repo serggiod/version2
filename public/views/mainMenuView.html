@@ -1,50 +1,209 @@
-<nav class="navbar navbar-inverse navbar-static-top pull-left" data-offset-top="220" bs-affix ng-controller="mainMenuController">
-    <div class="container">
-        <div class="nav navbar-nav">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-lg">
-                <span class="sr-only">Desplegar / Ocultar Menu</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+<!-- Main menu -->
+<nav
+    ng-controller="mainMenuController"
+    class="navbar navbar-inverse navbar-static-top pull-left"
+    data-offset-top="220"
+    bs-affix>
+    
+    <!-- Contenedor del menu -->
+    <div
+        class="container">
+
+        <!-- Boton Hamburguesa -->
+        <div
+            class="nav navbar-nav">
+            <button
+                type="button"
+                class="navbar-toggle collapsed"
+                data-toggle="collapse"
+                data-target="#navegacion-lg">
+                <span
+                    class="sr-only">
+                    Desplegar / Ocultar Menu
+                </span>
+                <span
+                    class="icon-bar">
+                </span>
+                <span
+                    class="icon-bar">
+                </span>
+                <span
+                    class="icon-bar">
+                </span>
             </button>
-            <a href="#/home" class="navbar-brand"><span class="glyphicon glyphicon-home"></span></a>
+            <a
+                href="#/home"
+                class="navbar-brand">
+                <span
+                    class="glyphicon glyphicon-home">
+                </span>
+            </a>
         </div>
-        <!-- Menu -->
-        <div class="collapse navbar-collapse" id="navegacion-lg">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#/home">Institucional</a></li>
-                <li><a href="#/autoridades">Autoridades</a></li>
-                <li><a href="#/diputados">Diputados</a></li>
-                <li><a href="#/orden_del_dia">Orden del d&iacute;a</a></li>
-                <li><a href="#/poder_legislativo">Poder Legislativo</a></li>
-                <li class="dropdown">
-                    <a ng-mouseenter="fncUpdateLocation()" href="#{{strLocation}}" class="dropdown-toggle" data-toggle="dropdown" role="button">Bloques <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li ng-repeat="b in bloques">
-                            <a href="#/bloque/{{b.uriname}}">{{b.nombre}}</a>
-                            <ul><li class="divider"></li></ul>
+        <!-- /Boton Hamburguesa -->
+
+        <!-- Menu Principal -->
+        <div
+            class="collapse navbar-collapse"
+            id="navegacion-lg">
+            <ul
+                class="nav navbar-nav">
+
+                <!-- /Home -->
+                <li
+                    class="active">
+                    <a
+                        href="#/home">
+                        Institucional
+                    </a>
+                </li>
+
+                <!-- /Autoridades -->
+                <li>
+                    <a
+                        href="#/autoridades">
+                        Autoridades
+                    </a>
+                </li>
+
+                <!-- /Diputados -->
+                <li>
+                    <a
+                        href="#/diputados">
+                        Diputados
+                    </a>
+                </li>
+
+                <!-- /Orden -->
+                <li>
+                    <a
+                        href="#/orden_del_dia">
+                        Orden del d&iacute;a
+                    </a>
+                </li>
+
+                <!-- /Poder -->
+                <li>
+                    <a
+                        href="#/poder_legislativo">
+                        Poder Legislativo
+                    </a>
+                </li>
+
+                <!-- /Bloque(Menu dropdown) -->
+                <li
+                    class="dropdown">
+                    <a
+                        ng-mouseenter="fncUpdateLocation()"
+                        href="#{{strLocation}}"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button">
+                        Bloques
+                        <span
+                            class="caret">
+                        </span>
+                    </a>
+                    <ul
+                        class="dropdown-menu"
+                        role="menu">
+                        <li
+                            ng-repeat="b in bloques">
+                            <a
+                                href="#/bloque/{{b.uriname}}">
+                                {{b.nombre}}
+                            </a>
+                            <ul>
+                                <li
+                                    class="divider">
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
-                <li><a href="#/labor_legislativa">Labor Legislativa</a></li>
-                <li class="dropdown">
-                    <a ng-mouseenter="fncUpdateLocation()" href="#{{strLocation}}" class="dropdown-toggle" data-toggle="dropdown" role="button">Ingreso<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="http://www.legislaturajujuy.gov.ar:1080/sileju/view/login.php" target="_blank">SILeJu</a></li>
-                        <li class="divider"></li>
-                        <li><a href="https://mail.legislaturajujuy.gov.ar/" target="_blank">Webmail</a></li>
+
+                <!-- /Labor(Menu Dropdown) -->
+                <li>
+                    <a
+                        href="#/labor_legislativa">
+                        Labor Legislativa
+                    </a>
+                </li>
+                <li
+                    class="dropdown">
+                    <a
+                        ng-mouseenter="fncUpdateLocation()"
+                        href="#{{strLocation}}"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button">
+                        Ingreso
+                        <span
+                            class="caret">
+                        </span>
+                    </a>
+                    <ul
+                        class="dropdown-menu"
+                        role="menu">
+                        <li>
+                            <a
+                                href="http://www.legislaturajujuy.gov.ar:1080/sileju/view/login.php"
+                                target="_blank">
+                                SILeJu
+                            </a>
+                        </li>
+                        <li
+                            class="divider">
+                        </li>
+                        <li>
+                            <a
+                                href="https://mail.legislaturajujuy.gov.ar/"
+                                target="_blank">
+                                Webmail
+                            </a>
+                        </li>
                     </ul>
                 </li>
+
             </ul>
-            <!-- Busqueda -->
-            <form action="" class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" size="8" placeholder="Buscar" ng-model="strBuscar">
+
+            <!-- /Busqueda -->
+            <div
+                class="navbar-form navbar-right">
+                <div
+                    class="form-group">
+                    <input
+                        type="text"
+                        class="form-control"
+                        size="8"
+                        placeholder="Buscar"
+                        ng-model="strBuscar">
+                    <a
+                        href="#/buscar/{{strBuscar}}"
+                        type="submit"
+                        class="btn btn-primary">
+                        <span
+                            class="glyphicon glyphicon-search">
+                        </span>
+                    </a>
                 </div>
-                <a href="#/buscar/{{strBuscar}}" type="submit" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-search"></span>
-                </a>
-            </form>
+            </div>
+            <!-- /Busqueda -->
+
         </div>
+        <!-- /Menu principal -->
+
     </div>
+    <!-- /Contenedor del menu -->
+
 </nav>
+<!-- /Main menu -->
+
+<!-- Fecha -->
+<div
+    ng-controller="mainMenuController"
+    class="row-fluid fecha">
+    <span>
+        {{fecha}}
+    </span>
+</div>
+<!-- /Fecha -->

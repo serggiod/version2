@@ -5,6 +5,9 @@ angular
 			// función inicializadora.
 			$scope.init = ()=>{
 
+				// Mostrar media bar.
+				$('#mediaBar').show();
+				
 				// Solicitar ultima actividad.
 				$http
 					.get('/rest/home.php/actividad')
@@ -32,32 +35,29 @@ angular
 
 			// Modal de actividad del día.
 			$scope.showModalActivad = ()=>{
-				title = 'Actividad del D&iacute;a';
-				html  = '<img class="img-responsive" src="'+$scope.actividad.archivo+'" width="800" />';
-				html += '<p class="titulo">'+$scope.actividad.nombre+'</p>';
-				html += '<table border="1px" width="100%">';
-				html += '<thead><tr>';
-				html += '<th>Fecha</th>';
-				html += '<th>Hora</th>';
-				html += '<th>Contenido</th>';
-				html += '<th>Requisitos</th>';
-				html += '</tr></thead>';
-				html += '<tbody>';
-				html += '<tr><td>'+$scope.actividad.fecha+'</td>';
-				html += '<td>'+$scope.actividad.hora+'</td>';
-				html += '<td>'+$scope.actividad.descrip+'</td>';
-				html += '<td>'+$scope.actividad.requi+'</td></tr>';
-				html += '</tbody>';
-				html += '</table>';
-				var dialogActividad = BootstrapDialog.show({
-					title:title,
-					message:html,
-					buttons:[{
-						label: 'Cerrar',
-        				cssClass: 'btn-primary',
-						action:()=>{ dialogActividad.close(); }
-					}]
-				});
+				$http
+					.get('views/home/dialogs/actividad.del.dia.html')
+					.success((html)=>{
+						message = html
+							.replace('{{archivo}}',$scope.actividad.archivo)
+							.replace('{{nombre}}',$scope.actividad.nombre)
+							.replace('{{fecha}}',$scope.actividad.fecha)
+							.replace('{{hora}}',$scope.actividad.hora)
+							.replace('{{descrip}}',$scope.actividad.descrip)
+							.replace('{{requi}}',$scope.actividad.requi);
+						dialog = BootstrapDialog.show({
+							closable:false,
+							type:'type-info',
+							nl2br:false,
+							title:'Actividad del D&iacute;a',
+							message:message,
+							buttons:[{
+								label: 'Cerrar',
+								cssClass: 'btn-info',
+								action:()=>{ dialog.close(); }
+							}]
+						});
+					});
 			};
 
 			// Modal para mostrar un Boletín Legislativo.
@@ -77,7 +77,7 @@ angular
 			// Modal para mostrar infomación del Boletín Legislativo.
 			$scope.showModalBoletinInfo = ()=>{
 				$http
-					.get('views/home/_boletinInformacion.html')
+					.get('views/home/dialogs/boletin.legislativo.informacion.html')
 					.success((html)=>{
 						showModalBoletinInfo = BootstrapDialog.show({
 							closable:false,

@@ -1,5 +1,6 @@
 angular
 		.module('legislaturaweb')
 		.controller('autoridadesController',function($scope,$rootScope,$http){
-			$rootScope.mediaB = false;
+			// Mostrar media bar.
+			$('#mediaBar').hide();
 		});

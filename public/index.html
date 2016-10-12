@@ -13,11 +13,13 @@
         <ng-include src="'views/headerView.html'"></ng-include>
 		<ng-include src="'views/mainMenuView.html'"></ng-include>
 		<ng-include src="'views/mediaBarView.html'"></ng-include>
-		<section class="main container marcoPagina"><!-- container principal -->
+		<!-- Contenedor principal -->
+		<section class="main container marcoPagina">
 			<ng-view></ng-view>
 			<ng-include src="'views/recintoView.html'"></ng-include>
 			<ng-include src="'views/destacadosView.html'"></ng-include>
-		</section><!-- cierre container principal -->
+		</section>
+		<!-- /Contenedor principal -->
 		<ng-include src="'views/mapaSitioView.html'"></ng-include>
 		<ng-include src="'views/footerView.html'"></ng-include>
 
@@ -77,42 +79,11 @@
 		<!-- addcontroller -->
 
 		<script src="js/init.js"></script>
-		<script type="text/javascript">
-			/*
-			$('#scrollBoletin').marquee({
-				enable : true,  // activa plug-in
-				direction: 'vertical', //direccion de scroll
-				itemSelecter : 'li',  //selecciona hijos
-				delay: 3000, //tiempo de espera
-				speed: 1, //velocidad
-				timing: 1,
-				mouse: true //si se detiene al pasar el mouse
-			});  
-			*/
-		</script>
 	<!-- Scroll boletin -->	
-
-
-	<!-- Datepicker
-	<script src="js/bootstrap-datepicker.min.js"></script>
-	<script src="locales/bootstrap-datepicker.es.min.js" charset="UTF-8"></script>
-
-	<script>
-		$('#fecha').datepicker({
-			format: "dd/mm/yyyy",
-			language: "es",
-			autoclose: true,
-			todayHighlight: true
-		});
-    </script>
-	 Datepicker -->
 
 	<!--Inicializa slides-->
 	<script type="text/javascript">
 	    var $ = jQuery.noConflict();
-		$(document).ready(function() { 
-  		$('#slidePrincipal').carousel({ interval: 4000, cycle: true });
-		}); 
 		$(document).ready(function() { 
   		$('#slideHistorico').carousel({ interval: 2000, cycle: true });
 		}); 

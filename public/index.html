@@ -14,10 +14,10 @@
 		<ng-include src="'views/mainMenuView.html'"></ng-include>
 		<ng-include src="'views/mediaBarView.html'"></ng-include>
 		<!-- Contenedor principal -->
-		<section class="main container marcoPagina">
+		<section class="container marcoPagina" style="overflow:hidden;">
 			<ng-view></ng-view>
 			<ng-include src="'views/recintoView.html'"></ng-include>
-			<ng-include src="'views/destacadosView.html'"></ng-include>
+			<ng-include src="'views/destacadosView.html'"></ng-include>	
 		</section>
 		<!-- /Contenedor principal -->
 		<ng-include src="'views/mapaSitioView.html'"></ng-include>

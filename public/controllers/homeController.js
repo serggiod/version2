@@ -3,7 +3,7 @@ angular
 		.controller('homeController',function($scope,$http,$modal,$location){
 			
 			// función inicializadora.
-			$scope.init = ()=>{
+			($scope.init = ()=>{
 
 				// Mostrar media bar.
 				$('#mediaBar').show();
@@ -31,7 +31,7 @@ angular
 						}
 					});
 
-			};
+			})();
 
 			// Modal de actividad del día.
 			$scope.showModalActivad = ()=>{
@@ -94,6 +94,4 @@ angular
 
 			// goTo controller buscarBoletin.
 			$scope.gotoBuscarBoletin = ()=>{ $location.path('/buscarBoletin'); };
-
-			$scope.init();
 		});

@@ -1,6 +1,8 @@
 angular.module('legislaturaweb',
 	[
 		'ngRoute'
+		,'ngTouch'
+		,'angular-carousel'
 		,'mgcrea.ngStrap'
 		//addmodule.
 	])

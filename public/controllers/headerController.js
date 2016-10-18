@@ -5,7 +5,7 @@ angular
 			// Función inicializadora.
 			($scope.init = ()=>{
 				// Iniciar slide principal.
-					$('#slidePrincipal').carousel({ interval: 4000, cycle: true });
+				$('#slidePrincipal').carousel({ interval: 4000, cycle: true });
 			})();
 
 		});

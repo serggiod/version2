@@ -4,6 +4,7 @@ angular.module('legislaturaweb',
 		,'ngTouch'
 		,'angular-carousel'
 		,'mgcrea.ngStrap'
+		,'ui.calendar'
 		//addmodule.
 	])
 	.config(function($routeProvider,$httpProvider){

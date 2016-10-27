@@ -11,39 +11,14 @@
                 <p class="help-block espacioSuperior">
                     Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
                 </p>
+                <p>
+                    <div id="calendario"></div>
+                    <!-- <div ui-calendar="CalendarioOpciones.calendar" ng-model="CalendarioModel"></div> -->
+                </p>
             </div>
         </div>
-        <br><br><br><br>
-        <p class="text-center texto">Ingrese fecha:
-            <input
-                class="date"
-                type="text"
-                size="10"
-                ng-model="fecha"
-                data-date-type="string"
-                data-date-format="dd/MM/yyyy"
-                data-date-locale="es"
-                data-min-date="{{mindate}}"
-                data-max-date="{{maxdate}}"
-                data-start-date="{{maxdate}}"
-                bs-datepicker/>
-            <button
-                type="button"
-                class="btn btn-primary"
-                ng-click="buscar()">
-                <span
-                    class="glyphicon glyphicon-calendar"></span>
-                    Buscar
-            </button>
-            <button
-                type="button"
-                class="btn btn-primary"
-                ng-click="cerrar()">
-                <span
-                    class="glyphicon glyphicon-remove"/>
-                    Cerrar
-            </button>
-        </p>
+        <br>
+
     </div>
     <!-- Widget: Marcos pAz. -->
     <ng-include

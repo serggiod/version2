@@ -1,58 +1,107 @@
 angular
 		.module('legislaturaweb')
-		.config(function($httpProvider) {
-			$httpProvider.defaults.useXDomain = true;
-		})
 		.controller('orden_del_diaController',function($scope,$http){
 
 				// Función inicializadora.
 				$scope.init = ()=>{
 					$('#mediaBar').hide();
-					$scope.getOrdenes();
 				};
 
-				// Objeto para almacenar ordenes del día.
-				$scope.ordenes = new Object();
-				$scope.ordenes.rows = new Object();
-				$scope.ordenes.keys = new Array();
-				$scope.ordenes.getMinDate = ()=>{
-					i = $scope.ordenes.keys.length -1;
-					k = $scope.ordenes.keys[i];
-					r = k.substring(0,4)+'-'+k.substring(4,6)+'-'+k.substring(6,8);
-					return r;
-				};
-				$scope.ordenes.getMaxDate = ()=>{
-					k = $scope.ordenes.keys[0];
-					return k.substring(0,4)+'-'+k.substring(4,6)+'-'+k.substring(6,8);
-				};
-
-				// Traer lista de ordenes del día.
-				$scope.getOrdenes = ()=>{
-					$http
-						.get('/rest/institucion.php/ordenes')
-						.success((json)=>{
-							if(json.result){
-								$scope.procesarOrdenes(json.rows);
+				// Inicializar calendario.
+				$scope.calendario = $('#calendario').fullCalendar({
+					theme:false,
+					editable:false,
+					selectable:false,
+					overlap:true,
+					height:420,
+					monthNames:['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio','Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+					monthNameShort:['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun','Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+					dayNames:['Domingo', 'Lunes', 'Martes', 'Miercoles','Jueves', 'Viernes', 'Sabado'],
+					dayNamesShort:['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+					customButtons:{
+						anterior: {
+							text: 'Mes Anterior',
+							click:()=>{ 
+								$('#calendario').fullCalendar('prev');
+								getEvents();
 							}
-						})
-						.error(()=>{
-							console.log('Error en petición.');
+						},
+						siguiente: {
+							text: 'Mes Siguiente',
+							click:()=>{ 
+								$('#calendario').fullCalendar('next');
+								getEvents(); 
+							}
+						},
+						anteriorY: {
+							text: 'Año Anterior',
+							click:()=>{ 
+								$('#calendario').fullCalendar('prevYear');
+								getEvents(); 
+							}
+						},
+						siguienteY: {
+							text: 'Año Siguiente',
+							click:()=>{ 
+								$('#calendario').fullCalendar('nextYear');
+								getEvents(); 
+							}
+						}
+					},
+					header:{
+						left:'anteriorY,anterior',
+						center:'title',
+						right:'siguiente,siguienteY'
+					},
+					timezone:'America/Argentina/Jujuy',
+					eventColor: '#5BC0DE',
+					eventClick: function(a){
+						titulo   = a.title;
+						fileRead = '/img/sesiones/'+a.description+'.html';
+						filePrint= '/img/sesiones/'+a.description+'_print.html';
+						height  = window.innerHeight -200;
+						html    = '<iframe src="'+fileRead+'" style="width:100%;height:'+height+'px;border:0;overflow:scroll;"></iframe>';
+						
+						alertM  = BootstrapDialog.show({
+							type:'type-info',
+							size:'size-wide',
+							closable:false,
+							html:true,
+							nl2br:false,
+							title:titulo,
+							message:html,
+							buttons:[{
+								cssClass:'btn btn-default',
+								label:'Imprimir',
+								action:()=>{
+									var win = window.open(filePrint);
+									win.onload = function(){
+										win.print();
+										win.close();
+									};									
+								}
+							},{
+								cssClass:'btn btn-info',
+								label:'Cerrar',
+								action:()=>{alertM.close();}
+							}]
 						});
-				};
+					},
+					viewRender:()=>{ getEvents(); }
+				});
 
-				// Procesar Ordenes.
-				$scope.procesarOrdenes = (json)=>{
-					for(i in json.all){
-						key = json.all[i].date;
-						subkey = json.all[i].tipo;
-						if(!$scope.ordenes.rows[key]) $scope.ordenes.rows[key] = new Object;
-						$scope.ordenes.rows[key][subkey] = json.all[i];
-						$scope.ordenes.keys.push(key);
-					}
-					$scope.mindate  = $scope.ordenes.getMinDate();
-					$scope.maxdate  = $scope.ordenes.getMaxDate();
+				// Solicitar eventos.
+				function getEvents(){
+					m   = $('#calendario').fullCalendar('getDate');
+					d   = m.format().substring(0,7).replace('-','/');
+					uri = '/rest/institucion.php/ordenes/'+d;
+					$('#calendario').fullCalendar('removeEvents');
 					
-					console.log($scope.mindate,$scope.maxdate);
+					$.get(uri,function(json){
+						$('#calendario').fullCalendar('removeEvents');
+						if(json.rows) for(i in json.rows) $('#calendario').fullCalendar( 'renderEvent',json.rows[i]);
+					});
+
 				};
 
 				$scope.init();

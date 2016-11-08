@@ -3,17 +3,18 @@ angular
 		.controller('homeController',function($scope,$http,$modal,$location){
 			
 			// función inicializadora.
-			($scope.init = ()=>{
+			$scope.init = ()=>{
 
 				// Mostrar media bar.
 				$('#mediaBar').show();
-				
-				// Solicitar ultima actividad.
-				$http
-					.get('/rest/home.php/actividad')
-					.success((json)=>{ if(json.result) $scope.actividad = json.rows; });
 
+				// Init get datas.
+				$scope.getActividadDelDiaWidgetContent();
+				$scope.getMarcosPazWidgetContent();
+				
+				
 				// Solicitamos ultimos boletines.
+				/*
 				$http
 					.get('/rest/home.php/boletin')
 					.success((json)=>{
@@ -31,20 +32,23 @@ angular
 						}
 					});
 
-			})();
+					*/
+
+			};
 
 			// Modal de actividad del día.
-			$scope.showModalActivad = ()=>{
+
+			$scope.showDialogActividadDelDia = ()=>{
 				$http
 					.get('views/home/dialogs/actividad.del.dia.html')
 					.success((html)=>{
 						message = html
-							.replace('{{archivo}}',$scope.actividad.archivo)
-							.replace('{{nombre}}',$scope.actividad.nombre)
-							.replace('{{fecha}}',$scope.actividad.fecha)
-							.replace('{{hora}}',$scope.actividad.hora)
-							.replace('{{descrip}}',$scope.actividad.descrip)
-							.replace('{{requi}}',$scope.actividad.requi);
+							.replace('{{archivo}}',$scope.actividadDelDiaWidgetContent.archivo.archivo)
+							.replace('{{nombre}}',$scope.actividadDelDiaWidgetContent.titulo)
+							.replace('{{fecha}}',$scope.actividadDelDiaWidgetContent.fecha)
+							.replace('{{hora}}',$scope.actividadDelDiaWidgetContent.hora)
+							.replace('{{descrip}}',$scope.actividadDelDiaWidgetContent.actividad)
+							.replace('{{requi}}',$scope.actividadDelDiaWidgetContent.requisitos);
 						dialog = BootstrapDialog.show({
 							closable:false,
 							type:'type-info',
@@ -94,4 +98,22 @@ angular
 
 			// goTo controller buscarBoletin.
 			$scope.gotoBuscarBoletin = ()=>{ $location.path('/buscarBoletin'); };
+
+			// Arctividad del Dia Widget Content.
+			$scope.getActividadDelDiaWidgetContent = ()=>{
+				$http
+					.get('/rest/home.php/actividad/actividad_del_dia')
+					.success((json)=>{ if(json.result) $scope.actividadDelDiaWidgetContent=json.rows; })
+					.error(()=>{ console.log('actividadDelDiaWidgetContent: no data;'); })
+			};
+			// Marcos Paz Widget Content.
+			$scope.getMarcosPazWidgetContent = ()=>{
+				$http
+					.get('/rest/home.php/actividad/salon_marcos_paz')
+					.success((json)=>{ if(json.result) $scope.marcosPazWidgetContent=json.rows; })
+					.error(()=>{ console.log('marcosPazWidgetContent: not data'); })
+			}
+
+			// Inicializar.
+			$scope.init();
 		});

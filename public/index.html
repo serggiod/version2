@@ -12,9 +12,55 @@
         <ng-include src="'views/headerView.html'"></ng-include>
 		<ng-include src="'views/mainMenuView.html'"></ng-include>
 		<ng-include src="'views/mediaBarView.html'"></ng-include>
+		
 		<!-- Contenedor principal -->
 		<section class="container marcoPagina" style="overflow:hidden;">
-			<ng-view></ng-view>
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+					<div class="container-fluid">
+						<div class="row" ng-controller="homeController">
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+								<ng-include src="'views/home/widgets/actividad.del.dia.html'"></ng-include>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+								<ng-include src="'views/home/widgets/boletin.legisltivo.html'"></ng-include>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								Un Widget
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								dos Widget
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								Tres Widget
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								Un Widget
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								dos Widget
+							</div>
+						</div>
+					</div>
+				</div>
+				<aside class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+					<div class="container-fluid">
+						<div class="row" ng-controller="homeController">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<ng-include src="'views/home/widgets/marcos.paz.html'"></ng-include>
+								<ng-include src="'views/home/widgets/archivo.historico.html'"></ng-include>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+			
 			<ng-include src="'views/recintoView.html'"></ng-include>
 			<ng-include src="'views/destacadosView.html'"></ng-include>	
 		</section>
@@ -23,42 +69,41 @@
 		<ng-include src="'views/footerView.html'"></ng-include>
 
 		<!-- JSLib: JQuery -->
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/jquery/dist/jquery.min.js"></script>
+		<script src="/jscdn/jquery/dist/jquery.min.js"></script>
 		<script src="js/jquery.marquee.min.js"></script>
 
 		<!-- JSLib: Bootstrap -->
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/bootstrap/dist/js/dropdown.js"></script>
-		<link rel="stylesheet" href="http://www.legislaturajujuy.gov.ar/jscdn/bootstrap/dist/css/bootstrap.min.css">
+		<script src="/jscdn/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="/jscdn/bootstrap/js/dropdown.js"></script>
+		<link rel="stylesheet" href="/jscdn/bootstrap/dist/css/bootstrap.min.css">
 
 		<!-- JSLib: Bootstrap3: Dialog -->
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js"></script>
-		<link rel="stylesheet" href="http://www.legislaturajujuy.gov.ar/jscdn/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css">
+		<script src="/jscdn/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js"></script>
+		<link rel="stylesheet" href="/jscdn/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css">
 
 		<!-- JSLib: Moments -->
-		<script type="text/javascript" src="http://www.legislaturajujuy.gov.ar/jscdn/moment/min/moment.min.js"></script>
+		<script type="text/javascript" src="/jscdn/moment/min/moment.min.js"></script>
 
 		<!-- JSLib: Full Calendar -->
-		<link rel="stylesheet" href="http://www.legislaturajujuy.gov.ar/jscdn/fullcalendar/dist/fullcalendar.min.css"/>
-		<script type="text/javascript" src="http://www.legislaturajujuy.gov.ar/jscdn/fullcalendar/dist/fullcalendar.min.js"></script>
-		<script type="text/javascript" src='http://www.legislaturajujuy.gov.ar/jscdn/fullcalendar/dist/lang//es.js'></script>
-		<script type="text/javascript" src="http://www.legislaturajujuy.gov.ar/jscdn/fullcalendar/dist/gcal.js"></script>
+		<link rel="stylesheet" href="/jscdn/fullcalendar/dist/fullcalendar.min.css"/>
+		<script type="text/javascript" src="/jscdn/fullcalendar/dist/fullcalendar.min.js"></script>
+		<script type="text/javascript" src='/jscdn/fullcalendar/dist/locale/es.js'></script>
+		<script type="text/javascript" src="/jscdn/fullcalendar/dist/gcal.js"></script>
 
 		<!-- JSLib: Angular -->
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/angular/angular.min.js"></script>
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/angular-touch/angular-touch.min.js"></script>
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/angular-carousel/dist/angular-carousel.min.js"></script>
-		<link rel="stylesheet" href="http://www.legislaturajujuy.gov.ar/jscdn/angular-carousel/dist/angular-carousel.min.css">
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/angular-route/angular-route.min.js"></script>
-		<script src="http://www.legislaturajujuy.gov.ar/jscdn/angular-sanitize/angular-sanitize.min.js"></script>
-		<script src="http://www.legislaturajujuy.gov.ar//jscdn/angular-animate/angular-animate.min.js"></script>
-		<script src="http://www.legislaturajujuy.gov.ar//jscdn/angular-animate/angular-animate.min.js"></script>
-		<script src="http://www.legislaturajujuy.gov.ar//jscdn/angular-strap/dist/angular-strap.min.js"></script>
-		<script src="http://www.legislaturajujuy.gov.ar//jscdn/angular-strap/dist/angular-strap.tpl.min.js"></script>
-		<link rel="stylesheet" href="http://www.legislaturajujuy.gov.ar/jscdn/angular-motion/dist/angular-motion.min.css">
+		<script src="/jscdn/angular/angular.min.js"></script>
+		<script src="/jscdn/angular-touch/angular-touch.min.js"></script>
+		<script src="/jscdn/angular-carousel/dist/angular-carousel.min.js"></script>
+		<link rel="stylesheet" href="/jscdn/angular-carousel/dist/angular-carousel.min.css">
+		<script src="/jscdn/angular-route/angular-route.min.js"></script>
+		<script src="/jscdn/angular-sanitize/angular-sanitize.min.js"></script>
+		<script src="/jscdn/angular-animate/angular-animate.min.js"></script>
+		<script src="/jscdn/angular-strap/dist/angular-strap.min.js"></script>
+		<script src="/jscdn/angular-strap/dist/angular-strap.tpl.min.js"></script>
+		<link rel="stylesheet" href="/jscdn/angular-motion/dist/angular-motion.min.css">
 
 		<!-- JSLib: UI Calendar -->
-		<script type="text/javascript" src="http://www.legislaturajujuy.gov.ar/jscdn/angular-ui-calendar/src/calendar.js"></script>
+		<script type="text/javascript" src="/jscdn/angular-ui-calendar/src/calendar.js"></script>
 
 		<!-- Aplicacion Angular: Definicionn -->
 		<script src="application/application.js"></script>
@@ -91,15 +136,17 @@
 		<script src="controllers/buscarBoletinController.js"></script>
 		<!-- addcontroller -->
 
-		<script src="js/init.js"></script>
+		<!-- <script src="js/init.js"></script> -->
 	<!-- Scroll boletin -->	
 
 	<!--Inicializa slides-->
+	<!--
 	<script type="text/javascript">
 	    var $ = jQuery.noConflict();
 		$(document).ready(function() { 
   		$('#slideHistorico').carousel({ interval: 2000, cycle: true });
 		}); 
 	</script>
+	-->
 </body>
 </html>

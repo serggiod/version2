@@ -2,11 +2,11 @@ angular
 		.module('legislaturaweb')
 		.controller('buscarBoletinController',function($scope,$http){
 			// Función inicializadora.
-			($scope.init=()=>{
+			$scope.init=()=>{
 				// Mostrar media bar.
 				$('#mediaBar').hide();
 				$scope.boletinShow = false;
-			})();
+			};
 
 			// Buscar un boletín.
 			$scope.boletinBuscar = ()=>{
@@ -37,4 +37,5 @@ angular
 				$('.date').value='';
 			};
 			
+			$scope.init();
 		});

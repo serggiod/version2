@@ -1,22 +1,24 @@
-<!-- Widget: Actualidad -->
-<div>
-    <p class="tituloSeccion visible-xs visible-lg">Actividad del d&iacute;a</p>
-    <p class="tituloSeccion visible-sm visible-md">Actividad d&iacute;a</p>
-    <div class="actividadDia">
-        <div class="zoom">
-            <a ng-click="showModalActivad()" style="cursor:pointer;">
-                <img class="img-responsive" src="{{actividad.archivo}}">
+<!-- Widget: Actualidad Del Dia -->
+<div class="panel">
+    <div class="panel-body">
+        <p class="tituloSeccion visible-xs visible-lg">Actividad del d&iacute;a</p>
+        <p class="tituloSeccion visible-sm visible-md">Actividad d&iacute;a</p>
+        <div class="actividadDia">
+            <div class="zoom">
+                <a ng-click="showDialogActividadDelDia()" style="cursor:pointer;">
+                    <img class="img-responsive" src="/imgcdn/actividad/{{actividadDelDiaWidgetContent.archivo.archivo}}">
+                </a>
+            </div>
+            <div class="linea"></div>
+            <a  ng-click="showDialogActividadDelDia()"  style="cursor:pointer;">
+                <p class="titulo" style="color:#fff;">
+                    {{actividadDelDiaWidgetContent.titulo}}
+                </p>
             </a>
-        </div>
-        <div class="linea"></div>
-        <a  ng-click="showModalActivad()"  style="cursor:pointer;">
-            <p class="titulo" style="color:#fff;">
-                {{actividad.nombre}}
+            <p class="texto text-justify">
+                {{actividadDelDiaWidgetContent.actividad}}
             </p>
-        </a>
-        <p class="texto text-justify">
-            {{actividad.descrip}}
-        </p>
+        </div>
     </div>
 </div>
-<!-- /Widget: Actividad -->
+<!-- /Widget: Actividad del Dia -->

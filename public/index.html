@@ -11,60 +11,42 @@
 
         <ng-include src="'views/headerView.html'"></ng-include>
 		<ng-include src="'views/mainMenuView.html'"></ng-include>
-		<ng-include src="'views/mediaBarView.html'"></ng-include>
+		<ng-show ng-show="mediaBar">
+			<ng-include src="'views/mediaBarView.html'"></ng-include>
+		</ng-show>
 		
 		<!-- Contenedor principal -->
-		<section class="container marcoPagina" style="overflow:hidden;">
-			<div class="row">
-				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-					<div class="container-fluid">
-						<div class="row" ng-controller="homeController">
-							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<ng-include src="'views/home/widgets/actividad.del.dia.html'"></ng-include>
-							</div>
-							<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-								<ng-include src="'views/home/widgets/boletin.legisltivo.html'"></ng-include>
-							</div>
-						</div>
+		<section class="row">
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+				<div class="row marcoPagina">
+					
+					<!-- Aside: Izquierdo. -->
+					<article class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+						<ng-view></ng-view>
+					</article>
+					<!-- /Aside: Izquierdo. -->
+
+					<!-- Aside: Derecho. -->
+					<aside class="col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-controller="homeController">
 						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								Un Widget
-							</div>
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								dos Widget
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								Tres Widget
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								Un Widget
-							</div>
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								dos Widget
-							</div>
-						</div>
-					</div>
-				</div>
-				<aside class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-					<div class="container-fluid">
-						<div class="row" ng-controller="homeController">
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<ng-include src="'views/home/widgets/marcos.paz.html'"></ng-include>
+								<ng-include src="'views/home/widgets/salon.marcos.paz.html'"></ng-include>
+								<ng-include src="'views/home/dialogs/salon.marcos.paz.html'"></ng-include>
 								<ng-include src="'views/home/widgets/archivo.historico.html'"></ng-include>
-							</div>
 						</div>
-					</div>
-				</aside>
+					</aside>
+					<!-- Aside: Derecho. -->
+
+					<!-- Secciones Inferiores. -->
+					<ng-include src="'views/recintoView.html'"></ng-include>
+					<ng-include src="'views/destacadosView.html'"></ng-include>
+					<!-- /Secciones Inferiores. -->
+
+				</div>
 			</div>
-			
-			<ng-include src="'views/recintoView.html'"></ng-include>
-			<ng-include src="'views/destacadosView.html'"></ng-include>	
 		</section>
 		<!-- /Contenedor principal -->
+
+
 		<ng-include src="'views/mapaSitioView.html'"></ng-include>
 		<ng-include src="'views/footerView.html'"></ng-include>
 
@@ -133,20 +115,8 @@
 		<script src="controllers/legislaturaController.js"></script>
 		<script src="controllers/session_en_vivoController.js"></script>
 		<script src="controllers/actividadController.js"></script>
-		<script src="controllers/buscarBoletinController.js"></script>
+		<script src="controllers/boletinLegislativoController.js"></script>
 		<!-- addcontroller -->
 
-		<!-- <script src="js/init.js"></script> -->
-	<!-- Scroll boletin -->	
-
-	<!--Inicializa slides-->
-	<!--
-	<script type="text/javascript">
-	    var $ = jQuery.noConflict();
-		$(document).ready(function() { 
-  		$('#slideHistorico').carousel({ interval: 2000, cycle: true });
-		}); 
-	</script>
-	-->
 </body>
 </html>

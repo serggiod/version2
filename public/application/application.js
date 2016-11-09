@@ -65,9 +65,9 @@ angular.module('legislaturaweb',
 				templateUrl:'views/actividadView.html',
 				controller:'actividadController'
 			})
-			.when('/buscarBoletin',{
-				templateUrl:'views/buscarBoletinView.html',
-				controller:'buscarBoletinController'
+			.when('/boletin_legislativo',{
+				templateUrl:'views/boletinLegislativoView.html',
+				controller:'boletinLegislativoController'
 			})
 			//addroute.
 			.otherwise({redirectTo:'/home'});

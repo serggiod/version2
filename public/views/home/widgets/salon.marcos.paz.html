@@ -4,16 +4,16 @@
         <p class="tituloSeccion visible-sm visible-md">Marcos Paz</p>
         <div class="marcosPaz">
         <div class="zoom">
-            <a>
-                <img class="img-responsive" src="/imgcdn/actividad/{{marcosPazWidgetContent.archivo.archivo}}">
+            <a ng-click="showDialogSalonMarcosPaz()" style="cursor:pointer;">
+                <img class="img-responsive" src="/imgcdn/actividad/{{salonMarcosPazContent.archivo.archivo}}">
             </a>
         </div>
         <div class="linea"></div>
-        <a>
+        <a ng-click="showDialogSalonMarcosPaz()" style="cursor:pointer;">
             <p class="titulo">
-                {{marcosPazWidgetContent.titulo}}
+                {{salonMarcosPazContent.titulo}}
             </p>
         </a>
     </div>    
-    </div>
+    </div> 
 </div>

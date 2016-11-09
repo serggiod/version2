@@ -1,28 +1,34 @@
-<!-- Imagen -->
-<img
-    class="img-responsive"
-    src="/imgcdn/actividad/{{archivo}}"
-    width="800"/>
+<div class="hidden">
+    <div class="panel" id="dialogActividadDelDia">
+        <div class="panel-body">
+            <!-- Imagen -->
+            <img
+                class="img-responsive"
+                src="/imgcdn/actividad/{{actividadDelDiaContent.archivo.archivo}}"
+                width="800"/>
 
-<!-- titulo -->
-<h3
-    class="titulo">
-    {{nombre}}
-</h3>
+            <!-- titulo -->
+            <h3
+                class="titulo">
+                {{actividadDelDiaContent.titulo}}
+            </h3>
 
-<!-- Contenido -->
-<table
-    style="width:100%; border:1px solid #000;">
-    <tr style="text-align:center;border-bottom:5px solid #75716c;">
-        <td style="padding:3px;"><strong>Fecha</strong></td>
-        <td style="padding:3px;"><strong>Hora</strong></td>
-        <td style="padding:3px;"><strong>Contenido</strong></td>
-        <td style="padding:3px;"><strong>Requisitos</strong></td>
-    </tr>
-    <tr>
-        <td style="padding:3px;">{{fecha}}</td>
-        <td style="padding:3px;">{{hora}}</td>
-        <td style="padding:3px;">{{descrip}}</td>
-        <td style="padding:3px;">{{requi}}</td>
-    </tr>
-</table>
+            <!-- Contenido -->
+            <table
+                style="width:100%; border:1px solid #000;">
+                <tr style="text-align:center;border-bottom:5px solid #75716c;">
+                    <td style="padding:3px;"><strong>Fecha</strong></td>
+                    <td style="padding:3px;"><strong>Hora</strong></td>
+                    <td style="padding:3px;"><strong>Contenido</strong></td>
+                    <td style="padding:3px;"><strong>Requisitos</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding:3px;">{{actividadDelDiaContent.fecha}}</td>
+                    <td style="padding:3px;">{{actividadDelDiaContent.hora}}</td>
+                    <td style="padding:3px;">{{actividadDelDiaContent.actividad}}</td>
+                    <td style="padding:3px;">{{actividadDelDiaContent.requisitos}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

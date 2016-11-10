@@ -11,9 +11,9 @@
 
         <ng-include src="'views/headerView.html'"></ng-include>
 		<ng-include src="'views/mainMenuView.html'"></ng-include>
-		<ng-show ng-show="mediaBar">
+		<!--<ng-show ng-show="mediaBar">-->
 			<ng-include src="'views/mediaBarView.html'"></ng-include>
-		</ng-show>
+		<!--</ng-show>-->
 		
 		<!-- Contenedor principal -->
 		<section class="row">
@@ -53,6 +53,10 @@
 		<!-- JSLib: JQuery -->
 		<script src="/jscdn/jquery/dist/jquery.min.js"></script>
 		<script src="js/jquery.marquee.min.js"></script>
+
+		<!-- JSLib: DHtmlXTree -->
+		<link href="/jscdn/dhx-tree/dhtmlxtree.css" type="text/css" rel="stylesheet">
+		<script src="/jscdn/dhx-tree/dhtmlxtree.js"></script>
 
 		<!-- JSLib: Bootstrap -->
 		<script src="/jscdn/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -105,6 +109,7 @@
 		<script src="controllers/mediaBarController.js"></script>
 		<script src="controllers/presidenciaController.js"></script>
 		<script src="controllers/homeController.js"></script>
+		<script src="controllers/leerNoticiaController.js"></script>
 		<script src="controllers/autoridadesController.js"></script>
 		<script src="controllers/diputadosController.js"></script>
 		<script src="controllers/orden_del_diaController.js"></script>
@@ -116,6 +121,7 @@
 		<script src="controllers/session_en_vivoController.js"></script>
 		<script src="controllers/actividadController.js"></script>
 		<script src="controllers/boletinLegislativoController.js"></script>
+		<script src="controllers/audienciasPublicasController.js"></script>
 		<!-- addcontroller -->
 
 </body>

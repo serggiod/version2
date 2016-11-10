@@ -6,24 +6,30 @@
 </div>
 <div class="row">
 	<div class="container destacados">
-		<div ng-repeat="b in [0,1,2,3]" class="container col-xs-12 col-sm-6 col-md-3 col-lg-3">
-			<div class="noticiasChicas">
-				<div class="zoom">
-					<a href="#">
-						<img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-42223000-1473989340-DSC_0023.JPG"></img>
-					</a>
+
+		<ng-controller ng-controller="homeController">
+			<ng-repeat  ng-repeat="n in noticiasTop4.noticias">
+				<div class="container col-xs-12 col-sm-6 col-md-3 col-lg-3">
+					<div class="noticiasChicas">
+						<div class="zoom">
+							<a href="#/leer-noticia/{{n.uriname}}">
+								<img class="img-responsive" src="/imgcdn/fotografias/{{n.fotografias[0].fotografia}}"></img>
+							</a>
+						</div>
+						<div class="linea"></div>
+						<a href="#/leer-noticia/{{n.uriname}}">
+							<p class="titulo">
+								{{n.titulo}}
+							</p>
+						</a>
+						<p class="texto text-justify">
+							{{n.cabeza}}
+						</p>
+					</div>
 				</div>
-				<div class="linea"></div>
-				<a href="#">
-					<p class="titulo">
-						SE APROBÓ LA LEY DE NOCTURNIDAD
-					</p>
-				</a>
-				<p class="texto text-justify">
-					La Cámara de Diputados provincial aprobó la ley Nº 5955 que regula Las actividades nocturnas y espectáculos públicos. La misma establece que el nuevo horario de cierre de boliches...
-				</p>
-			</div>
-		</div>
+			</ng-repeat>
+		</ng-controller>
+
 	</div>
 </div>
 <!-- /Destacados -->

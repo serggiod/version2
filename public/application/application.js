@@ -21,6 +21,20 @@ angular.module('legislaturaweb',
 				templateUrl:'views/homeView.html',
 				controller:'homeController'
 			})
+			.when('/leer-noticia/:uriname',{
+				templateUrl:'views/leerNoticiaView.html',
+				controller:'leerNoticiaController'
+			})
+			/*
+			.when('/leer-noticia/todas/legislatura',{
+				templateUrl:'views/leerNoticiaTodasLegislaturaView.html',
+				controller:'leerNoticiaController'
+			})
+			.when('/leer-noticia/todas/diputados',{
+				templateUrl:'views/leerNoticiaTodasDiputadosView.html',
+				controller:'leerNoticiaController'
+			})
+			*/
 			.when('/presidencia',{
 				templateUrl:'views/presidenciaView.html',
 				controller:'presidenciaController'
@@ -68,6 +82,10 @@ angular.module('legislaturaweb',
 			.when('/boletin_legislativo',{
 				templateUrl:'views/boletinLegislativoView.html',
 				controller:'boletinLegislativoController'
+			})
+			.when('/audiencias-publicas',{
+				templateUrl:'views/audienciasPublicasView.html',
+				controller:'audienciasPublicasController'
 			})
 			//addroute.
 			.otherwise({redirectTo:'/home'});

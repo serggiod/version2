@@ -1,0 +1,17 @@
+<p class="tituloSeccion">
+	{{leerNoticia.titulo}}
+</p>
+<ng-show ng-show="leerNoticia.fotografias">
+	<div class="espacioSuperior zoom" style="height: 350px;">
+		<img class="img-responsive" src="/imgcdn/fotografias/{{leerNoticia.fotografias[0].fotografia}}" width="100%">
+	</div>
+</ng-show>		
+<div class="linea"></div>
+<p class="espacioSuperior texto text-justify">
+	{{leerNoticia.cabeza}}
+	{{leerNoticia.cuerpo}}
+</p>
+
+<ng-controller ng-controller="homeController">
+	<ng-include src="'views/home/widgets/noticias.destacada.3.html'"></ng-include>
+</ng-controller>

@@ -1,7 +1,17 @@
-<p class="tituloSeccion espacioSuperior" style="color:#fff;">Noticias</p>
+<p class="tituloSeccion espacioSuperior" style="color:#fff;">
+    Noticias
+</p>
 <div class="zoom">
-    <a href="#"><img class="img-responsive" src="http://www.legislaturajujuy.gov.ar/img/fotografias/0-05010000-1474299877-DSC_0038.jpg"></a>
+    <a href="#/leer-noticia/{{noticiasDestacadasRojo.noticias[0].uriname}}">
+        <img class="img-responsive" src="/imgcdn/fotografias/{{noticiasDestacadasRojo.noticias[0].fotografias[0].fotografia}}">
+    </a>
 </div>
 <div class="linea" style="background-color: #337ab7;"></div>
-<a href="#"><p class="titulo" style="color: #fff;">EN LA LEGISLATURA SE REALIZÓ EL EXAMEN PARA OCUPAR EL CARGO DE JUEZ DE VIOLENCIA DE GÉNERO</p></a>
-<p class="texto text-justify" style="color: #fff;">En el marco de la nueva metodología de selección de integrantes del Poder Judicial, más de veinte postulantes rindieron en el Recinto de la Legislatura,el examen que constituye el concurso de oposición para ocupar el cargo de Juez de violencia de Género.  </p>
+<a href="#/leer-noticia/{{noticiasDestacadasRojo.noticias[0].uriname}}">
+    <p class="titulo" style="color: #fff;">
+        {{noticiasDestacadasRojo.noticias[0].titulo}}
+    </p>
+</a>
+<p class="texto text-justify" style="color: #fff;">
+    {{noticiasDestacadasRojo.noticias[0].cabeza}}
+</p> 

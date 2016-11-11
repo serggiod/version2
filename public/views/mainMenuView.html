@@ -90,33 +90,19 @@
                 </li>
 
                 <!-- /Bloque(Menu dropdown) -->
-                <li
-                    class="dropdown">
-                    <a
-                        ng-mouseenter="fncUpdateLocation()"
-                        href="#{{strLocation}}"
-                        class="dropdown-toggle"
-                        data-toggle="dropdown"
-                        role="button">
+                <li class="dropdown">
+                    <a ng-mouseenter="fncUpdateLocation()" href="#{{strLocation}}" class="dropdown-toggle" data-toggle="dropdown" role="button" bs-dropdown="dropdown" aria-haspopup="true" aria-expanded="false">
                         Bloques
                         <span
                             class="caret">
                         </span>
                     </a>
-                    <ul
-                        class="dropdown-menu"
-                        role="menu">
-                        <li
-                            ng-repeat="b in bloques">
-                            <a
-                                href="#/bloque/{{b.uriname}}">
+                    <ul class="dropdown-menu" role="menu">
+                        <li ng-repeat="b in bloques">
+                            <a href="#/bloque/{{b.uriname}}">
                                 {{b.nombre}}
                             </a>
-                            <ul>
-                                <li
-                                    class="divider">
-                                </li>
-                            </ul>
+                            <ul><li class="divider"></li></ul>
                         </li>
                     </ul>
                 </li>
@@ -128,26 +114,16 @@
                         Labor Legislativa
                     </a>
                 </li>
-                <li
-                    class="dropdown">
-                    <a
-                        ng-mouseenter="fncUpdateLocation()"
-                        href="#{{strLocation}}"
-                        class="dropdown-toggle"
-                        data-toggle="dropdown"
-                        role="button">
+                <li class="dropdown">
+                    <a ng-mouseenter="fncUpdateLocation()" href="#{{strLocation}}" class="dropdown-toggle" data-toggle="dropdown" role="button" bs-dropdown="dropdown" aria-haspopup="true" aria-expanded="false">
                         Ingreso
                         <span
                             class="caret">
                         </span>
                     </a>
-                    <ul
-                        class="dropdown-menu"
-                        role="menu">
+                    <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a
-                                href="http://www.legislaturajujuy.gov.ar:1080/sileju/view/login.php"
-                                target="_blank">
+                            <a href="http://www.legislaturajujuy.gov.ar:1080/sileju/view/login.php" target="_blank">
                                 SILeJu
                             </a>
                         </li>
@@ -155,9 +131,7 @@
                             class="divider">
                         </li>
                         <li>
-                            <a
-                                href="https://mail.legislaturajujuy.gov.ar/"
-                                target="_blank">
+                            <a href="https://mail.legislaturajujuy.gov.ar/" target="_blank">
                                 Webmail
                             </a>
                         </li>

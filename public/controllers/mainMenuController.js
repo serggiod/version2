@@ -2,8 +2,11 @@ angular
 		.module('legislaturaweb')
 		.controller('mainMenuController',function($scope,$http,$location){
 
+			// Rutas.
+			$scope.routeToBloquesContent = '/rest/institucion.php/bloques';
+			
 			// Funcion inicializadora.
-			($scope.init = ()=>{
+			$scope.init = ()=>{
 				// Fecha
 				$scope.date       = new Date();
 				$scope.meses      = new Array ("enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");
@@ -12,11 +15,14 @@ angular
 				
 				// Menu Bloques.
 				$http
-					.get('/rest/institucion.php/bloques')
-					.success((json)=>{ if(json.result) $scope.bloques = json.rows; });
-			})();
+					.get($scope.routeToBloquesContent)
+					.success((json)=>{ if(json.result) $scope.bloques = json.rows; })
+					.error(()=>{console.log($scope.routeToBloquesContent+' : No Data');});
+			};
 
 			$scope.strLocation = $location.url();
 			$scope.strBuscar   = '';
 			$scope.fncUpdateLocation = ()=>{ $scope.strLocation = $location.url(); };
-		});
+
+			$scope.init();
+		}); 

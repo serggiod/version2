@@ -55,7 +55,7 @@ angular.module('legislaturaweb',
 				templateUrl:'views/poder_legislativoView.html',
 				controller:'poder_legislativoController'
 			})
-			.when('/bloque/:strBloque',{
+			.when('/bloque/:uriname',{
 				templateUrl:'views/bloqueView.html',
 				controller:'bloqueController'
 			})

@@ -1,1 +1,205 @@
-Ingrese aqui el c&oacute;digo html del controlador bloqueController.
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="tituloSeccion">
+            {{bloqueContent.nombre}}
+        </h3>
+    </div>
+    <div class="panel-body container-fluid">
+        
+        <!-- Html Content: Submenu -->
+        <div class="col-xs-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Menú
+                    </h3>
+                </div>
+                <div class="pane-body">
+
+                    <!-- Menu -->
+                    <ul class="nav nav-pills nav-stacked">
+                        <ng-click ng-click="showDiputados()"><li><a class="btn btn-link">Diputados</a></li></ng-click>
+                        <ng-click ng-click="showPincipios()"><li><a class="btn btn-link">Principios</a></li></ng-click>
+                        <ng-click ng-click="showHistoria()"><li><a class="btn btn-link">Historia</a></li></ng-click>
+                        <ng-click ng-click="showAutoridades()"><li><a class="btn btn-link">Autoridades</a></li></ng-click>
+                        <ng-click ng-click="showEmails()"><li><a class="btn btn-link">Emails</a></li></ng-click>
+                        <ng-click ng-click="showTelefonos()"><li><a class="btn btn-link">Teléfonos</a></li></ng-click>
+                        <ng-click ng-click="showDireccion()"><li><a class="btn btn-link">Dirección</a></li></ng-click>
+                        <ng-click ng-click="showAlianzas()"><li><a class="btn btn-link">Alianzas</a></li></ng-click>
+                        <ng-click ng-click="showPartidos()"><li><a class="btn btn-link">Partidos</a></li></ng-click>
+                    </ul>
+                    
+                    <img src="/imgcdn/bloques/{{bloqueContent.escudo}}" class="img-responsive center-block">
+                    <!-- /Menu -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Html Content: Pages -->
+        <div class="col-xs-9">
+
+            <!-- Página: Diputados. -->
+            <div class="panel panel-default" ng-show="varShowDiputados">
+                <div class="panel-heading">
+                    <h4>
+                        {{bloqueContent.nombre}} / Diputados
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td><strong>Fotografía</strong></td>
+                            <td><strong>Diputado</strong></td>
+                            <td><strong>Mandato</strong></td>
+                        </tr>
+                        <tr ng-repeat="d in bloqueContent.diputados">
+                            <td>
+                                <a href="/diputado/#/{{d.uriname}}" target="__blank">
+                                    <img src="/img/diputados/{{d.fotografia}}" "="" border="0" width="130">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/diputado/#/{{d.uriname}}" target="__blank">
+                                    <strong>{{d.diputado}}</strong>
+                                </a>
+                            </td>
+                            <td>{{d.mandato}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Página: Principios. -->
+            <div class="panel panel-default" ng-show="varShowPrincipios">
+                <div class="panel-heading">
+                    <h4>
+                        {{bloqueContent.nombre}} / Principios
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    {{bloqueContent.principios}}
+                </div>
+            </div>
+
+            <!-- Página: Historia. -->
+            <div class="panel panel-default" ng-show="varShowHistoria">
+                <div class="panel-heading">
+                    <h4>
+                        {{bloqueContent.nombre}} / Historia
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    {{bloqueContent.historia}}
+                </div>
+            </div>
+
+            <!-- Página: Autoridades. -->
+            <div class="panel panel-default" ng-show="varShowAutoridades">
+                <div class="panel-heading">
+                    <h4>
+                        {{bloqueContent.nombre}} / Autoridades
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td><strong>Autoridad</strong></td>
+                            <td><strong>Diputado</strong></td>
+                        </tr>
+                        <tr ng-repeat="a in bloqueContent.autoridades">
+                            <td><strong>{{a.autoridad}}</strong></td>
+                            <td><a class="btn btn-link">{{a.diputado}}</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Página: Emails. -->
+            <div class="panel panel-default" ng-show="varShowEmails">
+                <div class="panel-heading">
+                    <h4>
+                        {{bloqueContent.nombre}} / Emails
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td><strong>Oficina</strong></td>
+                            <td><strong>Email</strong></td>
+                        </tr>
+                        <tr ng-repeat="e in bloqueContent.emails">
+                            <td><strong>{{e.oficina}}</strong></td>
+                            <td><a href="mailto:{{e.email}}" class="btn btn-link">{{e.email}}</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Página: Teléfonos. -->
+            <div class="panel panel-default" ng-show="varShowTelefonos">
+                <div class="panel-heading">
+                    <h4>
+                        {{bloqueContent.nombre}} / Teléfonos
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td><strong>Oficina</strong></td>
+                            <td><strong>Teléfono</strong></td>
+                        </tr>
+                        <tr ng-repeat="t in bloqueContent.telefonos">
+                            <td><strong>{{t.oficina}}</strong></td>
+                            <td><a class="btn btn-link">{{t.telefono}}</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Página: Dirección. -->
+            <div class="panel panel-default" ng-show="varShowDireccion">
+                <div class="panel-heading">
+                    <h4>
+                        {{bloqueContent.nombre}} / Dirección
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    {{bloqueContent.direccion}}
+                </div>
+            </div>
+
+            <!-- Página: Alianzas. -->
+            <div class="panel panel-default" ng-show="varShowAlianzas">
+                <div class="panel-heading">
+                    <h4>
+                        {{bloqueContent.nombre}} / Alianzas
+                    </h4>
+                </div>
+                <div class="panel-body">
+                </div>
+            </div>
+
+            <!-- Página: Partidos. -->
+            <div class="panel panel-default" ng-show="varShowPartidos">
+                <div class="panel-heading">
+                    <h4>
+                        {{bloqueContent.nombre}} / Partidos
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td><strong>Partidos</strong></td>
+                        </tr>
+                        <tr ng-repeat="p in bloqueContent.partidos">
+                            <td><a class="btn btn-link">{{p.partido}}</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+       </div>
+       
+    </div>
+
+</div>

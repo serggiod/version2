@@ -87,6 +87,14 @@ angular.module('legislaturaweb',
 				templateUrl:'views/audienciasPublicasView.html',
 				controller:'audienciasPublicasController'
 			})
+			.when('/acceso-a-leyes',{
+				templateUrl:'views/accesoALeyesView.html',
+				controller:'accesoALeyesController'
+			})
+			.when('/versiones-taquigraficas',{
+				templateUrl:'views/versionesTaquigraficasView.html',
+				controller:'versionesTaquigraficasController'
+			})
 			//addroute.
 			.otherwise({redirectTo:'/home'});
 	});

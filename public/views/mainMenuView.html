@@ -108,11 +108,44 @@
                 </li>
 
                 <!-- /Labor(Menu Dropdown) -->
-                <li>
-                    <a
-                        href="#/labor_legislativa">
+                <li class="dropdown">
+                    <a ng-mouseenter="fncUpdateLocation()" href="#{{strLocation}}" class="dropdown-toggle" data-toggle="dropdown" role="button" bs-dropdown="dropdown" aria-haspopup="true" aria-expanded="false">
                         Labor Legislativa
+                        <span
+                            class="caret">
+                        </span>
                     </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="#/busqueda-de-proyectos">
+                                Busqueda de Proyectos
+                            </a>
+                        </li>
+                        <li
+                            class="divider">
+                        </li>
+                        <li>
+                            <a href="#/versiones-taquigraficas">
+                                Versiones Taquigráficas
+                            </a>
+                        </li>
+                        <li
+                            class="divider">
+                        </li>
+                        <li>
+                            <a href="#/orden-del-dia">
+                                Orden del Día
+                            </a>
+                        </li>
+                        <li
+                            class="divider">
+                        </li>
+                        <li>
+                            <a href="#/acceso-a-leyes">
+                                Acceso a Leyes
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a ng-mouseenter="fncUpdateLocation()" href="#{{strLocation}}" class="dropdown-toggle" data-toggle="dropdown" role="button" bs-dropdown="dropdown" aria-haspopup="true" aria-expanded="false">

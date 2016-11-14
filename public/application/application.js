@@ -95,6 +95,10 @@ angular.module('legislaturaweb',
 				templateUrl:'views/versionesTaquigraficasView.html',
 				controller:'versionesTaquigraficasController'
 			})
+			.when('/proyectos',{
+				templateUrl:'views/proyectosView.html',
+				controller:'proyectosController'
+			})
 			//addroute.
 			.otherwise({redirectTo:'/home'});
 	});

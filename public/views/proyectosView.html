@@ -1,0 +1,145 @@
+<div class="panl panel-default">
+    <div class="panel-heading">
+        <h3 class="tituloSeccion">
+            Proyectos
+        </h3>
+    </div>
+    <div class="panel-body">
+			<!-- Filtros -->
+			<div id="formFiltros" class="panel panel-primary">
+			    <div class="panel-heading">APLICAR FILTROS</div>
+			    <div class="panel-body">
+				<div id="alert"></div>
+
+				    <!-- Expedientes -->
+				    <label>Por N&uacute;mero o Letra en el Expediente:</label>
+				    <div class="input-group">
+
+					<!-- Campo expediente. -->
+					<input ng-model="filtroExpediente" type="number" id="expediente" class="form-control input-sm" placeholder="N&uacute;mero" value="" onchange="onchangeExpediente()">
+
+					<span class="input-group-addon input-sm">-</span>
+
+					<!-- Campo letra. -->
+					<input ng-model="filtroLetra" type="text" id="letra" class="form-control input-sm" placeholder="Letra" value="" onchange="onchangeLetra()">
+				    </div>
+
+				    <!-- Proyecto -->
+				    <label>Por Palabra Clave:</label>
+				    <!-- Campo keyword. -->
+				    <input ng-model="filtroKeyword" type="text" id="keyword" class="form-control input-sm" placeholder="Palabra Clave" value="" onchange="onchangeKeyword()">
+
+				    <!-- Año -->
+				    <label>Por Año:</label>
+				    <!-- // Campo dateY. -->
+				    <input ng-model="filtroDateY" type="number" id="dateY" class="form-control input-sm" min="1983" max="{{actualYear}}" value="" maxlength="3" onchange="onchangeDateY()">
+
+				    <!-- Diputado -->
+				    <label>Por Diputado:</label>
+				    <!-- // Campo diputado. -->
+				    <select ng-model="filtroDiputado" id="diputado" class="form-control input-sm">
+						<option value="null">Seleccione un diputado...</option>
+						<option ng-repeat="d in diputados" value="{{d.cuil}}">{{d.nombre}}</option>
+				    </select>
+
+				    <!-- Orden -->
+				    <label>Ordenar Proyectos:</label>
+				    <!-- /// Campo orden -->
+				    <select ng-model="filtroOrden" id="orden" class="form-control input-sm">
+						<option value="DE">Los nuevos primero</option>
+						<option value="A">Los nuevos al &uacute;ltimo</option>
+				    </select>
+
+				    <!-- Botones -->
+				    <a ng-click="filterApply();" class="btn btn-success">Aplicar Filtros</a>
+				    <a ng-click="filterReset();" class="btn btn-danger">Cancelar Filtros</a>
+			    </div>
+			</div>
+			<!-- /Filtros -->
+			
+			<br/><br/>
+
+			<!-- Paginator -->
+			<nav>
+				<ul class="pager">
+
+					<!-- Pagina Primera -->
+					<li class="previous">
+						<a ng-click="moveFirst();" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-fast-backward"></i></a>
+					</li>
+					
+					<!-- Pagina anterior -->
+					<li>
+						<a ng-click="movePrev();" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-backward"></i></a>
+					</li>
+
+					<!-- Pagina Ubicacion -->
+					<li>
+						<span  class="btn btn-default btn-sm">P&aacute;gina <span id="position1">{{pagCurr}} de {{pagLast}}</span></span>
+					</li>
+
+					<!-- Pagia siguiente -->
+					<li>
+						<a ng-click="moveNext()" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-forward"></i></a>
+					</li>
+
+					<!-- Pagina Ultima -->
+					<li class="next">
+						<a ng-click="moveLast();" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-fast-forward"></i></a>
+					</li>
+				</ul>
+			</nav>
+			<!-- /Paginator -->
+
+			<!-- Proyectos -->
+			<ng-repeat ng-repeat="p in proyectos">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4>
+							Proyecto: {{p.numero}}
+						</h4>
+					</div>
+					<div class="panel-body">
+						<a href="/public/detalle_proyecto.php?p={{p.expediente}}" target="__blank">Tr&aacute;mite Administrativo</a><br/>
+						<b>Tipo:</b> {{p.tipo}}<br/>
+						<b>Ingreso:</b> {{p.ingreso}}<br/>
+						<b>Detalle:</b> {{p.detalle}}
+					</div>
+					</div>
+				<br/>
+			</ng-repeat>
+			<!-- /Proyectos -->
+
+			<!-- Paginator -->
+			<nav>
+				<ul class="pager">
+
+					<!-- Pagina Primera -->
+					<li class="previous">
+						<a ng-click="moveFirst();" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-fast-backward"></i></a>
+					</li>
+					
+					<!-- Pagina anterior -->
+					<li>
+						<a ng-click="movePrev();" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-backward"></i></a>
+					</li>
+
+					<!-- Pagina Ubicacion -->
+					<li>
+						<span  class="btn btn-default btn-sm">P&aacute;gina <span id="position2">{{pagCurr}} de {{pagLast}}</span></span>
+					</li>
+
+					<!-- Pagia siguiente -->
+					<li>
+						<a ng-click="moveNext()" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-forward"></i></a>
+					</li>
+
+					<!-- Pagina Ultima -->
+					<li class="next">
+						<a ng-click="moveLast();" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-fast-forward"></i></a>
+					</li>
+				</ul>
+			</nav>
+			<!-- /Paginator -->
+    </div>
+</div>

@@ -1,0 +1,142 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="tituloSeccion text-capitalize text-nowrap">
+            {{parlamento.nombre}}
+        </h3>
+    </div>
+    <div class="panel-body container-fluid">
+        
+        <!-- Html Content: Submenu -->
+        <div class="col-xs-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Menú
+                    </h3>
+                </div>
+                <div class="pane-body">
+
+                    <!-- Menu -->
+                    <ul class="nav nav-pills nav-stacked">
+                        <ng-repeat ng-repeat="p in parlamentos"><ng-click ng-click="showParlamento(p.uriname)"><li><a class="btn btn-link">{{p.nombre}}</a></li></ng-click></ng-repeat>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Html Content: Pages -->
+        <div class="col-xs-8">
+
+            <!-- Menu -->
+                <ul class="nav nav-tabs nav-justified"">
+                    <li class="active"><a ng-click="showResolucion()" class="btn btn-link" style="cursor:pointer;">Inicio</a></li>
+                    <li class="active"><a ng-click="showColegios()" class="btn btn-link" style="cursor:pointer;">Colegios</a></li>
+                    <li class="active"><a ng-click="showPrograma()" class="btn btn-link" style="cursor:pointer;">Programa</a></li>
+                    <li class="active"><a ng-click="showOrdenes()" class="btn btn-link" style="cursor:pointer;">Orden</a></li>
+                    <li class="active"><a href="https://www.flickr.com/photos/132554380@N04/" target="-blank" class="btn btn-link" style="cursor:pointer;">Fotos</a></li>
+                    <li class="active"><a ng-click="showVersiones()" class="btn btn-link" style="cursor:pointer;">Versiones</a></li>
+                </ul>
+
+            <!-- Página: Resolucion. -->
+            <div class="panel panel-default" ng-show="varShowResolucion">
+                <div class="panel-heading">
+                    <h4>
+                        {{parlamento.nombre}} / Resoluci&oacute;n
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <!-- Pagina -->
+                    <div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>LA LEGISLATURA DE JUJUY</b></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>RESUELVE</b></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>ARTICULO 1</b>.- Crear el Programa&nbsp;<b>"PARLAMENTO JUVENIL PROVINCIAL"</b>&nbsp;en el ámbito de la Cámara de Diputados destinados a organizar anualmente experiencias de labor legislativa para estudiantes de los dos (2) últimos años de las escuelas de Nivel Medio y/o Polimodal de la Provincia.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>ARTICULO 2.</b>- Los objetivos del Programa&nbsp;<b>"PARLAMENTO JUVENIL PROVINCIAL"</b>:</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">a) Promover la participación activa de los jóvenes elaborando propuestas concretas para dar soluciones a los problemas comunitarios especialmente en el ámbito de la juventud.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">b) Ofrecer a las escuelas de Enseñanza Media y/o Polimodal una herramienta pedagógica que permita a la comunidad educativa colaborar con la formación ciudadana de los estudiantes a través del afianzamiento de los principios de la democracia representativa y el respeto a los reglamentos de las instituciones.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">c) Generar un ámbito de relación directa y personal de los jóvenes y los diputados, a través del conocimiento del trabajo en la Cámara y de otros organismo oficiales.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">d) Facilitar el contacto de la juventud con la información parlamentaria necesaria para la elaboración de proyectos.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">e) Crear un ámbito de capacitación que propicie: un espacio de encuentro, integración e intercambio de experiencias de los jóvenes de nuestra provincia; compromiso con las problemáticas políticas, sociales, económicas y culturales.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">f) Brindar a los jóvenes un canal público para expresar sus inquietudes.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>ARTICULO 3.</b>- Integrar el Programa&nbsp;<b>"PARLAMENTO JUVENIL PROVINCIAL"</b>&nbsp;con representantes de los establecimientos del nivel Polimodal o del Ciclo Superior de las escuelas Medias Estatales y Privadas de toda la provincia. Éstos deberán ser estudiantes menores de diecinueve (19) años, en igual número que los diputados provinciales, procurando la colaboración de los Municipios para lograr una mejor representatividad.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>ARTICULO 4.</b>- La Comisión Permanente de Cultura y Educación de la Legislatura de de la Provincia en forma conjunta con el Ministerio de Gobierno, Justicia y Educación, propondrá presidencia de esta Cámara de Diputados las acciones necesarias para la aplicación del Programa; reglamento, plan anual de actividades, presupuesto, etc.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>ARTICULO 5.</b>- El Plan Anual de actividades comprenderá.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">a) Selección de las Instituciones Educativas Participantes.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">b) Preparación de un cronograma para la elaboración de los proyectos y para el proceso de elección de representantes.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">c) Preparación y difusión de materiales impresos para las escuelas que comprometan su participación en el Programa.&nbsp;</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">d) Organización del evento provincial, el cuál durará como mínimo cuatro (4) días hábiles.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);">e) Difusión del Programa, sus actividades y resultados a través de los medios de comunicación y de impresiones gráficas.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>ARTICULO 6.</b>- Las leyes, resoluciones y declaraciones aprobadas por el&nbsp;<b>"PARLAMENTO JUVENIL PROVINCIAL"</b>, serán remitidas por el Presidente de la Cámara de Diputados a las comisiones de trabajo respectivas de esta Legislatura para su tratamiento.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>ARTICULO 7.</b>- Encomendar al Presidente de la Cámara de Diputados que promueva la difusión de las actividades del Programa<b>"PARLAMENTO JUVENIL PROVINCIAL"</b>, la transmisión radial y televisiva de sus sesiones.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>ARTICULO 8.</b>- Reasignar personal de la Cámara de Diputados de acuerdo a la propuesta de la Comisión de Cultura y Educación de la Cámara de Diputados para que el cumplimiento del presente Programa no demande aumento presupuestario.</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>ARTICULO 9.</b>- Comuníquese al Poder Ejecutivo Provincial</div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><br></div><div style="font-size: 11px; text-align: justify; background-color: rgb(255, 255, 255);"><b>.- SALA DE SESIONES, SALVADOR DE JUJUY</b>, 18 de diciembre de 2002.-</div>
+                    <!-- /Pagina -->
+                </div>
+            </div>
+
+            <!-- Página: Teléfonos. -->
+            <div class="panel panel-default" ng-show="varShowColegios">
+                <div class="panel-heading">
+                    <h4>
+                        {{parlamento.nombre}} / Colegios
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td><strong>Nombre</strong></td>
+                            <td><strong>Numero</strong></td>
+                            <td><strong>Dirección</strong></td>
+                            <td><strong>Localidad</strong></td>
+                            <td><strong>Departamento</strong></td>
+                        </tr>
+                        <tr ng-repeat="t in parlamento.colegios">
+                            <td>{{t.nombre}}</td>
+                            <td>{{t.numero}}</td>
+                            <td>{{t.direccion}}</td>
+                            <td>{{t.localidad}}</td>
+                            <td>{{t.departamento}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Página: Dirección. -->
+            <div class="panel panel-default" ng-show="varShowPrograma">
+                <div class="panel-heading">
+                    <h4>
+                        {{parlamento.nombre}} / Programa
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <ng-repeat ng-repeat="o in parlamento.programa">
+                        <h3 class="text-center">
+                            {{o.nombre}}
+                            <br/>
+                            <small>Fecha: {{o.fecha}} | Desde: {{o.desde}} | Hasta: {{o.hasta}}</small>
+                        </h3>
+                        <div>{{o.descripcion}}</div>
+                    </ng-repeat>
+                </div>
+            </div>
+
+            <!-- Página: Alianzas. -->
+            <div class="panel panel-default" ng-show="varShowOrdenes">
+                <div class="panel-heading">
+                    <h4>
+                        {{parlamento.nombre}} / Ordenes
+                    </h4>
+                </div>
+                <div class="panel-body">
+
+                    <ng-repeat ng-repeat="o in parlamento.ordenes">
+                        <h3 class="text-center">
+                            {{o.titulo}}
+                            <small>{{o.fecha}}</small>
+                        </h3>
+                        <div>{{o.texto}}</div>
+                    </ng-repeat>
+                </div>
+            </div>
+
+            <!-- Página: Versiones. -->
+            <div class="panel panel-default" ng-show="varShowVersiones">
+                <div class="panel-heading">
+                    <h4>
+                        {{parlamento.nombre}} / Versiones
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <div id="treeBox"></div>
+                </div>
+            </div>
+
+       </div>
+       
+    </div>
+
+</div>
+
+
+
+
+
+                            

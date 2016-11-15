@@ -10,12 +10,7 @@ angular
 			$scope.actualYear = date.getFullYear();
 
 			// Filtros.
-			$scope.filtroExpediente = 'null';
-			$scope.filtroLetra      = 'null';
-			$scope.filtroKeyword    = 'null';
-			$scope.filtroDateY      = 'null';
-			$scope.filtroDiputado   = 'null';
-			$scope.filtroOrden      = 'DE';
+			$scope.filtroOrden = 'DE';
 
 			// Paginador.
 			$scope.pagCurr  = 1;
@@ -38,26 +33,6 @@ angular
 					.error(()=>{console.log($scope.routeToDiputados+' : No Data');});
 			};
 
-			// Cambiar expediente.
-			$scope.onchangeExpediente = ()=>{
-				if($scope.filtroExpediente=='')	$scope.filtroExpediente = 'null';
-			};
-
-			// Al cambiar la letra.
-			$scope.onchangeLetra = ()=>{
-				if($scope.filtroLetra=='') $scope.filtroLetra = 'null';
-			};
-
-			// Al cambiar la palabra clave.
-			$scope.onchangeKeyword = ()=>{
-				if($scope.filtroKeyword=='') $scope.filtroKeyword = 'null';
-			};
-
-			// Al cambiar el año.
-			$scope.onchangeDateY = ()=>{
-				if($scope.filtroDateY=='') $scope.filtroDateY = 'null';
-			};
-
 			// Aplicar filtros.
 			$scope.filterApply = ()=>{
 				$scope.pagCurr=$scope.pagFirst;
@@ -66,11 +41,11 @@ angular
 
 			// Resetear filtros.
 			$scope.filterReset = ()=>{
-				$scope.filtroExpediente = 'null';
-				$scope.filtroLetra      = 'null';
-				$scope.filtroKeyword    = 'null';
-				$scope.filtroDateY      = 'null';
-				$scope.filtroDiputado   = 'null';
+				$scope.filtroExpediente = undefined;
+				$scope.filtroLetra      = undefined;
+				$scope.filtroKeyword    = undefined;
+				$scope.filtroDateY      = undefined;
+				$scope.filtroDiputado   = undefined;
 				$scope.filtroOrden      = 'DE';
 				$scope.pagCurr		 = 1;
 				$scope.pagFirst	 	 = 1;
@@ -108,12 +83,29 @@ angular
 			$scope.getProyectsFromRest = ()=>{
 				uri  = '/rest/institucion.php/proyectos';
 				uri += '/'+$scope.pagCurr; // Posicion del paginador.
-				uri += '/'+$scope.filtroExpediente; // Valor del filtro 'expediente'.
-				uri += '/'+$scope.filtroLetra; // Valor del filtro 'letra'.
-				uri += '/'+$scope.filtroKeyword; // Valor del filtro 'keyword'.
-				uri += '/'+$scope.filtroDateY; // Valor del filtro 'dateY'.
-				uri += '/'+$scope.filtroDiputado; // Valor del filtro 'diputado'.
-				uri += '/'+$scope.filtroOrden; // Valor del filtro 'orden'.
+
+				// Valor del filtro 'expediente'.
+				if($scope.filtroExpediente==undefined) uri += '/null';
+				else uri += '/'+$scope.filtroExpediente;
+
+				// Valor del filtro 'letra'.
+				if($scope.filtroLetra==undefined) uri += '/null';
+				else uri += '/'+$scope.filtroLetra;
+
+				// Valor del filtro 'keyword'.
+				if($scope.filtroKeyword==undefined) uri += '/null';
+				else uri += '/'+$scope.filtroKeyword;
+
+				// Valor del filtro 'dateY'.
+				if($scope.filtroDateY==undefined) uri += '/null';
+				else uri += '/'+$scope.filtroDateY;
+
+				// Valor del filtro 'diputado'.
+				if($scope.filtroDiputado==undefined) uri += '/null';
+				else uri += '/'+$scope.filtroDiputado;
+
+				// Valor del filtro 'orden'.
+				uri += '/'+$scope.filtroOrden; 
 
 				$http
 					.get(uri)

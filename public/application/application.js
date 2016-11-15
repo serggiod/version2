@@ -47,10 +47,7 @@ angular.module('legislaturaweb',
 				templateUrl:'views/diputadosView.html',
 				controller:'diputadosController'
 			})
-			.when('/orden_del_dia',{
-				templateUrl:'views/orden_del_diaView.html',
-				controller:'orden_del_diaController'
-			})
+			
 			.when('/poder_legislativo',{
 				templateUrl:'views/poder_legislativoView.html',
 				controller:'poder_legislativoController'
@@ -83,22 +80,38 @@ angular.module('legislaturaweb',
 				templateUrl:'views/boletinLegislativoView.html',
 				controller:'boletinLegislativoController'
 			})
-			.when('/audiencias-publicas',{
-				templateUrl:'views/audienciasPublicasView.html',
-				controller:'audienciasPublicasController'
-			})
-			.when('/acceso-a-leyes',{
-				templateUrl:'views/accesoALeyesView.html',
-				controller:'accesoALeyesController'
-			})
-			.when('/versiones-taquigraficas',{
-				templateUrl:'views/versionesTaquigraficasView.html',
-				controller:'versionesTaquigraficasController'
+
+			// Labor Legislativa.
+			.when('/orden-del-dia',{
+				templateUrl:'views/orden_del_diaView.html',
+				controller:'orden_del_diaController'
 			})
 			.when('/proyectos',{
 				templateUrl:'views/proyectosView.html',
 				controller:'proyectosController'
 			})
+			.when('/boletin-legislativo',{
+				templateUrl:'views/boletinLegislativoView.html',
+				controller:'boletinLegislativoController'
+			})
+			.when('/versiones-taquigraficas',{
+				templateUrl:'views/versionesTaquigraficasView.html',
+				controller:'versionesTaquigraficasController'
+			})
+			.when('/audiencias-publicas',{
+				templateUrl:'views/audienciasPublicasView.html',
+				controller:'audienciasPublicasController'
+			})
+			.when('/parlamento-juvenil',{
+				templateUrl:'views/parlamentoJuvenilView.html',
+				controller:'parlamentoJuvenilController'
+			})
+			.when('/acceso-a-leyes',{
+				templateUrl:'views/accesoALeyesView.html',
+				controller:'accesoALeyesController'
+			})
+			
+			
 			//addroute.
 			.otherwise({redirectTo:'/home'});
 	});

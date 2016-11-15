@@ -3,18 +3,19 @@ angular
 		.controller('versionesTaquigraficasController',function($scope,$http,$rootScope){
 		
 			// Rutas.
-			$scope.routeToNoticiasDestacadas12         = '/rest/institucion.php/actualidad/legislatura/1';
+			$scope.routeToVersiones = '/rest/institucion.php/versiones';
 
-			// función inicializadora.
+			// Inicializadora..
 			$scope.init = ()=>{
 				$rootScope.mediaBar=false;
                 $scope.dhxTreeVersionesTaquigraficas();
 			};
 
+			// Solicitar versiones.
             $scope.dhxTreeVersionesTaquigraficas = ()=>{
 	            var tree = new dhtmlXTreeObject('treeBox','100%','100%','rootPath');
 	            tree.setImagePath('/jscdn/dhx-tree/imgs/dhxtree_skyblue/');
-                tree.load('/rest/institucion.php/versiones','json');
+                tree.load($scope.routeToVersiones,'json');
             }
             
 			// Inicializar.

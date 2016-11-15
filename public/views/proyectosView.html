@@ -1,58 +1,64 @@
-<div class="panl panel-default">
+<div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="tituloSeccion">
-            Proyectos
+        <h3 class="tituloSeccion text-capitalize text-nowrap">
+            proyectos
         </h3>
     </div>
     <div class="panel-body">
 			<!-- Filtros -->
 			<div id="formFiltros" class="panel panel-primary">
 			    <div class="panel-heading">APLICAR FILTROS</div>
-			    <div class="panel-body">
-				<div id="alert"></div>
+			    <div class="panel-body clearfix">
+					
+					<!-- Alerts -->
+					<div id="alert"></div>
 
 				    <!-- Expedientes -->
 				    <label>Por N&uacute;mero o Letra en el Expediente:</label>
 				    <div class="input-group">
-
-					<!-- Campo expediente. -->
-					<input ng-model="filtroExpediente" type="number" id="expediente" class="form-control input-sm" placeholder="N&uacute;mero" value="" onchange="onchangeExpediente()">
-
-					<span class="input-group-addon input-sm">-</span>
-
-					<!-- Campo letra. -->
-					<input ng-model="filtroLetra" type="text" id="letra" class="form-control input-sm" placeholder="Letra" value="" onchange="onchangeLetra()">
+						<!-- Campo expediente. -->
+						<input ng-model="filtroExpediente" type="number" id="expediente" class="form-control" placeholder="N&uacute;mero">
+						<span class="input-group-addon">-</span>
+						<!-- Campo letra. -->
+						<input ng-model="filtroLetra" type="text" id="letra" class="form-control" placeholder="Letra">
 				    </div>
+					<br/>
 
 				    <!-- Proyecto -->
 				    <label>Por Palabra Clave:</label>
 				    <!-- Campo keyword. -->
-				    <input ng-model="filtroKeyword" type="text" id="keyword" class="form-control input-sm" placeholder="Palabra Clave" value="" onchange="onchangeKeyword()">
+				    <input ng-model="filtroKeyword" type="text" id="keyword" class="form-control" placeholder="Palabra Clave">
+					<br/>
 
 				    <!-- Año -->
 				    <label>Por Año:</label>
 				    <!-- // Campo dateY. -->
-				    <input ng-model="filtroDateY" type="number" id="dateY" class="form-control input-sm" min="1983" max="{{actualYear}}" value="" maxlength="3" onchange="onchangeDateY()">
+				    <input ng-model="filtroDateY" type="number" id="dateY" class="form-control" min="1983" max="{{actualYear}}" maxlength="4" placeholder="{{actualYear}}">
+					<br/>
 
 				    <!-- Diputado -->
 				    <label>Por Diputado:</label>
 				    <!-- // Campo diputado. -->
-				    <select ng-model="filtroDiputado" id="diputado" class="form-control input-sm">
-						<option value="null">Seleccione un diputado...</option>
+				    <select ng-model="filtroDiputado" id="diputado" class="form-control">
+						<option value="">Seleccione un diputado...</option>
 						<option ng-repeat="d in diputados" value="{{d.cuil}}">{{d.nombre}}</option>
 				    </select>
+					<br/>
 
 				    <!-- Orden -->
 				    <label>Ordenar Proyectos:</label>
 				    <!-- /// Campo orden -->
-				    <select ng-model="filtroOrden" id="orden" class="form-control input-sm">
+				    <select ng-model="filtroOrden" id="orden" class="form-control">
 						<option value="DE">Los nuevos primero</option>
 						<option value="A">Los nuevos al &uacute;ltimo</option>
 				    </select>
+					<br/>
 
 				    <!-- Botones -->
-				    <a ng-click="filterApply();" class="btn btn-success">Aplicar Filtros</a>
-				    <a ng-click="filterReset();" class="btn btn-danger">Cancelar Filtros</a>
+					<div class="pull-right">
+				    	<a ng-click="filterApply();" class="btn btn-success">Aplicar Filtros</a>
+				    	<a ng-click="filterReset();" class="btn btn-danger">Cancelar Filtros</a>
+					</div>
 			    </div>
 			</div>
 			<!-- /Filtros -->

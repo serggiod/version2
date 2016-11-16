@@ -1,3 +1,63 @@
-<ng-controller ng-controller="presidenciaController">
-    <ng-include src="'views/presidenciaView.html'"></ng-include>
-</ng-controller>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="tituloSeccion text-capitalize text-nowrap">
+            Autoridades
+        </h3>
+    </div>
+    <div class="panel-body container-fluid">
+
+        <!-- Column Menu -->
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Men&uacute;
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <!-- Menu -->
+                    <ul class="nav nav-pills nav-stacked">
+                        <ng-click ng-click="showPresidente()"><li><a class="btn btn-link">Presidente</a></li></ng-click>
+                        <ng-click ng-click="showVicepresidente1()"><li><a class="btn btn-link">Vice Presidente 1º</a></li></ng-click>
+                        <ng-click ng-click="showVicepresidente2()"><li><a class="btn btn-link">Vice Presidente 2º</a></li></ng-click>
+                        <ng-click ng-click="showSecParla()"><li><a class="btn btn-link">Secretario Parlamentario</a></li></ng-click>
+                        <ng-click ng-click="showSecAdmin()"><li><a class="btn btn-link">Secretario Administrativo<Administrativo></Administrativo></a></li></ng-click>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column Content -->
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+
+            <!-- Pesidente. -->
+            <div ng-show="varPresidente">
+                <ng-include src="'views/autoridades/widgets/presidente.html'"></ng-include>
+            </div>
+
+            <!-- VicePesidente1. -->
+            <div ng-show="varVicePresidente1">
+                <ng-include src="'views/autoridades/widgets/vicepresidente1.html'"></ng-include>
+            </div>
+
+            <!-- VicePesidente2. -->
+            <div ng-show="varVicePresidente2">
+                <ng-include src="'views/autoridades/widgets/vicepresidente2.html'"></ng-include>
+            </div>
+
+            <!-- SecParla. -->
+            <div ng-show="varSecParla">
+                <ng-include src="'views/autoridades/widgets/secretario.parlamentario.html'"></ng-include>
+            </div>
+
+            <!-- SecAdmin. -->
+            <div ng-show="varSecAdmin">
+                <ng-include src="'views/autoridades/widgets/secretario.administrativo.html'"></ng-include>
+            </div>
+
+        </div>
+
+    </div>
+</div>

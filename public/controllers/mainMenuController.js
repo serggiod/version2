@@ -4,6 +4,7 @@ angular
 
 			// Rutas.
 			$scope.routeToBloquesContent = '/rest/institucion.php/bloques';
+			$scope.routeToComisiones = '/rest/institucion.php/comisiones';
 			
 			// Funcion inicializadora.
 			$scope.init = ()=>{
@@ -18,6 +19,12 @@ angular
 					.get($scope.routeToBloquesContent)
 					.success((json)=>{ if(json.result) $scope.bloques = json.rows; })
 					.error(()=>{console.log($scope.routeToBloquesContent+' : No Data');});
+
+				// Menu Comisiones.
+				$http
+					.get($scope.routeToComisiones)
+					.success((json)=>{if(json.result) $scope.comisiones=json.rows;})
+					.error(()=>{console.log($scope.routeToComisiones+' : No Data');})
 			};
 
 			$scope.strLocation = $location.url();

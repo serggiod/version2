@@ -5,21 +5,25 @@
                 <ul class="list-unstyled">
                     <li><p class="tituloMapa">Institucional</p></li>
                     <ul>
-                        <li><a href="#" class="textoMapa">Autoridades</a></li>
-                        <li><a href="#" class="textoMapa">Diputados</a></li>
+                        <li><a href="#/autoridades" class="textoMapa">Autoridades</a></li>
+                        <li><a href="#/diputados" class="textoMapa">Diputados</a></li>
                     </ul>
                     <li><p class="tituloMapa">Labor Legislativa</p></li>
                     <ul>
-                        <li><a href="#" class="textoMapa">Proyectos</a></li>
-                        <li><a href="#" class="textoMapa">Acceso a Leyes</a></li>
-                        <li><a href="#" class="textoMapa">Versiones Taquigráficas</a></li>
-                        <li><a href="#" class="textoMapa">Orden del Día</a></li>
+                        <li><a href="#/orden-del-dia" class="textoMapa">Orden del D&iacute;a</a></li>
+                        <li><a href="#/proyectos" class="textoMapa">Burqueda de Proyectos</a></li>
+                        <li><a href="#/boletin-legislativo" class="textoMapa">Bolet&iacute;n Legislativo</a></li>
+                        <li><a href="#/versiones-taquigraficas" class="textoMapa">Versiones Taquigr&aacute;ficas</a></li>
+                        <li><a href="#/audiencias-publicas" class="textoMapa">Audiencias P&uacute;biclas</a></li>
+                        <li><a href="#/parlamento-juvenil" class="textoMapa">Parlamento Juvenil</a></li>
+                        <li><a href="#/acceso-a-leyes" class="textoMapa">Acceso a Leyes</a></li>
                     </ul>
                     <li><p class="tituloMapa">Normativa</p></li>
                     <ul>
-                        <li><a href="#" class="textoMapa">Constitución de la Nación</a></li>
-                        <li><a href="#" class="textoMapa">Constitución de la Provincia</a></li>
-                        <li><a href="#" class="textoMapa">Reglamento de la Legislatura</a></li>
+                        <li><a href="/imgcdn/docs/constitucion_nacional.pdf" target="_blank" class="textoMapa">Constituci&oacute;n Nacional</a></li>
+                        <li><a href="/imgcdn/docs/constitucion_provincial.pdf" target="_blank" class="textoMapa">Constituci&oacute;n De la Provincia</a></li>
+                        <li><a href="/imgcdn/docs/reglamento_de_la_legislatura_2016.pdf" target="_blank" class="textoMapa">Reglamento de la Legislatura</a></li>
+                        <li><a href="/imgcdn/docs/reglamento_interno_parlamento_noa.pdf" target="_blank" class="textoMapa">Reglamento del Parlamento del NOA</a></li>
                     </ul>
                 </ul>
             </div>
@@ -27,33 +31,22 @@
                 <ul class="list-unstyled">
                     <li><p class="tituloMapa">Comisiones</p></li>
                     <ul>
-                        <li><a href="#" class="textoMapa">Ambiente</a></li>
-                        <li><a href="#" class="textoMapa">Asuntos Institucionales</a></li>
-                        <li><a href="#" class="textoMapa">Asuntos Sociales</a></li>
-                        <li><a href="#" class="textoMapa">Comision Especial Ddhh</a></li>
-                        <li><a href="#" class="textoMapa">Cultura Y Turismo</a></li>
-                        <li><a href="#" class="textoMapa">Derechos Humanos</a></li>
-                        <li><a href="#" class="textoMapa">Economía</a></li>
-                        <li><a href="#" class="textoMapa">Educación</a></li>
-                        <li><a href="#" class="textoMapa">Finanzas</a></li>
-                        <li><a href="#" class="textoMapa">Legislación General</a></li>
-                        <li><a href="#" class="textoMapa">Obras Y Servicios Públicos</a></li>
-                        <li><a class="textoMapa" href="#">Pueblos Indigenas</a></li>
-                        <li><a class="textoMapa" href="#">Reforma Del Codigo De Faltas</a></li>
-                        <li><a class="textoMapa" href="#">Salud Pública</a></li>
-                        <li><a class="textoMapa" href="#">Trabajo Y Seguridad Social</a></li>
-                        <li><a class="textoMapa" href="#">Transporte Y Comunicaciones</a></li>
+                        <ng-controller ng-controller="mainMenuController">
+                            <ng-repeat ng-repeat="c in comisiones">
+                                <li><a href="#/comision/{{c.uriname}}" class="textoMapa">{{c.nombre}}</a></li>
+                            </ng-repeat>
+                        </ng-controller>
                     </ul>
                 </ul>
             </div>
             <div class="col-sm-3"> <!-- Columna 3 -->
                 <ul class="list-unstyled">
                     <li><p class="tituloMapa">Bloques</p></li>
-                        <li><a class="textoMapa" href="#">Unión Cívica Radical</a></li>
-                        <li><a class="textoMapa" href="#">Justicialista</a></li>
-                        <li><a class="textoMapa" href="#">Peronista</a></li>
-                        <li><a class="textoMapa" href="#">Primero Jujuy</a></li>
-                        <li><a class="textoMapa" href="#">Unidos y Organizados por la Soberanía Popular</a></li>
+                        <ng-controller ng-controller="mainMenuController">
+                            <ng-repeat ng-repeat="b in bloques">
+                                <li><a class="textoMapa" href="#/bloque/{{b.uriname}}">{{b.nombre}}</a></li>
+                            </ng-repeat>
+                        </ng-controller>
                     <li><p class="tituloMapa" href="#">Prensa</p></li>
                     <ul>
                         <li><a href="#" class="textoMapa">Noticias de la Legislatura</a></li>

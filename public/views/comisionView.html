@@ -1,0 +1,146 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="tituloSeccion text-capitalize text-nowrap">
+			Comisi&oacute;n de {{comision.nombre}}
+		</h3>
+	</div>
+	<div class="panel-body">
+
+		<!-- Menu -->
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Menú
+                    </h3>
+                </div>
+                <div class="pane-body">
+					<!-- Menu -->
+                    <ul class="nav nav-pills nav-stacked">
+                        <ng-click ng-click="showCompetencias()"><li><a class="btn btn-link">Competencias</a></li></ng-click>
+                        <ng-click ng-click="showAutoridades()"><li><a class="btn btn-link">Autoridades</a></li></ng-click>
+                        <ng-click ng-click="showProyCDespacho()"><li><a class="btn btn-link">Proyectos con Despachos</a></li></ng-click>
+                        <ng-click ng-click="showProyEComision()"><li><a class="btn btn-link">Proyectos en Comisi&oacute;n</a></li></ng-click>
+                        <ng-click ng-click="showReuniones()"><li><a class="btn btn-link">Reuniones</a></li></ng-click>
+                    </ul>
+
+					<!-- Contancto -->
+					<p>
+						<strong>Secretario: </strong> {{comision.secretario}}<br>
+						<strong>Email: </strong> <a href="mailto:saladelascomisiones@legislaturajujuy.gov.ar">saladelascomisiones@<br/>legislaturajujuy.gov.ar</a><br>
+						<strong>Teléfonos :</strong> +54 0388 4239211 / 4239321
+					</p>
+                </div>
+            </div>
+		</div>
+
+		<!-- Contenido -->
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+			<!-- Comision / Competencias -->
+			<div class="panel panel-default" ng-show="varCompetencias">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-capitalize text-nowrap">
+                        {{comision.nombre}} / Competencias 
+                    </h3>
+                </div>
+                <div class="pane-body">
+                    <ng-bind-html ng-bind-html="comision.competencias"></ng-bind-html>
+                </div>
+            </div>
+
+			<!-- Comision / Autoridadess -->
+			<div class="panel panel-default" ng-show="varAutoridades">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-capitalize text-nowrap">
+                        {{comision.nombre}} / Autoridades
+                    </h3>
+                </div>
+                <div class="pane-body">
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td><strong>Autoridad</strong></td>
+                            <td><strong>Fotograf&iacute;a</strong></td>
+                            <td><strong>Diputado</strong></td>
+                        </tr>
+                        <tr ng-repeat="c in comision.autoridades">
+                            <td><strong>{{c.cargo}}</strong></td>
+                            <td>
+                                <a href="/diputado/#/{{c.uriname}}" target="_blank">
+                                    <img class="img-responsive diputado" src="/imgcdn/diputados/{{c.fotografia}}"/>
+                                </a>
+                            </td>
+                            <td>
+                                <a class="btn btn-link" href="/diputado/#/{{c.uriname}}" target="__blank">
+                                    <strong>{{d.nombre}}</strong>
+                                </a>
+                                <br/>{{c.mandato}}
+                                <br/><span class="test-capitalize">{{c.bloque}}<span>
+                                <br/><img src="/imgcdn/bloques/{{c.escudo}}" border="0" width="40">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+			<!-- Comision / Proyectos Con Despachos -->
+			<div class="panel panel-default" ng-show="varDespacho">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-capitalize text-nowrap">
+                        {{comision.nombre}} / Proyectos Con Despachos 
+                    </h3>
+                </div>
+                <div class="pane-body">
+                    <!--
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td><strong>Oficina</strong></td>
+                            <td><strong>Teléfono</strong></td>
+                        </tr>
+                        <tr ng-repeat="t in bloqueContent.telefonos">
+                            <td><strong>{{t.oficina}}</strong></td>
+                            <td><a class="btn btn-link">{{t.telefono}}</a></td>
+                        </tr>
+                    </table>
+                    -->
+                </div>
+            </div>
+
+			<!-- Comision / Proyectos en Comisión -->
+			<div class="panel panel-default" ng-show="varComision">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-capitalize text-nowrap">
+                        {{comision.nombre}} / Proyectos en Comisión 
+                    </h3>
+                </div>
+                <div class="pane-body">
+                    <!--
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td><strong>Oficina</strong></td>
+                            <td><strong>Teléfono</strong></td>
+                        </tr>
+                        <tr ng-repeat="t in bloqueContent.telefonos">
+                            <td><strong>{{t.oficina}}</strong></td>
+                            <td><a class="btn btn-link">{{t.telefono}}</a></td>
+                        </tr>
+                    </table>
+                    -->
+                </div>
+            </div>
+
+			<!-- Comision / Reuniones -->
+			<div class="panel panel-default" ng-show="varReuniones">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-capitalize text-nowrap">
+                        {{comision.nombre}} / Reuniones 
+                    </h3>
+                </div>
+                <div class="pane-body">
+                    {{comision.reunion}}
+                </div>
+            </div>
+
+		</div>
+	</div>
+</div>

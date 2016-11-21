@@ -11,7 +11,7 @@
                     <li><p class="tituloMapa">Labor Legislativa</p></li>
                     <ul>
                         <li><a href="#/orden-del-dia" class="textoMapa">Orden del D&iacute;a</a></li>
-                        <li><a href="#/proyectos" class="textoMapa">Burqueda de Proyectos</a></li>
+                        <li><a href="#/proyectos" class="textoMapa">Busqueda de Proyectos</a></li>
                         <li><a href="#/boletin-legislativo" class="textoMapa">Bolet&iacute;n Legislativo</a></li>
                         <li><a href="#/versiones-taquigraficas" class="textoMapa">Versiones Taquigr&aacute;ficas</a></li>
                         <li><a href="#/audiencias-publicas" class="textoMapa">Audiencias P&uacute;biclas</a></li>
@@ -42,15 +42,17 @@
             <div class="col-sm-3"> <!-- Columna 3 -->
                 <ul class="list-unstyled">
                     <li><p class="tituloMapa">Bloques</p></li>
+                    <ul>
                         <ng-controller ng-controller="mainMenuController">
                             <ng-repeat ng-repeat="b in bloques">
                                 <li><a class="textoMapa" href="#/bloque/{{b.uriname}}">{{b.nombre}}</a></li>
                             </ng-repeat>
                         </ng-controller>
+                    </ul>
                     <li><p class="tituloMapa" href="#">Prensa</p></li>
                     <ul>
-                        <li><a href="#" class="textoMapa">Noticias de la Legislatura</a></li>
-                        <li><a href="#" class="textoMapa">Archivo de Fotografias</a></li>
+                        <li><a href="#/prensa/noticias" class="textoMapa">Noticias de la Legislatura</a></li>
+                        <li><a href="#/prensa/fotografia/1" class="textoMapa">Archivo de Fotografias</a></li>
                     </ul>
                     <li><p class="tituloMapa" href="#">Transparencia</p></li>
                     <ul>

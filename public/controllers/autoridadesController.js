@@ -1,8 +1,9 @@
 angular
 		.module('legislaturaweb')
-		.controller('autoridadesController',function($scope,$rootScope,$http){
+		.controller('autoridadesController',function($scope,$rootScope,$http,$window){
 			// Inicializadora.
 			$scope.init = ()=>{
+				$window.scrollTo(0,0);
 				$rootScope.mediaBar=false;
 				$scope.resetVars();
 				$scope.showPresidente();

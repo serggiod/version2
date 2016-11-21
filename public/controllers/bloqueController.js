@@ -1,17 +1,20 @@
 angular
 .module('legislaturaweb')
-.controller('bloqueController',function($scope,$http,$routeParams){
+.controller('bloqueController',function($scope,$http,$rootScope,$routeParams,$window){
+	
 	// Rutas.
 	$scope.routeToBloqueContent = '/rest/institucion.php/bloque/'+$routeParams.uriname;
+
 	// Inicializadora.
 	$scope.init = ()=>{
-		$scope.getBloqueContent();
+		$window.scrollTo(0,0);
+		$rootScope.mediabar=false;
 		$scope.resetVars();
-		$scope.showDiputados();
+		$scope.getBloqueContent();
 	};
 
 	$scope.showDiputados   = ()=>{ $scope.resetVars(); $scope.varShowDiputados    = true; };
-	$scope.showPincipios   = ()=>{ $scope.resetVars(); $scope.varShowPrincipios    = true; };
+	$scope.showPincipios   = ()=>{ $scope.resetVars(); $scope.varShowPrincipios   = true; };
 	$scope.showHistoria    = ()=>{ $scope.resetVars(); $scope.varShowHistoria     = true; };
 	$scope.showAutoridades = ()=>{ $scope.resetVars(); $scope.varShowAutoridades  = true; };
 	$scope.showEmails      = ()=>{ $scope.resetVars(); $scope.varShowEmails       = true; };
@@ -22,7 +25,7 @@ angular
 
 	$scope.resetVars = ()=>{
 		$scope.varShowDiputados    = false;  
-		$scope.varShowPrincipios    = false;  
+		$scope.varShowPrincipios   = false;  
 		$scope.varShowHistoria     = false;   
 		$scope.varShowAutoridades  = false;
 		$scope.varShowEmails       = false;     
@@ -36,9 +39,15 @@ angular
 	$scope.getBloqueContent = ()=>{
 		$http
 			.get($scope.routeToBloqueContent)
-			.success((json)=>{if(json.result) $scope.bloqueContent=json.rows;})
+			.success((json)=>{
+				if(json.result){
+					$scope.bloqueContent=json.rows;
+					$scope.showDiputados();
+				}
+			})
 			.error(()=>{console.log($scope.routeToBloqueContent+' : No Data');});
 	};
+
 	//Inicilizar.
 	$scope.init();		
 });

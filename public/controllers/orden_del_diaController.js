@@ -1,10 +1,11 @@
 angular
 		.module('legislaturaweb')
-		.controller('orden_del_diaController',function($scope,$http){
+		.controller('orden_del_diaController',function($scope,$rootScope,$http,$window){
 
 				// Función inicializadora.
 				$scope.init = ()=>{
-					$('#mediaBar').hide();
+					$window.scrollTo(0,0);
+					$rootScope.mediaBar=false;
 				};
 
 				// Inicializar calendario.

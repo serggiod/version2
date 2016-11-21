@@ -1,12 +1,13 @@
 angular
 .module('legislaturaweb')
-.controller('parlamentoJuvenilController',function($scope,$http,$rootScope){
+.controller('parlamentoJuvenilController',function($scope,$http,$rootScope,$window){
 
 	// Rutas.
 	$scope.routeToParlamentos = '/rest/intranet.php/parlamento/juvenil';
 	
     // Inicializadora.
 	$scope.init = ()=>{
+        $window.scrollTo(0,0);
         $rootScope.mediaBar=false;
 		$scope.resetVars();
         $scope.showResolucion();

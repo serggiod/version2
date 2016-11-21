@@ -1,12 +1,13 @@
 angular
 		.module('legislaturaweb')
-		.controller('boletinLegislativoController',function($scope,$http,$rootScope,$location){
+		.controller('boletinLegislativoController',function($scope,$http,$rootScope,$location,$window){
 			
 			// Routes.
 			$scope.routeToBoletin = '/rest/home.php/boletin';
 
 			// Función inicializadora.
 			$scope.init = ()=>{
+				$window.scrollTo(0,0);
 				$rootScope.mediaBar=false;
 				$scope.getBoletinInformativoContent();
 			};

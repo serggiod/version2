@@ -1,6 +1,6 @@
 angular
 		.module('legislaturaweb')
-		.controller('homeController',function($scope,$http,$rootScope){
+		.controller('homeController',function($scope,$http,$rootScope,$window){
 		
 			// Rutas.
 			$scope.routeToNoticiasDestacadas12         = '/rest/institucion.php/actualidad/legislatura/1';
@@ -12,6 +12,7 @@ angular
 
 			// función inicializadora.
 			$scope.init = ()=>{
+				$window.scrollTo(0,0);
 				$rootScope.mediaBar=true;
 				$scope.getActividadDelDiaWidgetContent();
 				$scope.getMarcosPazWidgetContent();

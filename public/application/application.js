@@ -5,6 +5,7 @@ angular.module('legislaturaweb',
 		,'angular-carousel'
 		,'mgcrea.ngStrap'
 		,'ui.calendar'
+		,'ngSanitize'
 		//addmodule.
 	])
 	.config(function($routeProvider,$httpProvider){
@@ -35,26 +36,9 @@ angular.module('legislaturaweb',
 				controller:'leerNoticiaController'
 			})
 			*/
-			.when('/presidencia',{
-				templateUrl:'views/presidenciaView.html',
-				controller:'presidenciaController'
-			})
-			.when('/autoridades',{
-				templateUrl:'views/autoridadesView.html',
-				controller:'autoridadesController'
-			})
-			.when('/diputados',{
-				templateUrl:'views/diputadosView.html',
-				controller:'diputadosController'
-			})
-			
 			.when('/poder_legislativo',{
 				templateUrl:'views/poder_legislativoView.html',
 				controller:'poder_legislativoController'
-			})
-			.when('/bloque/:uriname',{
-				templateUrl:'views/bloqueView.html',
-				controller:'bloqueController'
 			})
 			.when('/labor_legislativa',{
 				templateUrl:'views/labor_legislativaView.html',
@@ -64,6 +48,17 @@ angular.module('legislaturaweb',
 				templateUrl:'views/buscarView.html',
 				controller:'buscarController'
 			})
+			.when('/actividad/:dia/:mes/:anio',{
+				templateUrl:'views/actividadView.html',
+				controller:'actividadController'
+			})
+			
+
+			// Media Bar.
+			.when('/presidencia',{
+				templateUrl:'views/presidenciaView.html',
+				controller:'presidenciaController'
+			})
 			.when('/legislatura',{
 				templateUrl:'views/legislaturaView.html',
 				controller:'legislaturaController'
@@ -72,13 +67,24 @@ angular.module('legislaturaweb',
 				templateUrl:'views/session_en_vivoView.html',
 				controller:'session_en_vivoController'
 			})
-			.when('/actividad/:dia/:mes/:anio',{
-				templateUrl:'views/actividadView.html',
-				controller:'actividadController'
+
+
+			// Autoridades.
+			.when('/autoridades',{
+				templateUrl:'views/autoridadesView.html',
+				controller:'autoridadesController'
 			})
-			.when('/boletin_legislativo',{
-				templateUrl:'views/boletinLegislativoView.html',
-				controller:'boletinLegislativoController'
+
+			// Diputados.
+			.when('/diputados',{
+				templateUrl:'views/diputadosView.html',
+				controller:'diputadosController'
+			})
+
+			// Comisiones.
+			.when('/comision/:uriname',{
+				templateUrl:'views/comisionView.html',
+				controller:'comisionController'
 			})
 
 			// Labor Legislativa.
@@ -110,7 +116,22 @@ angular.module('legislaturaweb',
 				templateUrl:'views/accesoALeyesView.html',
 				controller:'accesoALeyesController'
 			})
-			
+
+			// Bloques.
+			.when('/bloque/:uriname',{
+				templateUrl:'views/bloqueView.html',
+				controller:'bloqueController'
+			})
+
+			// Prensa
+			.when('/prensa/noticias',{
+				templateUrl:'views/prensaNoticiasView.html',
+				controller:'prensaNoticiasController'
+			})
+			.when('/prensa/fotografia/:fotografia',{
+				templateUrl:'views/prensaFotografiaView.html',
+				controller:'prensaFotografiaController'
+			})
 			
 			//addroute.
 			.otherwise({redirectTo:'/home'});

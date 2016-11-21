@@ -1,12 +1,13 @@
 angular
 		.module('legislaturaweb')
-		.controller('audienciasPublicasController',function($scope,$http,$rootScope){
+		.controller('audienciasPublicasController',function($scope,$http,$rootScope,$window){
 		
 			// Rutas.
 			$scope.routeToNoticiasDestacadas12         = '/rest/institucion.php/actualidad/legislatura/1';
 
 			// función inicializadora.
 			$scope.init = ()=>{
+				$window.scrollTo(0,0);
 				$rootScope.mediaBar=true;
 				$scope.dhxTreeAudienciasPublicas();
 			};

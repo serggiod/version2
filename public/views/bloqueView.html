@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="tituloSeccion">
+        <h3 class="tituloSeccion text-capitalize text-nowrap">
             {{bloqueContent.nombre}}
         </h3>
     </div>
@@ -77,7 +77,7 @@
                     </h4>
                 </div>
                 <div class="panel-body">
-                    {{bloqueContent.principios}}
+                    <ng-bind-html ng-bind-html="bloqueContent.principios"></ng-bind-html>
                 </div>
             </div>
 
@@ -89,7 +89,7 @@
                     </h4>
                 </div>
                 <div class="panel-body">
-                    {{bloqueContent.historia}}
+                    <ng-bind-html ng-bind-html="bloqueContent.historia"></ng-bind-html>
                 </div>
             </div>
 
@@ -164,7 +164,7 @@
                     </h4>
                 </div>
                 <div class="panel-body">
-                    {{bloqueContent.direccion}}
+                    <ng-bind-html ng-bind-html="bloqueContent.direccion"></ng-bind-html>
                 </div>
             </div>
 

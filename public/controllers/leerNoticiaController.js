@@ -1,12 +1,13 @@
 angular
 		.module('legislaturaweb')
-		.controller('leerNoticiaController',function($scope,$http,$rootScope,$routeParams){
+		.controller('leerNoticiaController',function($scope,$http,$rootScope,$routeParams,$window){
 		
 			// Rutas.
 			$scope.routeToLeerNoticia = '/rest/institucion.php/leer-noticia/'+$routeParams.uriname;
 
 			// función inicializadora.
 			$scope.init = ()=>{
+				$window.scrollTo(0,0);
 				$rootScope.mediaBar=false;
 				$scope.getLeerNoticiaContent();
 			};

@@ -8,8 +8,8 @@
 </ng-show>		
 <div class="linea"></div>
 <p class="espacioSuperior texto text-justify">
-	{{leerNoticia.cabeza}}
-	{{leerNoticia.cuerpo}}
+	<ng-bind-html ng-bind-html="leerNoticia.cabeza"></ng-bind-html>
+	<ng-bind-html ng-bind-html="leerNoticia.cuerpo"></ng-bind-html>
 </p>
 
 <ng-controller ng-controller="homeController">

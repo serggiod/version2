@@ -1,11 +1,12 @@
 angular
 		.module('legislaturaweb')
-		.controller('session_en_vivoController',function($scope,$http,$rootScope,$window){
+		.controller('prensaNoticiasController',function($scope,$rootScope,$http,$window){
 				// Inicializadora.
 				$scope.init = ()=>{
 					$window.scrollTo(0,0);
-					$rootScope.mediabar=false;
+					$rootScope.mediabar = false;
 				};
-				//Inicializar.
+
+				// Inicializar.
 				$scope.init();
 		});

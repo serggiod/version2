@@ -15,8 +15,8 @@
                     <tr>
                         <td style="padding:3px;">{{actividadDelDiaContent.fecha}}</td>
                         <td style="padding:3px;">{{actividadDelDiaContent.hora}}</td>
-                        <td style="padding:3px;">{{actividadDelDiaContent.actividad}}</td>
-                        <td style="padding:3px;">{{actividadDelDiaContent.requisitos}}</td>
+                        <td style="padding:3px;"><ng-bind-html ng-bind-html="actividadDelDiaContent.actividad"></ng-bind-html></td>
+                        <td style="padding:3px;"><ng-bind-html ng-bind-html="actividadDelDiaContent.requisitos"></ng-bind-html></td>
                     </tr>
                 </table>
         <div>

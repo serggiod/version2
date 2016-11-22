@@ -56,16 +56,16 @@
                     </ul>
                     <li><p class="tituloMapa" href="#">Transparencia</p></li>
                     <ul>
-                        <li><a href="#" class="textoMapa">Resoluciones Concursos Secretaria Administrativa</a></li>
-                        <li><a href="#" class="textoMapa">Direcci&oacute;n de Administraci&oacute;n</a></li>
-                        <li><a href="proveedores.html" class="textoMapa">Inscripci&oacute;n para Proveedores</a></li>
-                        <li><a href="personal.html" class="textoMapa">N&oacute;mina del Personal de la Legislatura</a></li>
-                        <li><a href="#" class="textoMapa">Listado de Tel&eacute;fonos internos</a></li>
+                        <li><a href="#/resoluciones-y-concursos" class="textoMapa">Resoluciones Concursos Secretaria Administrativa</a></li>
+                        <li><a href="#/direccion-de-administracion" class="textoMapa">Direcci&oacute;n de Administraci&oacute;n</a></li>
+                        <li><a href="#/inscripcion-para-proveedores" class="textoMapa">Inscripci&oacute;n para Proveedores</a></li>
+                        <li><a href="#/nomina-del-personal" class="textoMapa">N&oacute;mina del Personal de la Legislatura</a></li>
+                        <li><a href="#/listado-de-teslefonos-internos" class="textoMapa">Listado de Tel&eacute;fonos internos</a></li>
                     </ul>
                 </ul>
             </div>				
 
-            <div class="col-sm-3"> <!-- Columna 4 -->
+            <div class="col-sm-3" ng-controller="homeController"> <!-- Columna 4 -->
                 <ul class="list-unstyled">
                     </ul>
                 </ul>
@@ -76,25 +76,10 @@
                     <img src="images/mapa.jpg" alt="">
                 </div>
                 <div style="position: absolute; margin:20px;">
-                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#mapa">Abrir Mapa <span class="glyphicon glyphicon-map-marker"/></button>
+                    <button ng-click="abrirMapa()" type="button" class="btn btn-success btn-lg" >Abrir Mapa <span class="glyphicon glyphicon-map-marker"/></button>
                 </div>
                 <!-- Ventana emergente mapa-->
-                <div id="mapa" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Donde estamos</h4>
-                                </div>
-                                <div class="container modal-body">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.551886582221!2d-65.30043138187949!3d-24.187443621063057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f44ba8981d1%3A0xb6b2365e42893975!2sCan%C3%B3nigo+Gorriti+47%2C+4600+San+Salvador+de+Jujuy%2C+Jujuy!5e0!3m2!1ses!2sar!4v1474455234052" width="550" height="400" frameborder="0" style="border:0;" allowfullscreen></iframe>
-                                </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ng-include src="'views/mapasitio/widgets/google.maps.legislatura.html'"></ng-include>
 
 
             </div>

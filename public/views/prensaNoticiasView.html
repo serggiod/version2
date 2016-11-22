@@ -1,1 +1,118 @@
-Ingrese aqui el c&oacute;digo html del controlador presaNoticiasController.
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="tituloSeccion text-capitalize text-nowrap">
+            Noticias de la Legislatura
+        </h3>
+    </div>
+    <div class="panel-body container-fluid">
+        <!-- Paginator -->
+        <nav>
+            <ul class="pager">
+
+                <!-- Pagina Primera -->
+                <li class="previous">
+                    <a href="#/prensa/noticias/1" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-fast-backward"></i></a>
+                </li>
+
+                <!-- Pagina anterior -->
+                <li>
+                    <a href="#/prensa/noticias/{{anterior}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-backward"></i></a>
+                </li>
+
+                <!-- Pagina Ubicacion -->
+                <li>
+                    <span  class="btn btn-default btn-sm">Fotograf&iacute;a {{noticias.paginador.pagina}}/{{noticias.paginador.paginas}}</span>
+                </li>
+
+                <!-- Pagia siguiente -->
+                <li>
+                    <a href="#/prensa/noticias/{{siguiente}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-forward"></i></a>
+                </li>
+
+                <!-- Pagina Ultima -->
+                <li class="next">
+                    <a href="#/prensa/noticias/{{noticias.paginador.paginas}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-fast-forward"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /Paginator -->
+
+        <div class="row">
+            <ng-repeat ng-repeat="n in noticias.noticias"> 
+
+
+                <div class="container col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<div class="noticiasChicas">
+						<div class="zoom">
+							<a href="#/leer-noticia/{{n.uriname}}">
+								<img class="img-responsive" src="/imgcdn/fotografias/{{n.fotografias[0].fotografia}}"></img>
+							</a>
+						</div>
+						<div class="linea"></div>
+						<a href="#/leer-noticia/{{n.uriname}}">
+							<p class="titulo">
+								{{n.titulo}}
+							</p>
+						</a>
+						<p class="texto text-justify">
+							<ng-bind-html ng-bind-html="n.cabeza"></ng-bind-html>
+						</p>
+					</div>
+				</div>
+
+                <!--
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-wrap">
+
+                    <div class="zoom">
+                        <a href="#/leer-noticia/{{n.uriname}}">
+                            <img class="img-responsive" src="/imgcdn/fotografias/{{n.fotografias[0].fotografia}}">
+                        </a>
+                    </div>
+                    <div class="linea"></div>
+                    <a href="#/leer-noticia/{{n.uriname}}">
+                        <p class="titulo">
+                            {{n.titulo}}
+                        </p>
+                    </a>
+                    <p class="texto text-justify">
+                        <ng-bind-html ng-bind-html="n.cabeza"></ng-bind-html>
+                    </p>
+
+                </div>
+                -->
+            </ng-repeat>
+        </div>
+
+        <!-- Paginator -->
+        <nav>
+            <ul class="pager">
+
+                <!-- Pagina Primera -->
+                <li class="previous">
+                    <a href="#/prensa/noticias/1" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-fast-backward"></i></a>
+                </li>
+
+                <!-- Pagina anterior -->
+                <li>
+                    <a href="#/prensa/noticias/{{anterior}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-backward"></i></a>
+                </li>
+
+                <!-- Pagina Ubicacion -->
+                <li>
+                    <span  class="btn btn-default btn-sm">Fotograf&iacute;a {{noticias.paginador.pagina}}/{{noticias.paginador.paginas}}</span>
+                </li>
+
+                <!-- Pagia siguiente -->
+                <li>
+                    <a href="#/prensa/noticias/{{siguiente}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-forward"></i></a>
+                </li>
+
+                <!-- Pagina Ultima -->
+                <li class="next">
+                    <a href="#/prensa/noticias/{{noticias.paginador.paginas}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-fast-forward"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /Paginator -->
+    </div>
+</div>

@@ -42,13 +42,31 @@ angular
 			//Dialog Modal Salon Marcos Paz.
 			$scope.showDialogSalonMarcosPaz = ()=>{
 				o = $('#dialogSalonMarcosPaz');
-				console.log(o);
 				dialog = BootstrapDialog.show({
 					autodestroy:false,
 					closable:false,
 					nl2br:false,
 					type:'type-info',
 					title:'Salon Marcos Paz',
+					message:o,
+					buttons:[{
+						label:'Cerrar',
+						cssClass:'btn-info',
+						action:()=>{ dialog.close(); }
+					}]
+				});
+			};
+
+			//Abrir mapa.
+			$scope.abrirMapa = ()=>{
+				o = $('#dialogGoogleMapsLegislatura');
+				dialog = BootstrapDialog.show({
+					autodestroy:false,
+					closable:false,
+					nl2br:false,
+					size:'size-wide',
+					type:'type-info',
+					title:'Donde Estamos',
 					message:o,
 					buttons:[{
 						label:'Cerrar',

@@ -8,19 +8,19 @@
 
 
 	    <!--- FOTOGRAFIAS -->
-	    <div class="jumbotron fFondo">
+	    <div class="jumbotron" style="color:#fff;background-color:#222;">
 
-		<h4 class="fFrente fFondo2">
+		<h4 class="fFrente text-center" style="background-color:#333;padding:15px;">
 		    {{fotografia.fotografia.titulo}}
 		</h4>
 
 		<img src="/imgcdn/fotografias/{{fotografia.fotografia.archivo}}" width="100%" border="0"/>
 
-		<strong class="fFrente">
+		<strong class="fFrente" style="display:block; width:100%;background-color:#222;padding:5px;">
 		    {{fotografia.fotografia.fecha}}
 		</strong>
 
-		<div id="fDescripcion" class="fFrente fFondo2">
+		<div id="fDescripcion" class="fFrente" style="background-color:#333;padding:15px;">
 		    <ng-bind-html ng-bind-html="fotografia.fotografia.descripcion"></ng-bind-html>
 		</div>
 
@@ -59,9 +59,6 @@
 
 	    </div>
 	    <!--- /FOTOGRAFIAS -->
-					
-
-
 
     </div>
 </div>

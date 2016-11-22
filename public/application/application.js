@@ -124,13 +124,37 @@ angular.module('legislaturaweb',
 			})
 
 			// Prensa
-			.when('/prensa/noticias',{
+			.when('/prensa/noticias',{redirectTo:'/prensa/noticias/1'})
+			.when('/prensa/noticias/:pagina',{
 				templateUrl:'views/prensaNoticiasView.html',
 				controller:'prensaNoticiasController'
 			})
+			.when('/prensa/fotografias',{redirectTo:'/prensa/fotografias/1'})
 			.when('/prensa/fotografia/:fotografia',{
 				templateUrl:'views/prensaFotografiaView.html',
 				controller:'prensaFotografiaController'
+			})
+
+			// Transparencia
+			.when('/resoluciones-y-concursos',{
+				templateUrl:'views/resolucionesYConcursosView.html',
+				controller:'resolucionesYConcursosController'
+			})
+			.when('/direccion-de-administracion',{
+				templateUrl:'views/direccionDeAdministracionView.html',
+				controller:'direccionDeAdministracionController'
+			})
+			.when('/inscripcion-para-proveedores',{
+				templateUrl:'views/inscripcionParaProveedoresView.html',
+				controller:'inscripcionParaProveedoresController'
+			})
+			.when('/nomina-del-personal',{
+				templateUrl:'views/nominaDelPersonalView.html',
+				controller:'nominaDelPersonalController'
+			})
+			.when('/listado-de-teslefonos-internos',{
+				templateUrl:'views/listadoDeTeslefonosInternosView.html',
+				controller:'listadoDeTeslefonosInternosController'
 			})
 			
 			//addroute.

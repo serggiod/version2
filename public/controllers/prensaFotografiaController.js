@@ -19,8 +19,8 @@ angular
 						.success((json)=>{
 							if(json.result){
 								$scope.fotografia=json.rows;
-								$scope.anterior  = (parseInt($routeParams.fotografia)) +1;
-								$scope.siguiente = (parseInt($routeParams.fotografia)) +1;
+								$scope.anterior  = parseInt($scope.fotografia.paginador.pagina) -1;
+								$scope.siguiente = parseInt($scope.fotografia.paginador.pagina) +1;
 								if($scope.anterior<1) $scope.anterior = 1;
 								if($scope.siguiente>$scope.paginador.paginas) $scope.siguiente = $scope.paginador.paginas;
 							}

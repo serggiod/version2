@@ -76,6 +76,26 @@ angular
 				});
 			};
 
+			// Abrir lista de diputados.
+			$scope.abrirListaDeDiputados = ()=>{
+				o = $('#diputadosLista');
+				console.log(o);
+				dialog = BootstrapDialog.show({
+					autodestroy:false,
+					closable:false,
+					nl2br:false,
+					size:'size-wide',
+					type:'type-info',
+					title:'Diputados',
+					message:o,
+					buttons:[{
+						label:'Cerrar',
+						cssClass:'btn-info',
+						action:()=>{ dialog.close(); }
+					}]
+				});
+			};
+
 			// Widget Content: Arctividad del Dia.
 			$scope.getActividadDelDiaWidgetContent = ()=>{
 				$http

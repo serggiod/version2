@@ -1,0 +1,78 @@
+<div class="row clearfix" ng-controller="diputadosController">
+    <div class="container col-xs-12 col-md-12">
+
+        <ng-repeat ng-repeat="d in diputadosContent">
+
+            <div class="container-fluid cajaDiputado">
+                <div class="col-xs-3 pull-left">
+                    <a href="/diputado/#/{{d.uriname}}" target="_blank">
+                        <img src="/imgcdn/diputados/{{d.fotografia}}" class="img-responsive diputado">
+                    </a>
+                </div>
+                <div class="col-xs-6 pull-left">
+                    <a href="/diputado/#/{{d.uriname}}" target="_blank">
+                        <p class="titulo">
+                            {{d.nombre}}
+                        </p>
+                    </a>
+                    <hr>
+                    <p class="texto">{{d.mandato}}</p>
+                    <p>
+
+                        <ng-show ng-show="d.telefono">
+                            <a class="tooltipbloque">
+                                <img class="redes tooltipbloque" src="images/redes/telefono.png">
+                                <span class="tooltiptextbloque" style="margin: 50px -50px;">
+                                    {{d.telefono}}
+                                </span>
+                            </a>
+                        </ng-show>
+
+                        <ng-show ng-show="d.email">
+                            <a href="mailto:{{d.email}}" class="tooltipbloque">
+                                <img class="redes" src="images/redes/mail.png">
+                                <span class="tooltiptextbloque" style="margin: 50px -50px;">
+                                    {{d.email}}
+                                </span>
+                            </a>
+                        </ng-show>
+
+                        <ng-show ng-show="d.facebook">
+                            <a href="{{d.facebook}}" target="_blank" class="tooltipbloque">
+                                <img class="redes" src="images/redes/facebook.png">
+                                <span class="tooltiptextbloque" style="margin: 50px -50px;">
+                                    {{d.facebook}}
+                                </span>
+                            </a>
+                        </ng-show>
+
+                        <ng-show ng-show="d.twitter">
+                            <a href="{{d.twitter}}" target="_blank" class="tooltipbloque">
+                                <img class="redes" src="images/redes/twitter.png">
+                                <span class="tooltiptextbloque" style="margin: 50px -50px;">
+                                    {{d.twitter}}
+                                </span>
+                            </a>
+                        </ng-show>
+
+                        <ng-show ng-show="d.paginaweb">
+                            <a href="{{d.paginaweb}}" target="_blank" class="tooltipbloque">
+                                <img class="redes" src="images/redes/web.png">
+                                <span class="tooltiptextbloque" style="margin: 50px -50px;">
+                                    {{d.paginaweb}}
+                                </span>
+                            </a>
+                        </ng-show>
+                        
+                    </p>
+                </div>
+                <div class="col-xs-3">
+                    <img src="/imgcdn/bloques/{{d.escudo}}" class="img-responsive logoBloque" alt="">
+                    <p class="texto espacioSuperior text-center">{{d.bloque_detalle}}</p>
+                </div>
+            </div>
+            
+        </ng-repeat>
+
+    </div>
+</div>

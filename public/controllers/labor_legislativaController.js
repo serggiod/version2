@@ -1,6 +1,7 @@
 angular
 		.module('legislaturaweb')
-		.controller('labor_legislativaController',function($scope,$http){
+		.controller('labor_legislativaController',function($scope,$http,$rootScope,$location){
 				// Mostrar media bar.
-				$('#mediaBar').hide();
+				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
 		});

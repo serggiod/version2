@@ -1,14 +1,15 @@
 angular
 		.module('legislaturaweb')
-		.controller('comisionController',function($scope,$http,$rootScope,$routeParams,$window){
+		.controller('comisionController',function($scope,$http,$rootScope,$routeParams,$window,$location){
 		
 			// Rutas.
 			$scope.routeToComision = '/rest/institucion.php/comision/'+$routeParams.uriname;
 
 			// función inicializadora.
 			$scope.init = ()=>{
+				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
 				$window.scrollTo(0,0);
-				$rootScope.mediaBar=true;
 				$scope.reset();
 				$scope.getComision();
 			};

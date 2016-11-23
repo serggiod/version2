@@ -1,10 +1,11 @@
 angular
 		.module('legislaturaweb')
-		.controller('autoridadesController',function($scope,$rootScope,$http,$window){
+		.controller('autoridadesController',function($scope,$rootScope,$http,$window,$location){
 			// Inicializadora.
 			$scope.init = ()=>{
-				$window.scrollTo(0,0);
-				$rootScope.mediaBar=false;
+				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
+				$window.scrollTo(0,0);				
 				$scope.resetVars();
 				$scope.showPresidente();
 			};

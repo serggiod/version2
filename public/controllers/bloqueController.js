@@ -1,14 +1,15 @@
 angular
 .module('legislaturaweb')
-.controller('bloqueController',function($scope,$http,$rootScope,$routeParams,$window){
+.controller('bloqueController',function($scope,$http,$rootScope,$routeParams,$window,$location){
 	
 	// Rutas.
 	$scope.routeToBloqueContent = '/rest/institucion.php/bloque/'+$routeParams.uriname;
 
 	// Inicializadora.
 	$scope.init = ()=>{
-		$window.scrollTo(0,0);
 		$rootScope.mediabar=false;
+		if($location.path()==='/home') $rootScope.mediabar=true;
+		$window.scrollTo(0,0);		
 		$scope.resetVars();
 		$scope.getBloqueContent();
 	};

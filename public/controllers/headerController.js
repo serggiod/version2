@@ -1,10 +1,11 @@
 angular
 		.module('legislaturaweb')
-		.controller('headerController',function($scope,$http){
+		.controller('headerController',function($scope,$http,$rootScope,$location){
 
 			// Función inicializadora.
 			($scope.init = ()=>{
-				// Iniciar slide principal.
+				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
 				$('#slidePrincipal').carousel({ interval: 4000, cycle: true });
 			})();
 

@@ -1,6 +1,5 @@
 <!-- Media bar -->
-<section
-    ng-controller="mediaBarController">
+<section>
     <article>
         <div
             class="row-fluid cajaBotonesGrandes">
@@ -11,30 +10,27 @@
                 
             <div
                 class="container-fluid col-xs-4 text-center">
-                <a
-                    href="#/presidencia">
+                <a href="#/presidencia">
                     <button class="btnPresidencia"></button>
                 </a>
                 <h4>
                     Presidencia
                 </h4>	
             </div>
+            <ng-controller ng-controller="homeController">
+                <div class="container col-xs-4 text-center">
+                    <a ng-click="laborLegislativaOpen()">
+                        <button class="btnLegislatura"></button>
+                    </a>
+                    <h4>
+                        Labor Legislativa
+                    </h4>
+                </div>
+            </ng-controller>
 
             <div
                 class="container col-xs-4 text-center">
-                <a
-                    href="#/legislatura">
-                    <button class="btnLegislatura"></button>
-                </a>
-                <h4>
-                    Legislatura
-                </h4>
-            </div>
-
-            <div
-                class="container col-xs-4 text-center">
-                <a
-                    href="#/session_en_vivo">
+                <a href="#/session_en_vivo">
                     <button class="btnSesion"></button>
                 </a>
                 <h4>

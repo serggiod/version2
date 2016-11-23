@@ -4,8 +4,9 @@ angular
 			
 			// Icialiadora.
 			$scope.init = ()=>{
-				$window.scrollTo(0,0);
 				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
+				$window.scrollTo(0,0);
 			};
 
 			// Iniclializar

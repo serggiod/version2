@@ -1,14 +1,15 @@
 angular
 		.module('legislaturaweb')
-		.controller('prensaFotografiaController',function($scope,$rootScope,$http,$window,$routeParams){
+		.controller('prensaFotografiaController',function($scope,$rootScope,$http,$window,$routeParams,$location){
 
 				// Rutas.
 				$scope.routeToFotografia = '/rest/institucion.php/fotografias/'+$routeParams.fotografia;
 
 				// Inicializadora.
 				$scope.init = ()=>{
+					$rootScope.mediabar=false;
+					if($location.path()==='/home') $rootScope.mediabar=true;
 					$window.scrollTo(0,0);
-					$rootScope.mediabar = false;
 					$scope.getFotografia();
 				};
 

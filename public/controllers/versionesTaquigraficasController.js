@@ -1,14 +1,15 @@
 angular
 		.module('legislaturaweb')
-		.controller('versionesTaquigraficasController',function($scope,$http,$rootScope,$window){
+		.controller('versionesTaquigraficasController',function($scope,$http,$rootScope,$window,$location){
 		
 			// Rutas.
 			$scope.routeToVersiones = '/rest/institucion.php/versiones';
 
 			// Inicializadora..
 			$scope.init = ()=>{
+				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
 				$window.scrollTo(0,0);
-				$rootScope.mediaBar=false;
                 $scope.dhxTreeVersionesTaquigraficas();
 			};
 

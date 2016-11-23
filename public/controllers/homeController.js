@@ -1,6 +1,6 @@
 angular
 		.module('legislaturaweb')
-		.controller('homeController',function($scope,$http,$rootScope,$window){
+		.controller('homeController',function($scope,$http,$rootScope,$window,$location){
 		
 			// Rutas.
 			$scope.routeToNoticiasDestacadas12         = '/rest/institucion.php/actualidad/legislatura/1';
@@ -13,13 +13,19 @@ angular
 			// función inicializadora.
 			$scope.init = ()=>{
 				$window.scrollTo(0,0);
-				$rootScope.mediaBar=true;
+				$scope.mediabar();
 				$scope.getActividadDelDiaWidgetContent();
 				$scope.getMarcosPazWidgetContent();
 				$scope.getNoticiasDestacadas12Content();
 				$scope.getNoticiasDestacadas3Content();
 				$scope.getNoticiasDestacadasRojo();
 				$scope.getNoticiasTop4();
+			};
+
+			// Mediabar Status.
+			$scope.mediabar = ()=>{
+				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
 			};
 
 			// Dialog Modal Actividad Del Dia.
@@ -79,7 +85,6 @@ angular
 			// Abrir lista de diputados.
 			$scope.abrirListaDeDiputados = ()=>{
 				o = $('#diputadosLista');
-				console.log(o);
 				dialog = BootstrapDialog.show({
 					autodestroy:false,
 					closable:false,
@@ -143,6 +148,29 @@ angular
 					.get($scope.routeToNoticiasTop4)
 					.success((json)=>{ if(json.result) $scope.noticiasTop4=json.rows;})
 					.error(()=>{$scope.routeToNoticiasTop4+' : No Data'});
+			};
+
+			// Labor Legislativa Open.
+			$scope.laborLegislativaOpen = ()=>{
+				$http
+					.get('views/home/dialogs/labor.legislatva.html')
+					.success((html)=>{
+						window.a = BootstrapDialog.show({
+							autodestroy:true,
+							closable:false,
+							nl2br:false,
+							size:'size-wide',
+							type:'type-info',
+							title:'Labor legislativa',
+							message:html,
+							buttons:[{
+								label:'Cerrar',
+								cssClass:'btn-info',
+								action:()=>{ window.a.close(); }
+							}]
+						});
+					})
+					.error(()=>{console.log('views/home/dialogs/labor.legislatva.html : No data');});
 			};
 
 			// Inicializar.

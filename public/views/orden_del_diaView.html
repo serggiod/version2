@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default"> 
     <div class="panel-heading">
         <h3 class="tituloSeccion text-capitalize text-nowrap">
             orden del d&iacute;a
@@ -7,24 +7,73 @@
     <div class="panel-body">
 
         <!-- Mensaje del orden del dia. -->
-        <div class="row lineaVertical">
-            <div class="col-xs-3 pull-left">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 lineaVertical">
+
                 <img class="img-responsive" src="images/orden.jpg" alt="">
-                <!-- Menu -->
-                <ul class="nav nav-pills nav-stacked">
-                    <ng-click ng-click="showOrdinarias()"><li><a class="btn btn-link">Ordinarias</a></li></ng-click>
-                    <ng-click ng-click="showExtraordinarias()"><li><a class="btn btn-link">Extraordinarias</a></li></ng-click>
-                    <ng-click ng-click="showEspeciales()"><li><a class="btn btn-link">Especiales</a></li></ng-click>
-                    <ng-click ng-click="showPreparatorias()"><li><a class="btn btn-link">Preparatorias</a></li></ng-click>
-                    <ng-click ng-click="showParlamentoJuvenil()"><li><a class="btn btn-link">Parlamento Juvenil</a></li></ng-click>
-                </ul>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Menú
+                        </h3>
+                    </div>
+                    <div class="pane-body">
+
+                        <!-- Menu -->
+                        <ul class="nav nav-pills nav-stacked">
+                            <ng-click ng-click="showOrdinarias()"><li><a class="btn btn-link">Ordinarias</a></li></ng-click>
+                            <ng-click ng-click="showExtraordinarias()"><li><a class="btn btn-link">Extraordinarias</a></li></ng-click>
+                            <ng-click ng-click="showEspeciales()"><li><a class="btn btn-link">Especiales</a></li></ng-click>
+                            <ng-click ng-click="showPreparatorias()"><li><a class="btn btn-link">Preparatorias</a></li></ng-click>
+                            <ng-click ng-click="showParlamentoJuvenil()"><li><a class="btn btn-link">Parlamento Juvenil</a></li></ng-click>
+                            <ng-click ng-click="showTodas()"><li><a class="btn btn-link">Ver Todos Los Ordenes</a></li></ng-click>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-capitalize text-nowrap">
+                            Orden del Día / {{titulo}} 
+                        </h3>
+                    </div>
+                    <div class="pane-body">
+
+
+
+				<table id="insertHtmlOrdinaria" class="table">
+					<tr>
+						<td>NOMBRE</td>
+						<td>FECHA</td>
+						<td>ACCIONES</td>
+					</tr>
+                    <tr ng-repeat="o in inshow">
+                        <td>
+                            <strong class="text-uppercase">
+                                {{o.numero}} SESION	{{o.tipo}}		
+                            </strong>
+                        </td>
+                        <td>
+                            {{o.fecha}}
+                        </td>
+                        <td>
+                            <a href="/img/sesiones/{{o.file}}.html" target="__blank" class="btn btn-info">
+                                Visualizar
+                            </a>
+                            <a ng-click="imprimir(o.file_print)" class="btn btn-primary">
+                                Imprimir
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+          
+                
 
             </div>
-            <div class="col-xs-9 pull-right">
-                <p class="help-block espacioSuperior">
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-                </p>
-            </div>
-        </div>
+
     </div>
 </div>

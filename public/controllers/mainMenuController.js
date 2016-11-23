@@ -1,6 +1,6 @@
 angular
 		.module('legislaturaweb')
-		.controller('mainMenuController',function($scope,$http,$location){
+		.controller('mainMenuController',function($scope,$http,$location,$rootScope){
 
 			// Rutas.
 			$scope.routeToBloquesContent = '/rest/institucion.php/bloques';
@@ -8,6 +8,8 @@ angular
 			
 			// Funcion inicializadora.
 			$scope.init = ()=>{
+				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
 				// Fecha
 				$scope.date       = new Date();
 				$scope.meses      = new Array ("enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");

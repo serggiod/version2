@@ -1,11 +1,13 @@
 angular
 		.module('legislaturaweb')
-		.controller('diputadosController',function($scope,$http,$window){
+		.controller('diputadosController',function($scope,$http,$window,$rootScope,$location){
 			 // Rutas.
 			 $scope.routeToDiputadosContent = '/rest/institucion.php/diputados';
 
 			 // Inicilizador.
 			 $scope.init = ()=>{
+				 $rootScope.mediabar=false;
+				 if($location.path()==='/home') $rootScope.mediabar=true;
 				 $window.scrollTo(0,0);
 				 $scope.getWidgetContentDiputados();
 			 };

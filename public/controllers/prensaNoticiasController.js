@@ -1,14 +1,15 @@
 angular
 		.module('legislaturaweb')
-		.controller('prensaNoticiasController',function($scope,$rootScope,$http,$window,$routeParams){
+		.controller('prensaNoticiasController',function($scope,$rootScope,$http,$window,$routeParams,$location){
 
 			// Rutas.
 			$scope.routeToNoticias = '/rest/institucion.php/actualidad/legislatura/'+$routeParams.pagina+'/10';
 
 			// Inicializadora.
 			$scope.init = ()=>{
+				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
 				$window.scrollTo(0,0);
-				$rootScope.mediabar = false;
 				$scope.getNoticias();
 			};
 

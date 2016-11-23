@@ -1,6 +1,6 @@
 angular
 		.module('legislaturaweb')
-		.controller('proyectosController',function($scope,$http,$rootScope,$window){
+		.controller('proyectosController',function($scope,$http,$rootScope,$window,$location){
 
 			// Rutas.
 			$scope.routeToDiputados = '/rest/institucion.php/diputados';
@@ -23,6 +23,7 @@ angular
 			$scope.formInit = ()=>{
 				$window.scrollTo(0,0);
 				$rootScope.mediabar=false;
+				if($location.path()==='/home') $rootScope.mediabar=true;
 				$scope.getDiputados();
 				$scope.getProyectsFromRest();
 			}

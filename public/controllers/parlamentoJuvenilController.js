@@ -4,6 +4,7 @@ angular
 
 	// Rutas.
 	$scope.routeToParlamentos = '/rest/intranet.php/parlamento/juvenil';
+    $scope.routeToOrdenesPJ   = '/rest/institucion.php/ordenes';
 	
     // Inicializadora.
 	$scope.init = ()=>{
@@ -13,6 +14,7 @@ angular
 		$scope.resetVars();
         $scope.showResolucion();
         $scope.getParlamentos();
+        $scope.getOrdenesPJ();
         $scope.dhxTreeVersiones();
 	};
 
@@ -53,12 +55,30 @@ angular
             .error(()=>{console.log($scope.routeToParlamentos+' : No Data');});
     };
 
+    // Solicitar ordenes.
+    $scope.getOrdenesPJ = () =>{
+        $http
+            .get($scope.routeToOrdenesPJ)
+            .success((json)=>{if(json.result)$scope.ordenes = json.rows.juvenil})
+            .error(()=>{console.log($scope.routeToOrdenesPJ+' : No Data');});
+    }
+
     // Armar versiones.
     $scope.dhxTreeVersiones = ()=>{
-            var tree = new dhtmlXTreeObject('treeBox','100%','100%','rootPath');
-            tree.setImagePath('/jscdn/dhx-tree/imgs/dhxtree_skyblue/');
-            tree.load('/rest/institucion.php/versiones/juvenil','json');
-        }
+        var tree = new dhtmlXTreeObject('treeBox','100%','100%','rootPath');
+        tree.setImagePath('/jscdn/dhx-tree/imgs/dhxtree_skyblue/');
+        tree.load('/rest/institucion.php/versiones/juvenil','json');
+    }
+
+    // Imprimir.
+    $scope.imprimir = (file)=>{
+        uri = '/img/sesiones/'+file;
+        win = window.open(uri);
+        win.onload = ()=>{
+            win.print();
+            win.close();
+        };
+    };
 
 	//Inicilizar.
 	$scope.init();		

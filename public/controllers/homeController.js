@@ -157,7 +157,7 @@ angular
 					.success((html)=>{
 						window.a = BootstrapDialog.show({
 							autodestroy:true,
-							closable:false,
+							closable:true,
 							nl2br:false,
 							size:'size-wide',
 							type:'type-info',
@@ -170,7 +170,53 @@ angular
 							}]
 						});
 					})
-					.error(()=>{console.log('views/home/dialogs/labor.legislatva.html : No data');});
+					.error(()=>{console.log('views/home/dialogs/labor.legislatva.html : No Data');});
+			};
+
+			// Session en Vivo Open.
+			$scope.sessionEnVivoOpen = ()=>{
+				$http
+					.get('views/home/dialogs/session.en.vivo.html')
+					.success((html)=>{
+						window.a = BootstrapDialog.show({
+							autodestroy:true,
+							closable:true,
+							nl2br:false,
+							size:'size-wide',
+							type:'type-info',
+							title:'Sessión en Vivo',
+							message:html,
+							buttons:[{
+								label:'Cerrar',
+								cssClass:'btn-info',
+								action:()=>{ window.a.close(); }
+							}]
+						});
+					})
+					.error(()=>{console.log('views/home/dialogs/session.en.vivo.html : No Data');});
+			};
+
+			// Presidencia Open.
+			$scope.presidenciaOpen = ()=>{
+				$http
+					.get('views/autoridades/widgets/presidente.html')
+					.success((html)=>{
+						window.a = BootstrapDialog.show({
+							autodestroy:true,
+							closable:true,
+							nl2br:false,
+							size:'size-wide',
+							type:'type-info',
+							title:'Presidencia',
+							message:html,
+							buttons:[{
+								label:'Cerrar',
+								cssClass:'btn-info',
+								action:()=>{ window.a.close(); }
+							}]
+						});
+					})
+					.error(()=>{console.log('views/autoridades/widgets/presidente.html : No Data');});
 			};
 
 			// Inicializar.

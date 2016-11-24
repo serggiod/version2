@@ -107,13 +107,32 @@
                 </div>
                 <div class="panel-body">
 
-                    <ng-repeat ng-repeat="o in parlamento.ordenes">
-                        <h3 class="text-center">
-                            {{o.titulo}}
-                            <small>{{o.fecha}}</small>
-                        </h3>
-                        <div ng-bind.html="o.texto"></div>
-                    </ng-repeat>
+                    <table class="table table-striped table-hover table-bordered table-responsive">
+                        <tr>
+                            <td>NOMBRE</td>
+                            <td>FECHA</td>
+                            <td>ACCIONES</td>
+                        </tr>
+                        <tr ng-repeat="o in ordenes">
+                            <td>
+                                <strong class="text-uppercase">
+                                    {{o.numero}} SESION	{{o.tipo}}		
+                                </strong>
+                            </td>
+                            <td>
+                                {{o.fecha}}
+                            </td>
+                            <td>
+                                <a href="/img/sesiones/{{o.file}}.html" target="__blank" class="btn btn-info">
+                                    Visualizar
+                                </a>
+                                <a ng-click="imprimir(o.file_print)" class="btn btn-primary">
+                                    Imprimir
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    
                 </div>
             </div>
 

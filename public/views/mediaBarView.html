@@ -7,16 +7,18 @@
             <div
                 style="margin:55px 100px; position:absolute;">
             </div>
-                
-            <div
-                class="container-fluid col-xs-4 text-center">
-                <a href="#/presidencia">
-                    <button class="btnPresidencia"></button>
-                </a>
-                <h4>
-                    Presidencia
-                </h4>	
-            </div>
+
+            <ng-controller ng-controller="homeController">    
+                <div class="container-fluid col-xs-4 text-center">
+                    <a ng-click="presidenciaOpen()">
+                        <button class="btnPresidencia"></button>
+                    </a>
+                    <h4>
+                        Presidencia
+                    </h4>	
+                </div>
+            </ng-controller>
+            
             <ng-controller ng-controller="homeController">
                 <div class="container col-xs-4 text-center">
                     <a ng-click="laborLegislativaOpen()">
@@ -28,15 +30,16 @@
                 </div>
             </ng-controller>
 
-            <div
-                class="container col-xs-4 text-center">
-                <a href="#/session_en_vivo">
-                    <button class="btnSesion"></button>
-                </a>
-                <h4>
-                    Sesi&oacute;n en vivo
-                </h4>
-            </div>
+            <ng-controller ng-controller="homeController">
+                <div class="container col-xs-4 text-center">
+                    <a ng-click="sessionEnVivoOpen()">
+                        <button class="btnSesion"></button>
+                    </a>
+                    <h4>
+                        Sesi&oacute;n en vivo
+                    </h4>
+                </div>
+            </ng-controller>
         </div>
     </article>
 </section>

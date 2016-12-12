@@ -1,7 +1,9 @@
 <div class="hidden">
     <div class="panel" id="dialogSalonMarcosPaz">
         <div class="panel-body">
-                <img class="img-responsive" src="/imgcdn/actividad/{{salonMarcosPazContent.archivo.archivo}}" width="800"></img>
+                <ng-show ng-show="salonMarcosPazContent.archivo">
+                    <img class="img-responsive" src="{{salonMarcosPazContent.archivo.archivo}}" width="800"></img>
+                </ng-show>
                 <p class="titulo">{{salonMarcosPazContent.titulo}}</p>
                 <!-- Contenido -->
                 <table
@@ -13,10 +15,10 @@
                         <td style="padding:3px;"><strong>Requisitos</strong></td>
                     </tr>
                     <tr>
-                        <td style="padding:3px;">{{actividadDelDiaContent.fecha}}</td>
-                        <td style="padding:3px;">{{actividadDelDiaContent.hora}}</td>
-                        <td style="padding:3px;"><ng-bind-html ng-bind-html="actividadDelDiaContent.actividad"></ng-bind-html></td>
-                        <td style="padding:3px;"><ng-bind-html ng-bind-html="actividadDelDiaContent.requisitos"></ng-bind-html></td>
+                        <td style="padding:3px;">{{salonMarcosPazContent.fecha}}</td>
+                        <td style="padding:3px;">{{salonMarcosPazContent.hora}}</td>
+                        <td style="padding:3px;"><ng-bind-html ng-bind-html="salonMarcosPazContent.actividad"></ng-bind-html></td>
+                        <td style="padding:3px;"><ng-bind-html ng-bind-html="salonMarcosPazContent.requisitos"></ng-bind-html></td>
                     </tr>
                 </table>
         <div>

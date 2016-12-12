@@ -7,8 +7,8 @@ angular
 			$scope.routeToNoticiasDestacadas3          = '/rest/institucion.php/actualidad/legislatura/2';
 			$scope.routeToNoticiasDestacadasRojo       = '/rest/institucion.php/actualidad/diputados/1';
 			$scope.routeToNoticiasTop4                 = '/rest/institucion.php/actualidad/top/1';
-			$scope.routeToActividadDelDiaWidgetContent = '/rest/home.php/actividad/actividad_del_dia';
-			$scope.routeToMarcosPazWidgetContent       = '/rest/home.php/actividad/salon_marcos_paz';
+			$scope.routeToActividadDelDiaWidgetContent = '/rest/home.php/actividad/del/dia';
+			$scope.routeToMarcosPazWidgetContent       = '/rest/home.php/actividad/marcos/paz';
 
 			// función inicializadora.
 			$scope.init = ()=>{

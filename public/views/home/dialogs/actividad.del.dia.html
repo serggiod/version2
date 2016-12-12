@@ -2,20 +2,17 @@
     <div class="panel" id="dialogActividadDelDia">
         <div class="panel-body">
             <!-- Imagen -->
-            <img
-                class="img-responsive"
-                src="/imgcdn/actividad/{{actividadDelDiaContent.archivo.archivo}}"
-                width="800"/>
+            <ng-show ng-show="actividadDelDiaContent.archivo">
+                <img class="img-responsive" src="{{actividadDelDiaContent.archivo.archivo}}" width="800"/>
+            </ng-show>
 
             <!-- titulo -->
-            <h3
-                class="titulo">
+            <h3 class="titulo">
                 {{actividadDelDiaContent.titulo}}
             </h3>
 
             <!-- Contenido -->
-            <table
-                style="width:100%; border:1px solid #000;">
+            <table style="width:100%; border:1px solid #000;">
                 <tr style="text-align:center;border-bottom:5px solid #75716c;">
                     <td style="padding:3px;"><strong>Fecha</strong></td>
                     <td style="padding:3px;"><strong>Hora</strong></td>
